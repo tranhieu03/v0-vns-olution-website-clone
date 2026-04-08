@@ -1,41 +1,41 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Building2, Users, TrendingUp, Package } from "lucide-react"
+import { ArrowRight, Truck, Factory, RotateCcw, MapPin } from "lucide-react"
 
 const stats = [
-  { value: "500+", label: "Doanh nghiệp" },
-  { value: "50K+", label: "Người dùng" },
-  { value: "99.9%", label: "Uptime" },
-  { value: "24/7", label: "Hỗ trợ" },
+  { value: "150+", label: "Đơn vị sử dụng" },
+  { value: "2,000+", label: "Xe vận chuyển" },
+  { value: "99.5%", label: "Uptime hệ thống" },
+  { value: "24/7", label: "Hỗ trợ kỹ thuật" },
 ]
 
 const products = [
   {
-    id: "erp",
-    name: "VNS-ERP",
-    description: "Quản trị tổng thể",
-    icon: Building2,
+    id: "collect",
+    name: "EcoCollect",
+    description: "Thu gom thông minh",
+    icon: MapPin,
     color: "bg-primary text-primary-foreground",
   },
   {
-    id: "hrm",
-    name: "VNS-HR",
-    description: "Quản trị nhân sự",
-    icon: Users,
-    color: "bg-accent text-accent-foreground",
+    id: "transport",
+    name: "EcoTransport",
+    description: "Vận chuyển tối ưu",
+    icon: Truck,
+    color: "bg-amber-500 text-white",
   },
   {
-    id: "crm",
-    name: "VNS-CRM",
-    description: "Quản trị khách hàng",
-    icon: TrendingUp,
-    color: "bg-green-500 text-white",
+    id: "process",
+    name: "EcoProcess",
+    description: "Xử lý hiệu quả",
+    icon: Factory,
+    color: "bg-blue-500 text-white",
   },
   {
-    id: "dms",
-    name: "VNS-DMS",
-    description: "Quản trị phân phối",
-    icon: Package,
-    color: "bg-orange-500 text-white",
+    id: "recycle",
+    name: "EcoRecycle",
+    description: "Tái chế bền vững",
+    icon: RotateCcw,
+    color: "bg-emerald-500 text-white",
   },
 ]
 
@@ -47,10 +47,10 @@ export function Solutions() {
           {/* Content */}
           <div>
             <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl text-balance">
-              Giải pháp toàn diện cho hệ thống quản lý doanh nghiệp
+              Giải pháp toàn diện cho hệ thống xử lý rác thải
             </h2>
             <p className="mt-4 text-muted-foreground text-pretty">
-              Hệ sinh thái VNSolution là giải pháp giúp doanh nghiệp số hóa quản lý tài liệu và tự động hóa quy trình, tối ưu vận hành và giảm thiểu sai sót.
+              Hệ sinh thái EcoWaste Pro là giải pháp số hóa toàn bộ quy trình quản lý chất thải từ thu gom, vận chuyển, xử lý đến tái chế - giúp tối ưu chi phí và bảo vệ môi trường.
             </p>
 
             {/* Stats Grid */}
@@ -73,7 +73,7 @@ export function Solutions() {
               {/* Central Hub */}
               <div className="mb-6 text-center">
                 <p className="text-sm text-muted-foreground">
-                  Hệ sinh thái VNSolution tích hợp liền mạch các giải pháp quản trị doanh nghiệp
+                  Hệ sinh thái EcoWaste Pro tích hợp liền mạch các module quản lý rác thải
                 </p>
               </div>
 
@@ -105,14 +105,14 @@ export function Solutions() {
                   <ArrowRight className="h-4 w-4" />
                 </Button>
                 <Button variant="outline">
-                  Ứng Dụng Chuyên Biệt
+                  Tải Brochure
                 </Button>
               </div>
             </div>
 
             {/* Decorative Elements */}
             <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-primary/5 blur-2xl" />
-            <div className="absolute -bottom-4 -left-4 h-32 w-32 rounded-full bg-accent/5 blur-2xl" />
+            <div className="absolute -bottom-4 -left-4 h-32 w-32 rounded-full bg-amber-500/5 blur-2xl" />
           </div>
         </div>
       </div>

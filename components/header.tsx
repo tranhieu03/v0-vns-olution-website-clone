@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ChevronDown, Menu, X } from "lucide-react"
+import { ChevronDown, Menu, X, Recycle } from "lucide-react"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -18,12 +18,12 @@ export function Header() {
     {
       label: "Sản phẩm",
       hasDropdown: true,
-      items: ["VNS-ERP", "VNS-HRM", "VNS-CRM", "VNS-DMS"],
+      items: ["EcoCollect - Thu gom", "EcoTransport - Vận chuyển", "EcoProcess - Xử lý", "EcoRecycle - Tái chế"],
     },
     {
       label: "Giải pháp",
       hasDropdown: true,
-      items: ["Cho doanh nghiệp", "Cho cơ quan nhà nước", "Cho ngành y tế"],
+      items: ["Cho công ty môi trường đô thị", "Cho khu công nghiệp", "Cho chính quyền địa phương", "Cho doanh nghiệp sản xuất"],
     },
     { label: "Khách hàng", hasDropdown: false },
     { label: "Tài nguyên", hasDropdown: false },
@@ -39,18 +39,17 @@ export function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex items-center gap-1">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-              <svg viewBox="0 0 24 24" className="h-5 w-5 text-primary-foreground" fill="currentColor">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" fill="none"/>
-              </svg>
+          <div className="flex items-center gap-2">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary">
+              <Recycle className="h-6 w-6 text-primary-foreground" />
             </div>
             <div className="flex flex-col">
               <span className="text-lg font-bold text-primary">
-                VN<span className="text-foreground">SOLUTION</span>
+                Eco<span className="text-foreground">Waste</span>
+                <span className="text-primary"> Pro</span>
               </span>
-              <span className="text-[10px] text-muted-foreground -mt-1">
-                GIẢI PHÁP HOÀN HẢO CHO DOANH NGHIỆP
+              <span className="text-[9px] text-muted-foreground -mt-1 uppercase tracking-wide">
+                Giải pháp xử lý rác thải thông minh
               </span>
             </div>
           </div>
@@ -67,7 +66,7 @@ export function Header() {
                     <ChevronDown className="h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="center" className="w-48">
+                <DropdownMenuContent align="center" className="w-56">
                   {item.items?.map((subItem) => (
                     <DropdownMenuItem key={subItem} asChild>
                       <Link href="#" className="cursor-pointer">

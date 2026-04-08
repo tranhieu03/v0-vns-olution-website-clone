@@ -1,49 +1,49 @@
 import Link from "next/link"
-import { Facebook, Youtube, Linkedin, Mail, Phone, MapPin } from "lucide-react"
+import { Facebook, Youtube, Linkedin, Mail, Phone, MapPin, Recycle } from "lucide-react"
 
 const footerLinks = {
   products: {
     title: "Sản phẩm",
     links: [
-      { label: "VNS - ERP", href: "#" },
-      { label: "VNS - HRM", href: "#" },
-      { label: "VNS - CRM", href: "#" },
-      { label: "VNS - DMS", href: "#" },
+      { label: "EcoCollect - Thu gom", href: "#" },
+      { label: "EcoTransport - Vận chuyển", href: "#" },
+      { label: "EcoProcess - Xử lý", href: "#" },
+      { label: "EcoRecycle - Tái chế", href: "#" },
     ],
   },
   solutions: {
     title: "Giải pháp",
     links: [
-      { label: "Giải pháp cho ngành dược", href: "#" },
-      { label: "Giải pháp cho hệ thống xử lý rác", href: "#" },
-      { label: "Giải pháp cho cơ quan nhà nước", href: "#" },
-      { label: "Giải pháp cho doanh nghiệp SME", href: "#" },
+      { label: "Cho công ty môi trường đô thị", href: "#" },
+      { label: "Cho khu công nghiệp", href: "#" },
+      { label: "Cho chính quyền địa phương", href: "#" },
+      { label: "Cho doanh nghiệp sản xuất", href: "#" },
     ],
   },
   resources: {
     title: "Tài nguyên",
     links: [
-      { label: "Blog", href: "#" },
+      { label: "Blog môi trường", href: "#" },
       { label: "Hướng dẫn sử dụng", href: "#" },
       { label: "Case Studies", href: "#" },
-      { label: "Webinars", href: "#" },
+      { label: "Quy định pháp luật", href: "#" },
     ],
   },
   company: {
-    title: "Về chúng tôi",
+    title: "Liên hệ",
     links: [
       { label: "Giới thiệu", href: "#" },
       { label: "Đội ngũ", href: "#" },
       { label: "Tuyển dụng", href: "#" },
-      { label: "Liên hệ", href: "#" },
+      { label: "Đối tác", href: "#" },
     ],
   },
 }
 
 const contactInfo = [
-  { icon: Phone, text: "Hotline: 1900 123 456" },
-  { icon: Mail, text: "Email: contact@vnsolution.vn" },
-  { icon: MapPin, text: "Tầng 10, Tòa nhà ABC, Cầu Giấy, Hà Nội" },
+  { icon: Phone, text: "Hotline: 1900 636 568" },
+  { icon: Mail, text: "Email: contact@ecowastepro.vn" },
+  { icon: MapPin, text: "Tầng 15, Tòa nhà Green Tower, Cầu Giấy, Hà Nội" },
 ]
 
 const socialLinks = [
@@ -60,19 +60,18 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-                <svg viewBox="0 0 24 24" className="h-5 w-5 text-primary-foreground" fill="currentColor">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" fill="none"/>
-                </svg>
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary">
+                <Recycle className="h-6 w-6 text-primary-foreground" />
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-bold text-primary">
-                  VN<span className="text-foreground">SOLUTION</span>
+                  Eco<span className="text-foreground">Waste</span>
+                  <span className="text-primary"> Pro</span>
                 </span>
               </div>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
-              Nền tảng quản trị doanh nghiệp toàn diện, giúp số hóa quy trình và tối ưu hiệu suất.
+              Giải pháp phần mềm quản lý xử lý rác thải toàn diện, giúp tối ưu hóa quy trình và bảo vệ môi trường.
             </p>
 
             {/* Contact Info */}
@@ -123,7 +122,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
           <p className="text-sm text-muted-foreground">
-            © 2024 VNSolution. Tất cả quyền được bảo lưu.
+            © 2024 EcoWaste Pro. Tất cả quyền được bảo lưu.
           </p>
           <div className="flex gap-6">
             <Link href="#" className="text-sm text-muted-foreground hover:text-primary">

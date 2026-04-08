@@ -1,25 +1,25 @@
-import { FileX, Clock, Users, TrendingDown } from "lucide-react"
+import { MapPin, Clock, Truck, BarChart3 } from "lucide-react"
 
 const problems = [
   {
-    icon: FileX,
-    title: "Tài liệu rời rạc",
-    description: "Tài liệu lưu trữ phân tán, khó tìm kiếm và quản lý phiên bản gây mất thời gian và sai sót.",
+    icon: MapPin,
+    title: "Lộ trình thu gom chưa tối ưu",
+    description: "Phương tiện di chuyển lòng vòng, tốn nhiên liệu và thời gian do thiếu công cụ quy hoạch tuyến đường thông minh.",
   },
   {
     icon: Clock,
-    title: "Quy trình thủ công",
-    description: "Phê duyệt chậm trễ, công việc bị đình trệ do quy trình thủ công và thiếu tự động hóa.",
+    title: "Giám sát thủ công, thiếu realtime",
+    description: "Không nắm bắt được tiến độ thu gom theo thời gian thực, khó xử lý sự cố kịp thời và điều phối nhân lực hiệu quả.",
   },
   {
-    icon: Users,
-    title: "Phối hợp kém hiệu quả",
-    description: "Các phòng ban làm việc độc lập, thiếu kết nối và chia sẻ thông tin kịp thời.",
+    icon: Truck,
+    title: "Quản lý phương tiện phân tán",
+    description: "Thông tin xe, lái xe, lịch bảo trì lưu trữ rời rạc, gây khó khăn trong việc theo dõi và duy trì đội xe.",
   },
   {
-    icon: TrendingDown,
-    title: "Thiếu báo cáo tổng hợp",
-    description: "Không có cái nhìn toàn diện về hoạt động doanh nghiệp, khó đưa ra quyết định chính xác.",
+    icon: BarChart3,
+    title: "Thiếu dữ liệu báo cáo chính xác",
+    description: "Không có số liệu thống kê chi tiết về khối lượng rác, tỷ lệ tái chế, chi phí vận hành để đưa ra quyết định.",
   },
 ]
 
@@ -32,7 +32,7 @@ export function Problems() {
             Doanh nghiệp bạn đang gặp vấn đề gì?
           </h2>
           <p className="mt-4 text-muted-foreground text-pretty">
-            Hàng nghìn doanh nghiệp Việt Nam đang lãng phí thời gian và nguồn lực vì quy trình thủ công, lạc hậu.
+            Hàng trăm công ty môi trường đô thị và doanh nghiệp xử lý rác thải đang gặp khó khăn với quy trình vận hành thủ công, thiếu công nghệ.
           </p>
         </div>
 

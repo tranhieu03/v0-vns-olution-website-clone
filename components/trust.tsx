@@ -1,27 +1,27 @@
-import { Cloud, Headphones, Zap, Shield, Server, Lock } from "lucide-react"
+import { Cloud, Headphones, Zap, Shield, MapPin, Leaf } from "lucide-react"
 
 const trustFeatures = [
   {
     icon: Cloud,
-    title: "Hạ tầng AWS Cloud",
-    description: "Triển khai trên nền tảng đám mây Amazon Web Services với độ tin cậy và bảo mật hàng đầu thế giới.",
+    title: "Hạ tầng Cloud an toàn",
+    description: "Triển khai trên nền tảng đám mây với độ tin cậy cao, backup tự động và khả năng mở rộng linh hoạt theo nhu cầu.",
   },
   {
     icon: Headphones,
-    title: "Hỗ trợ 24/7",
-    description: "Đội ngũ kỹ thuật chuyên nghiệp sẵn sàng hỗ trợ mọi lúc, đảm bảo hệ thống vận hành liên tục.",
+    title: "Hỗ trợ kỹ thuật 24/7",
+    description: "Đội ngũ kỹ thuật chuyên nghiệp sẵn sàng hỗ trợ mọi lúc, đảm bảo hệ thống vận hành liên tục không gián đoạn.",
   },
   {
     icon: Zap,
-    title: "Triển khai nhanh",
-    description: "Quy trình triển khai tối ưu, doanh nghiệp có thể bắt đầu sử dụng chỉ trong vài ngày.",
+    title: "Triển khai nhanh chóng",
+    description: "Quy trình triển khai tối ưu, đơn vị có thể bắt đầu sử dụng chỉ trong 2-4 tuần với đầy đủ tính năng.",
   },
 ]
 
 const securityFeatures = [
   { icon: Shield, label: "Bảo mật đa lớp" },
-  { icon: Server, label: "Backup tự động" },
-  { icon: Lock, label: "Mã hóa dữ liệu" },
+  { icon: MapPin, label: "GPS/IoT tích hợp" },
+  { icon: Leaf, label: "Báo cáo môi trường" },
 ]
 
 export function Trust() {
@@ -30,10 +30,10 @@ export function Trust() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl text-balance">
-            Nền tảng an toàn đáng tin cậy
+            Nền tảng an toàn, đáng tin cậy
           </h2>
           <p className="mt-4 text-muted-foreground text-pretty">
-            VNSolution đồng hành cùng doanh nghiệp đa ngành, giúp tối ưu hệ thống quản lý nội bộ và tự động hóa quy trình với công nghệ tiên tiến nhất.
+            EcoWaste Pro được thiết kế với tiêu chuẩn bảo mật cao nhất, tích hợp công nghệ IoT hiện đại và tuân thủ các quy định về môi trường.
           </p>
         </div>
 

@@ -15,8 +15,8 @@ const beVietnamPro = Be_Vietnam_Pro({
 });
 
 export const metadata: Metadata = {
-  title: 'VNSolution - Nền tảng quản trị doanh nghiệp toàn diện',
-  description: 'Giải pháp phần mềm quản lý tài liệu và quy trình doanh nghiệp hàng đầu Việt Nam. Tự động hóa quy trình, tối ưu hiệu suất với VNS-ERP, VNS-HRM, VNS-CRM, VNS-DMS.',
+  title: 'EcoWaste Pro - Phần mềm Quản lý Xử lý Rác thải Thông minh',
+  description: 'Giải pháp phần mềm quản lý xử lý rác thải toàn diện cho doanh nghiệp và cơ quan nhà nước. Tối ưu hóa thu gom, vận chuyển, xử lý và tái chế chất thải.',
   generator: 'v0.app',
   icons: {
     icon: [
