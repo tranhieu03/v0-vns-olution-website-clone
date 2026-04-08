@@ -1,10 +1,10 @@
 const clients = [
-  { name: "URENCO Hà Nội", logo: "URENCO" },
-  { name: "CITENCO TP.HCM", logo: "CITENCO" },
-  { name: "Môi trường Đà Nẵng", logo: "MTDN" },
-  { name: "VWS", logo: "VWS" },
-  { name: "Sông Công Xanh", logo: "SCX" },
-  { name: "Biwase", logo: "BIWASE" },
+  { name: "Pharmacity", logo: "PHARMACITY" },
+  { name: "Long Châu", logo: "LONG CHÂU" },
+  { name: "An Khang", logo: "AN KHANG" },
+  { name: "Phano Pharmacy", logo: "PHANO" },
+  { name: "Medipharco", logo: "MEDIPHARCO" },
+  { name: "Vimedimex", logo: "VIMEDIMEX" },
 ]
 
 export function Clients() {
@@ -16,7 +16,7 @@ export function Clients() {
             Khách hàng tin dùng
           </h2>
           <p className="mt-4 text-muted-foreground">
-            EcoWaste Pro đồng hành cùng các công ty môi trường đô thị, khu công nghiệp và cơ quan quản lý môi trường trên toàn quốc.
+            PharmaPro đồng hành cùng các chuỗi nhà thuốc, nhà phân phối và doanh nghiệp dược phẩm hàng đầu Việt Nam.
           </p>
         </div>
 
@@ -28,7 +28,7 @@ export function Clients() {
               className="flex items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/30 hover:shadow-md"
             >
               <div className="flex h-12 w-full items-center justify-center">
-                <span className="text-lg font-bold text-muted-foreground/60">
+                <span className="text-sm font-bold text-muted-foreground/60 text-center">
                   {client.logo}
                 </span>
               </div>
@@ -43,11 +43,11 @@ export function Clients() {
               <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
             </svg>
             <blockquote className="mt-4 text-lg text-foreground text-pretty">
-              &quot;EcoWaste Pro đã giúp chúng tôi tối ưu 35% chi phí vận hành, giảm 40% thời gian quy hoạch tuyến đường thu gom và nâng cao tỷ lệ tái chế lên 28%. Đây là bước tiến quan trọng trong chuyển đổi số ngành môi trường.&quot;
+              &quot;PharmaPro đã giúp chuỗi nhà thuốc chúng tôi giảm 90% thời gian báo cáo GDP/GPP, kiểm soát chặt chẽ hạn sử dụng thuốc và tăng 35% doanh thu nhờ bán hàng đa kênh. Đây là bước tiến quan trọng trong chuyển đổi số ngành dược.&quot;
             </blockquote>
             <div className="mt-6">
-              <p className="font-semibold text-foreground">Ông Nguyễn Văn Hùng</p>
-              <p className="text-sm text-muted-foreground">Phó Giám đốc - Công ty TNHH MTV Môi trường Đô thị Hà Nội</p>
+              <p className="font-semibold text-foreground">Bà Nguyễn Thị Mai Hương</p>
+              <p className="text-sm text-muted-foreground">Giám đốc Vận hành - Chuỗi Nhà thuốc Pharmacity</p>
             </div>
           </div>
         </div>

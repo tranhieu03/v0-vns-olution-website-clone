@@ -15,8 +15,8 @@ const beVietnamPro = Be_Vietnam_Pro({
 });
 
 export const metadata: Metadata = {
-  title: 'EcoWaste Pro - Phần mềm Quản lý Xử lý Rác thải Thông minh',
-  description: 'Giải pháp phần mềm quản lý xử lý rác thải toàn diện cho doanh nghiệp và cơ quan nhà nước. Tối ưu hóa thu gom, vận chuyển, xử lý và tái chế chất thải.',
+  title: 'PharmaPro - Phần mềm Quản lý Phân phối & Bán lẻ Dược phẩm',
+  description: 'Giải pháp phần mềm quản lý dược phẩm toàn diện cho nhà phân phối, nhà thuốc và bán hàng đa kênh. Tuân thủ GDP/GPP, quản lý lô hàng, hạn sử dụng và kết nối sàn TMĐT.',
   generator: 'v0.app',
   icons: {
     icon: [

@@ -1,32 +1,32 @@
 import Link from "next/link"
-import { Facebook, Youtube, Linkedin, Mail, Phone, MapPin, Recycle } from "lucide-react"
+import { Facebook, Youtube, Linkedin, Mail, Phone, MapPin, Pill } from "lucide-react"
 
 const footerLinks = {
   products: {
     title: "Sản phẩm",
     links: [
-      { label: "EcoCollect - Thu gom", href: "#" },
-      { label: "EcoTransport - Vận chuyển", href: "#" },
-      { label: "EcoProcess - Xử lý", href: "#" },
-      { label: "EcoRecycle - Tái chế", href: "#" },
+      { label: "PharmaDistro - Phân phối", href: "#" },
+      { label: "PharmaRetail - Bán lẻ", href: "#" },
+      { label: "PharmaChannel - Đa kênh", href: "#" },
+      { label: "PharmaStock - Quản lý kho", href: "#" },
     ],
   },
   solutions: {
     title: "Giải pháp",
     links: [
-      { label: "Cho công ty môi trường đô thị", href: "#" },
-      { label: "Cho khu công nghiệp", href: "#" },
-      { label: "Cho chính quyền địa phương", href: "#" },
-      { label: "Cho doanh nghiệp sản xuất", href: "#" },
+      { label: "Cho nhà phân phối dược", href: "#" },
+      { label: "Cho chuỗi nhà thuốc GPP", href: "#" },
+      { label: "Cho bệnh viện & phòng khám", href: "#" },
+      { label: "Bán hàng trên sàn TMĐT", href: "#" },
     ],
   },
   resources: {
     title: "Tài nguyên",
     links: [
-      { label: "Blog môi trường", href: "#" },
+      { label: "Blog dược phẩm", href: "#" },
       { label: "Hướng dẫn sử dụng", href: "#" },
       { label: "Case Studies", href: "#" },
-      { label: "Quy định pháp luật", href: "#" },
+      { label: "Quy định GDP/GPP", href: "#" },
     ],
   },
   company: {
@@ -41,9 +41,9 @@ const footerLinks = {
 }
 
 const contactInfo = [
-  { icon: Phone, text: "Hotline: 1900 636 568" },
-  { icon: Mail, text: "Email: contact@ecowastepro.vn" },
-  { icon: MapPin, text: "Tầng 15, Tòa nhà Green Tower, Cầu Giấy, Hà Nội" },
+  { icon: Phone, text: "Hotline: 1900 636 789" },
+  { icon: Mail, text: "Email: contact@pharmapro.vn" },
+  { icon: MapPin, text: "Tầng 12, Tòa nhà Pharma Tower, Quận 1, TP.HCM" },
 ]
 
 const socialLinks = [
@@ -61,17 +61,16 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary">
-                <Recycle className="h-6 w-6 text-primary-foreground" />
+                <Pill className="h-6 w-6 text-primary-foreground" />
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-bold text-primary">
-                  Eco<span className="text-foreground">Waste</span>
-                  <span className="text-primary"> Pro</span>
+                  Pharma<span className="text-foreground">Pro</span>
                 </span>
               </div>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
-              Giải pháp phần mềm quản lý xử lý rác thải toàn diện, giúp tối ưu hóa quy trình và bảo vệ môi trường.
+              Giải pháp phần mềm quản lý dược phẩm toàn diện cho nhà phân phối, chuỗi nhà thuốc và bán hàng đa kênh.
             </p>
 
             {/* Contact Info */}
@@ -122,7 +121,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
           <p className="text-sm text-muted-foreground">
-            © 2024 EcoWaste Pro. Tất cả quyền được bảo lưu.
+            © 2024 PharmaPro. Tất cả quyền được bảo lưu.
           </p>
           <div className="flex gap-6">
             <Link href="#" className="text-sm text-muted-foreground hover:text-primary">

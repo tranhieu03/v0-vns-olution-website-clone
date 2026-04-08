@@ -1,25 +1,25 @@
-import { MapPin, Clock, Truck, BarChart3 } from "lucide-react"
+import { Calendar, Boxes, ShoppingCart, BarChart3 } from "lucide-react"
 
 const problems = [
   {
-    icon: MapPin,
-    title: "Lộ trình thu gom chưa tối ưu",
-    description: "Phương tiện di chuyển lòng vòng, tốn nhiên liệu và thời gian do thiếu công cụ quy hoạch tuyến đường thông minh.",
+    icon: Calendar,
+    title: "Quản lý hạn sử dụng thủ công",
+    description: "Theo dõi lô hàng, hạn sử dụng bằng Excel dễ sai sót, gây tồn kho thuốc hết hạn và thiệt hại tài chính lớn.",
   },
   {
-    icon: Clock,
-    title: "Giám sát thủ công, thiếu realtime",
-    description: "Không nắm bắt được tiến độ thu gom theo thời gian thực, khó xử lý sự cố kịp thời và điều phối nhân lực hiệu quả.",
+    icon: Boxes,
+    title: "Tồn kho phân tán nhiều nơi",
+    description: "Hàng tồn kho phân bố rời rạc giữa các kho, nhà thuốc, khó kiểm soát số lượng và điều phối hàng hóa kịp thời.",
   },
   {
-    icon: Truck,
-    title: "Quản lý phương tiện phân tán",
-    description: "Thông tin xe, lái xe, lịch bảo trì lưu trữ rời rạc, gây khó khăn trong việc theo dõi và duy trì đội xe.",
+    icon: ShoppingCart,
+    title: "Bán đa kênh thiếu đồng bộ",
+    description: "Quản lý đơn hàng từ nhiều sàn TMĐT (Shopee, Lazada, TikTok Shop) riêng lẻ, dễ bị trùng đơn, sót đơn.",
   },
   {
     icon: BarChart3,
-    title: "Thiếu dữ liệu báo cáo chính xác",
-    description: "Không có số liệu thống kê chi tiết về khối lượng rác, tỷ lệ tái chế, chi phí vận hành để đưa ra quyết định.",
+    title: "Thiếu báo cáo GDP/GPP",
+    description: "Không có hệ thống báo cáo tự động theo chuẩn GDP/GPP, mất nhiều thời gian chuẩn bị khi thanh tra.",
   },
 ]
 
@@ -29,10 +29,10 @@ export function Problems() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl text-balance">
-            Doanh nghiệp bạn đang gặp vấn đề gì?
+            Doanh nghiệp dược đang gặp vấn đề gì?
           </h2>
           <p className="mt-4 text-muted-foreground text-pretty">
-            Hàng trăm công ty môi trường đô thị và doanh nghiệp xử lý rác thải đang gặp khó khăn với quy trình vận hành thủ công, thiếu công nghệ.
+            Hàng trăm nhà phân phối, nhà thuốc và doanh nghiệp dược phẩm đang gặp khó khăn với quy trình quản lý thủ công, thiếu công nghệ số hóa.
           </p>
         </div>
 

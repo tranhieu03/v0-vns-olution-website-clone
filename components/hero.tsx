@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Play, Leaf, Truck, Factory, RotateCcw } from "lucide-react"
+import { ArrowRight, Play, ShieldCheck, Truck, Store, ShoppingCart, Boxes, TrendingUp, AlertTriangle } from "lucide-react"
 
 export function Hero() {
   return (
@@ -16,14 +16,15 @@ export function Hero() {
           {/* Content */}
           <div className="text-center lg:text-left">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-1.5 text-sm text-primary-foreground">
-              <Leaf className="h-4 w-4" />
-              <span>Giải pháp xanh cho tương lai bền vững</span>
+              <ShieldCheck className="h-4 w-4" />
+              <span>Tuân thủ GDP/GPP - Chuẩn Bộ Y tế</span>
             </div>
             <h1 className="text-3xl font-bold leading-tight text-primary-foreground sm:text-4xl lg:text-5xl text-balance">
-              Phần mềm Quản lý Xử lý Rác thải Thông minh
+              Phần mềm Quản lý Dược phẩm Toàn diện
             </h1>
             <p className="mt-6 text-lg text-primary-foreground/80 text-pretty">
-              Tối ưu hóa quy trình thu gom, vận chuyển, xử lý và tái chế chất thải. Nâng cao hiệu suất vận hành, giảm chi phí và bảo vệ môi trường với nền tảng EcoWaste Pro.
+              Giải pháp số hóa cho nhà phân phối, chuỗi nhà thuốc và bán hàng đa kênh. 
+              Quản lý lô hàng, hạn sử dụng, kết nối sàn TMĐT Shopee, Lazada, TikTok Shop.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
               <Button size="lg" variant="secondary" className="gap-2 font-semibold">
@@ -53,7 +54,7 @@ export function Hero() {
                       <div className="h-3 w-3 rounded-full bg-yellow-400" />
                       <div className="h-3 w-3 rounded-full bg-green-400" />
                     </div>
-                    <div className="text-xs font-medium text-muted-foreground">EcoWaste Dashboard</div>
+                    <div className="text-xs font-medium text-muted-foreground">PharmaPro Dashboard</div>
                   </div>
                   
                   {/* Dashboard Content */}
@@ -61,9 +62,9 @@ export function Hero() {
                     {/* Stats Row */}
                     <div className="grid grid-cols-3 gap-2">
                       {[
-                        { label: "Rác thu gom", value: "1,250 tấn", icon: Truck, color: "bg-primary/10 text-primary" },
-                        { label: "Tái chế", value: "420 tấn", icon: RotateCcw, color: "bg-amber-100 text-amber-600" },
-                        { label: "Xử lý", value: "830 tấn", icon: Factory, color: "bg-blue-100 text-blue-600" },
+                        { label: "Sản phẩm", value: "12,458", icon: Boxes, color: "bg-primary/10 text-primary" },
+                        { label: "Đơn hàng", value: "847", icon: ShoppingCart, color: "bg-amber-100 text-amber-600" },
+                        { label: "Doanh thu", value: "2.8 tỷ", icon: TrendingUp, color: "bg-green-100 text-green-600" },
                       ].map((stat) => (
                         <div key={stat.label} className={`rounded-lg p-3 ${stat.color}`}>
                           <div className="flex items-center gap-1">
@@ -75,11 +76,11 @@ export function Hero() {
                       ))}
                     </div>
                     
-                    {/* Chart Placeholder - Waste collection by area */}
+                    {/* Chart Placeholder - Revenue by channel */}
                     <div className="rounded-lg bg-muted/50 p-4">
-                      <p className="mb-2 text-xs font-medium text-muted-foreground">Lượng rác theo khu vực</p>
+                      <p className="mb-2 text-xs font-medium text-muted-foreground">Doanh thu theo kênh bán</p>
                       <div className="flex items-end justify-between gap-1 h-16">
-                        {[40, 65, 45, 80, 55, 90, 70, 85, 60, 75, 95, 80].map((height, i) => (
+                        {[70, 55, 40, 35, 25, 45, 60, 50, 65, 40, 55, 75].map((height, i) => (
                           <div
                             key={i}
                             className="flex-1 rounded-t bg-primary/60"
@@ -87,29 +88,41 @@ export function Hero() {
                           />
                         ))}
                       </div>
+                      <div className="flex justify-between text-[9px] text-muted-foreground mt-1">
+                        <span>Phân phối</span>
+                        <span>Bán lẻ</span>
+                        <span>Shopee</span>
+                        <span>Lazada</span>
+                      </div>
                     </div>
                     
-                    {/* Collection Routes */}
+                    {/* Alert - Expiry Warning */}
+                    <div className="flex items-center gap-3 rounded-lg bg-amber-50 border border-amber-200 p-3">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-amber-100">
+                        <AlertTriangle className="h-4 w-4 text-amber-600" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-xs font-medium text-amber-800">Cảnh báo hạn sử dụng</p>
+                        <p className="text-[10px] text-amber-600">24 sản phẩm sắp hết hạn trong 60 ngày</p>
+                      </div>
+                    </div>
+                    
+                    {/* Recent Orders */}
                     <div className="space-y-2">
                       {[
-                        { route: "Tuyến 01 - Quận Hoàn Kiếm", status: "Đang thu gom", progress: 75 },
-                        { route: "Tuyến 02 - Quận Hai Bà Trưng", status: "Hoàn thành", progress: 100 },
-                        { route: "Tuyến 03 - Quận Đống Đa", status: "Chờ xử lý", progress: 30 },
-                      ].map((item, index) => (
+                        { code: "ĐH-2024-0847", customer: "Nhà thuốc An Khang", amount: "45.2 tr", status: "success" },
+                        { code: "ĐH-2024-0846", customer: "Pharmacity Q.1", amount: "32.8 tr", status: "warning" },
+                        { code: "ĐH-2024-0845", customer: "Long Châu Bình Thạnh", amount: "28.5 tr", status: "success" },
+                      ].map((order, index) => (
                         <div key={index} className="flex items-center gap-3 rounded-lg bg-muted/30 p-2">
-                          <div className={`h-8 w-8 rounded-full flex items-center justify-center ${item.progress === 100 ? 'bg-primary/20' : 'bg-amber-100'}`}>
-                            <Truck className={`h-4 w-4 ${item.progress === 100 ? 'text-primary' : 'text-amber-600'}`} />
+                          <div className={`h-8 w-8 rounded-full flex items-center justify-center ${order.status === 'success' ? 'bg-green-100' : 'bg-amber-100'}`}>
+                            <Store className={`h-4 w-4 ${order.status === 'success' ? 'text-green-600' : 'text-amber-600'}`} />
                           </div>
                           <div className="flex-1">
-                            <p className="text-xs font-medium">{item.route}</p>
-                            <div className="mt-1 h-1.5 w-full rounded-full bg-muted">
-                              <div 
-                                className={`h-full rounded-full ${item.progress === 100 ? 'bg-primary' : 'bg-amber-500'}`}
-                                style={{ width: `${item.progress}%` }}
-                              />
-                            </div>
+                            <p className="text-xs font-medium">{order.code}</p>
+                            <p className="text-[10px] text-muted-foreground">{order.customer}</p>
                           </div>
-                          <span className="text-xs text-muted-foreground">{item.progress}%</span>
+                          <span className="text-xs font-semibold text-primary">{order.amount}</span>
                         </div>
                       ))}
                     </div>
@@ -121,11 +134,11 @@ export function Hero() {
               <div className="absolute -left-4 top-1/4 hidden rounded-lg bg-white p-3 shadow-lg lg:block">
                 <div className="flex items-center gap-2">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10">
-                    <RotateCcw className="h-4 w-4 text-primary" />
+                    <Truck className="h-4 w-4 text-primary" />
                   </div>
                   <div>
-                    <p className="text-xs text-muted-foreground">Tỷ lệ tái chế</p>
-                    <p className="text-sm font-semibold text-primary">33.6%</p>
+                    <p className="text-xs text-muted-foreground">Đơn giao hôm nay</p>
+                    <p className="text-sm font-semibold text-primary">156 đơn</p>
                   </div>
                 </div>
               </div>
@@ -134,11 +147,11 @@ export function Hero() {
               <div className="absolute -right-4 bottom-1/4 hidden rounded-lg bg-white p-3 shadow-lg lg:block">
                 <div className="flex items-center gap-2">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-green-100">
-                    <Leaf className="h-4 w-4 text-green-600" />
+                    <ShieldCheck className="h-4 w-4 text-green-600" />
                   </div>
                   <div>
-                    <p className="text-xs text-muted-foreground">CO2 giảm thiểu</p>
-                    <p className="text-sm font-semibold text-green-600">-2,500 tấn</p>
+                    <p className="text-xs text-muted-foreground">Tuân thủ</p>
+                    <p className="text-sm font-semibold text-green-600">GDP/GPP</p>
                   </div>
                 </div>
               </div>
