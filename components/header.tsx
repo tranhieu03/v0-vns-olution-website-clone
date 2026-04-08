@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ChevronDown, Menu, X, Recycle } from "lucide-react"
+import { ChevronDown, Menu, X, Pill } from "lucide-react"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -18,12 +18,12 @@ export function Header() {
     {
       label: "Sản phẩm",
       hasDropdown: true,
-      items: ["EcoCollect - Thu gom", "EcoTransport - Vận chuyển", "EcoProcess - Xử lý", "EcoRecycle - Tái chế"],
+      items: ["PharmaDistro - Phân phối", "PharmaRetail - Bán lẻ", "PharmaChannel - Đa kênh", "PharmaStock - Quản lý kho"],
     },
     {
       label: "Giải pháp",
       hasDropdown: true,
-      items: ["Cho công ty môi trường đô thị", "Cho khu công nghiệp", "Cho chính quyền địa phương", "Cho doanh nghiệp sản xuất"],
+      items: ["Cho nhà phân phối dược", "Cho chuỗi nhà thuốc GPP", "Cho bệnh viện & phòng khám", "Bán hàng trên sàn TMĐT"],
     },
     { label: "Khách hàng", hasDropdown: false },
     { label: "Tài nguyên", hasDropdown: false },
@@ -41,15 +41,14 @@ export function Header() {
         <Link href="/" className="flex items-center gap-2">
           <div className="flex items-center gap-2">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary">
-              <Recycle className="h-6 w-6 text-primary-foreground" />
+              <Pill className="h-6 w-6 text-primary-foreground" />
             </div>
             <div className="flex flex-col">
               <span className="text-lg font-bold text-primary">
-                Eco<span className="text-foreground">Waste</span>
-                <span className="text-primary"> Pro</span>
+                Pharma<span className="text-foreground">Pro</span>
               </span>
               <span className="text-[9px] text-muted-foreground -mt-1 uppercase tracking-wide">
-                Giải pháp xử lý rác thải thông minh
+                Giải pháp dược phẩm số
               </span>
             </div>
           </div>
@@ -89,6 +88,9 @@ export function Header() {
           <Button variant="outline" size="sm">
             Đăng nhập
           </Button>
+          <Button size="sm">
+            Dùng thử miễn phí
+          </Button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -118,6 +120,9 @@ export function Header() {
             <div className="mt-4 flex flex-col gap-2">
               <Button variant="outline" size="sm" className="w-full">
                 Đăng nhập
+              </Button>
+              <Button size="sm" className="w-full">
+                Dùng thử miễn phí
               </Button>
             </div>
           </nav>

@@ -1,27 +1,27 @@
-import { Cloud, Headphones, Zap, Shield, MapPin, Leaf } from "lucide-react"
+import { Cloud, Headphones, Zap, Shield, FileCheck, Thermometer } from "lucide-react"
 
 const trustFeatures = [
   {
     icon: Cloud,
-    title: "Hạ tầng Cloud an toàn",
-    description: "Triển khai trên nền tảng đám mây với độ tin cậy cao, backup tự động và khả năng mở rộng linh hoạt theo nhu cầu.",
+    title: "Hạ tầng Cloud bảo mật",
+    description: "Triển khai trên AWS với chứng chỉ ISO 27001, đảm bảo an toàn dữ liệu dược phẩm và backup tự động hàng ngày.",
   },
   {
     icon: Headphones,
     title: "Hỗ trợ kỹ thuật 24/7",
-    description: "Đội ngũ kỹ thuật chuyên nghiệp sẵn sàng hỗ trợ mọi lúc, đảm bảo hệ thống vận hành liên tục không gián đoạn.",
+    description: "Đội ngũ kỹ thuật chuyên ngành dược sẵn sàng hỗ trợ mọi lúc, đảm bảo hệ thống vận hành liên tục.",
   },
   {
     icon: Zap,
     title: "Triển khai nhanh chóng",
-    description: "Quy trình triển khai tối ưu, đơn vị có thể bắt đầu sử dụng chỉ trong 2-4 tuần với đầy đủ tính năng.",
+    description: "Quy trình triển khai tối ưu, nhà thuốc có thể bắt đầu sử dụng chỉ trong 3-5 ngày với đầy đủ tính năng.",
   },
 ]
 
 const securityFeatures = [
   { icon: Shield, label: "Bảo mật đa lớp" },
-  { icon: MapPin, label: "GPS/IoT tích hợp" },
-  { icon: Leaf, label: "Báo cáo môi trường" },
+  { icon: FileCheck, label: "Tuân thủ GDP/GPP" },
+  { icon: Thermometer, label: "Giám sát kho lạnh" },
 ]
 
 export function Trust() {
@@ -33,7 +33,7 @@ export function Trust() {
             Nền tảng an toàn, đáng tin cậy
           </h2>
           <p className="mt-4 text-muted-foreground text-pretty">
-            EcoWaste Pro được thiết kế với tiêu chuẩn bảo mật cao nhất, tích hợp công nghệ IoT hiện đại và tuân thủ các quy định về môi trường.
+            PharmaPro được thiết kế với tiêu chuẩn bảo mật cao nhất, tuân thủ quy định GDP/GPP của Bộ Y tế và các tiêu chuẩn quốc tế về quản lý dược phẩm.
           </p>
         </div>
 

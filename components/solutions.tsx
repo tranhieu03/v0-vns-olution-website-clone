@@ -1,40 +1,40 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Truck, Factory, RotateCcw, MapPin } from "lucide-react"
+import { ArrowRight, Truck, Store, ShoppingCart, Boxes } from "lucide-react"
 
 const stats = [
-  { value: "150+", label: "Đơn vị sử dụng" },
-  { value: "2,000+", label: "Xe vận chuyển" },
-  { value: "99.5%", label: "Uptime hệ thống" },
+  { value: "500+", label: "Nhà thuốc sử dụng" },
+  { value: "50,000+", label: "SKU quản lý" },
+  { value: "99.9%", label: "Uptime hệ thống" },
   { value: "24/7", label: "Hỗ trợ kỹ thuật" },
 ]
 
 const products = [
   {
-    id: "collect",
-    name: "EcoCollect",
-    description: "Thu gom thông minh",
-    icon: MapPin,
+    id: "distro",
+    name: "PharmaDistro",
+    description: "Quản lý phân phối",
+    icon: Truck,
     color: "bg-primary text-primary-foreground",
   },
   {
-    id: "transport",
-    name: "EcoTransport",
-    description: "Vận chuyển tối ưu",
-    icon: Truck,
+    id: "retail",
+    name: "PharmaRetail",
+    description: "Quản lý bán lẻ GPP",
+    icon: Store,
     color: "bg-amber-500 text-white",
   },
   {
-    id: "process",
-    name: "EcoProcess",
-    description: "Xử lý hiệu quả",
-    icon: Factory,
-    color: "bg-blue-500 text-white",
+    id: "channel",
+    name: "PharmaChannel",
+    description: "Bán hàng đa kênh",
+    icon: ShoppingCart,
+    color: "bg-pink-500 text-white",
   },
   {
-    id: "recycle",
-    name: "EcoRecycle",
-    description: "Tái chế bền vững",
-    icon: RotateCcw,
+    id: "stock",
+    name: "PharmaStock",
+    description: "Quản lý kho & lô hàng",
+    icon: Boxes,
     color: "bg-emerald-500 text-white",
   },
 ]
@@ -47,10 +47,10 @@ export function Solutions() {
           {/* Content */}
           <div>
             <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl text-balance">
-              Giải pháp toàn diện cho hệ thống xử lý rác thải
+              Giải pháp toàn diện cho ngành dược phẩm
             </h2>
             <p className="mt-4 text-muted-foreground text-pretty">
-              Hệ sinh thái EcoWaste Pro là giải pháp số hóa toàn bộ quy trình quản lý chất thải từ thu gom, vận chuyển, xử lý đến tái chế - giúp tối ưu chi phí và bảo vệ môi trường.
+              Hệ sinh thái PharmaPro là giải pháp số hóa toàn bộ quy trình từ phân phối, bán lẻ, bán đa kênh đến quản lý kho và tuân thủ quy định GDP/GPP.
             </p>
 
             {/* Stats Grid */}
@@ -73,7 +73,7 @@ export function Solutions() {
               {/* Central Hub */}
               <div className="mb-6 text-center">
                 <p className="text-sm text-muted-foreground">
-                  Hệ sinh thái EcoWaste Pro tích hợp liền mạch các module quản lý rác thải
+                  Hệ sinh thái PharmaPro tích hợp liền mạch các module quản lý dược phẩm
                 </p>
               </div>
 

@@ -1,64 +1,64 @@
-import { CheckCircle, MapPin, Truck, Factory, RotateCcw, Route, Gauge, BarChart3, Leaf } from "lucide-react"
+import { CheckCircle, Truck, Store, ShoppingCart, Boxes, Building2, Users, BarChart3, Package, Calendar, Zap, Globe } from "lucide-react"
 
 const products = [
   {
-    id: "collect",
-    name: "EcoCollect",
-    title: "Hệ thống Thu gom Rác thải Thông minh",
-    description: "EcoCollect là module quản lý thu gom rác thải với tính năng quy hoạch tuyến đường tối ưu, giám sát vị trí xe realtime qua GPS, và tự động phân bổ công việc cho đội thu gom. Giúp tiết kiệm 30% chi phí nhiên liệu và tăng 40% hiệu suất thu gom.",
+    id: "distro",
+    name: "PharmaDistro",
+    title: "Hệ thống Quản lý Phân phối Dược phẩm",
+    description: "PharmaDistro là giải pháp quản lý phân phối dược phẩm toàn diện cho các đại lý cấp 1, cấp 2. Quản lý đơn hàng B2B, công nợ đại lý, chính sách giá theo khách hàng, và tracking lô hàng theo chuẩn GDP.",
     features: [
-      "Quy hoạch tuyến đường thu gom tự động bằng AI",
-      "Giám sát vị trí xe realtime qua GPS/IoT",
-      "Cảnh báo thùng rác đầy tự động",
-      "Báo cáo khối lượng rác theo khu vực",
+      "Quản lý đơn hàng B2B và công nợ đại lý",
+      "Chính sách giá phân cấp theo khách hàng",
+      "Tracking lô hàng, số đăng ký thuốc",
+      "Báo cáo doanh số theo vùng miền",
     ],
-    icon: MapPin,
-    secondaryIcon: Route,
+    icon: Truck,
+    secondaryIcon: Building2,
     reverse: false,
   },
   {
-    id: "transport",
-    name: "EcoTransport",
-    title: "Quản lý Vận chuyển và Đội xe",
-    description: "EcoTransport là giải pháp quản lý toàn diện đội xe vận chuyển rác thải, từ lịch bảo trì, quản lý lái xe, đến theo dõi hành trình chi tiết. Tích hợp cân điện tử và camera giám sát để đảm bảo vận chuyển đúng quy định.",
+    id: "retail",
+    name: "PharmaRetail",
+    title: "Phần mềm Quản lý Nhà thuốc GPP",
+    description: "PharmaRetail là giải pháp quản lý nhà thuốc bán lẻ tuân thủ chuẩn GPP. Hỗ trợ bán hàng nhanh, quản lý tồn kho theo lô, cảnh báo hạn sử dụng, tra cứu tương tác thuốc và xuất báo cáo Bộ Y tế tự động.",
     features: [
-      "Quản lý lịch bảo trì xe tự động",
-      "Tích hợp cân điện tử ghi nhận khối lượng",
-      "Camera AI giám sát quá trình vận chuyển",
-      "Định vị GPS và theo dõi hành trình",
+      "POS bán hàng nhanh, quét barcode",
+      "Cảnh báo hạn sử dụng tự động",
+      "Tra cứu tương tác thuốc realtime",
+      "Xuất báo cáo GPP theo chuẩn Bộ Y tế",
     ],
-    icon: Truck,
-    secondaryIcon: Gauge,
+    icon: Store,
+    secondaryIcon: Users,
     reverse: true,
   },
   {
-    id: "process",
-    name: "EcoProcess",
-    title: "Quản lý Trạm Xử lý Chất thải",
-    description: "EcoProcess hỗ trợ quản lý vận hành các trạm xử lý, nhà máy đốt rác, bãi chôn lấp với các tính năng giám sát công suất, quản lý chỉ số môi trường, và tự động hóa quy trình xử lý theo tiêu chuẩn quốc tế.",
+    id: "channel",
+    name: "PharmaChannel",
+    title: "Bán hàng Đa kênh & Sàn TMĐT",
+    description: "PharmaChannel kết nối và đồng bộ đơn hàng từ Shopee, Lazada, TikTok Shop, Sendo về một hệ thống duy nhất. Tự động cập nhật tồn kho, in vận đơn, và quản lý đánh giá khách hàng.",
     features: [
-      "Giám sát công suất xử lý realtime",
-      "Quản lý chỉ số môi trường (khí thải, nước thải)",
-      "Tự động hóa quy trình vận hành",
-      "Báo cáo tuân thủ quy định pháp luật",
+      "Tích hợp Shopee, Lazada, TikTok Shop",
+      "Đồng bộ tồn kho realtime giữa các kênh",
+      "Tự động in vận đơn GHN, GHTK, J&T",
+      "Quản lý đánh giá và phản hồi khách hàng",
     ],
-    icon: Factory,
-    secondaryIcon: BarChart3,
+    icon: ShoppingCart,
+    secondaryIcon: Globe,
     reverse: false,
   },
   {
-    id: "recycle",
-    name: "EcoRecycle",
-    title: "Quản lý Phân loại và Tái chế",
-    description: "EcoRecycle giúp quản lý quy trình phân loại rác tại nguồn, theo dõi tỷ lệ tái chế, và kết nối với các đơn vị thu mua phế liệu. Tăng giá trị thu hồi từ rác thải và giảm lượng rác chôn lấp.",
+    id: "stock",
+    name: "PharmaStock",
+    title: "Quản lý Kho Dược phẩm Thông minh",
+    description: "PharmaStock là hệ thống quản lý kho dược phẩm với tính năng theo dõi lô hàng, hạn sử dụng, điều kiện bảo quản và xuất nhập kho theo FIFO/FEFO. Tích hợp mã vạch và QR code theo chuẩn ngành dược.",
     features: [
-      "Theo dõi tỷ lệ phân loại tại nguồn",
-      "Quản lý kho phế liệu và vật liệu tái chế",
-      "Kết nối đơn vị thu mua tự động",
-      "Báo cáo giảm phát thải CO2",
+      "Quản lý theo lô, số lô, hạn sử dụng",
+      "Xuất kho theo FIFO/FEFO tự động",
+      "Cảnh báo nhiệt độ, độ ẩm kho lạnh",
+      "Kiểm kê kho bằng thiết bị cầm tay",
     ],
-    icon: RotateCcw,
-    secondaryIcon: Leaf,
+    icon: Boxes,
+    secondaryIcon: Calendar,
     reverse: true,
   },
 ]
@@ -108,14 +108,14 @@ export function Products() {
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <div className={`h-8 w-8 rounded flex items-center justify-center ${
-                            product.id === 'collect' ? 'bg-primary/20' :
-                            product.id === 'transport' ? 'bg-amber-100' :
-                            product.id === 'process' ? 'bg-blue-100' : 'bg-emerald-100'
+                            product.id === 'distro' ? 'bg-primary/20' :
+                            product.id === 'retail' ? 'bg-amber-100' :
+                            product.id === 'channel' ? 'bg-pink-100' : 'bg-emerald-100'
                           }`}>
                             <product.icon className={`h-4 w-4 ${
-                              product.id === 'collect' ? 'text-primary' :
-                              product.id === 'transport' ? 'text-amber-600' :
-                              product.id === 'process' ? 'text-blue-600' : 'text-emerald-600'
+                              product.id === 'distro' ? 'text-primary' :
+                              product.id === 'retail' ? 'text-amber-600' :
+                              product.id === 'channel' ? 'text-pink-600' : 'text-emerald-600'
                             }`} />
                           </div>
                           <div className="text-sm font-medium">{product.name}</div>
@@ -129,13 +129,19 @@ export function Products() {
                       {/* Stats */}
                       <div className="grid grid-cols-3 gap-3">
                         {[
-                          { label: product.id === 'collect' ? 'Điểm thu gom' : product.id === 'transport' ? 'Xe hoạt động' : product.id === 'process' ? 'Công suất' : 'Tái chế', value: product.id === 'collect' ? '156' : product.id === 'transport' ? '48' : product.id === 'process' ? '85%' : '2,400 tấn' },
-                          { label: product.id === 'collect' ? 'Hoàn thành' : product.id === 'transport' ? 'Chuyến/ngày' : product.id === 'process' ? 'Xử lý/ngày' : 'Thu hồi', value: product.id === 'collect' ? '89%' : product.id === 'transport' ? '124' : product.id === 'process' ? '450 tấn' : '35%' },
-                          { label: 'Hiệu suất', value: '+12%' },
+                          { 
+                            label: product.id === 'distro' ? 'Đại lý' : product.id === 'retail' ? 'Đơn hôm nay' : product.id === 'channel' ? 'Đơn chờ xử lý' : 'Sản phẩm', 
+                            value: product.id === 'distro' ? '245' : product.id === 'retail' ? '89' : product.id === 'channel' ? '156' : '12,458' 
+                          },
+                          { 
+                            label: product.id === 'distro' ? 'Đơn B2B' : product.id === 'retail' ? 'Doanh thu' : product.id === 'channel' ? 'Shopee' : 'Sắp hết hạn', 
+                            value: product.id === 'distro' ? '67' : product.id === 'retail' ? '45.2 tr' : product.id === 'channel' ? '89 đơn' : '24' 
+                          },
+                          { label: 'Tăng trưởng', value: '+18%' },
                         ].map((stat, i) => (
                           <div key={i} className="rounded-lg bg-background p-3 shadow-sm">
                             <div className="text-xs text-muted-foreground">{stat.label}</div>
-                            <div className={`mt-1 text-lg font-bold ${i === 2 ? 'text-primary' : 'text-foreground'}`}>{stat.value}</div>
+                            <div className={`mt-1 text-lg font-bold ${i === 2 ? 'text-green-600' : 'text-foreground'}`}>{stat.value}</div>
                           </div>
                         ))}
                       </div>
@@ -144,16 +150,16 @@ export function Products() {
                       <div className="grid grid-cols-3 gap-3">
                         <div className="col-span-2 rounded-lg bg-background p-4 shadow-sm">
                           <div className="text-xs font-medium text-muted-foreground mb-2">
-                            {product.id === 'collect' ? 'Lượng rác theo giờ' : product.id === 'transport' ? 'Số chuyến theo ngày' : product.id === 'process' ? 'Công suất xử lý' : 'Tỷ lệ tái chế'}
+                            {product.id === 'distro' ? 'Doanh số theo vùng' : product.id === 'retail' ? 'Doanh thu theo giờ' : product.id === 'channel' ? 'Đơn hàng theo sàn' : 'Tồn kho theo nhóm'}
                           </div>
                           <div className="flex items-end gap-1">
                             {[30, 50, 40, 70, 55, 80, 65].map((h, i) => (
                               <div
                                 key={i}
                                 className={`flex-1 rounded-t ${
-                                  product.id === 'collect' ? 'bg-primary/60' :
-                                  product.id === 'transport' ? 'bg-amber-400' :
-                                  product.id === 'process' ? 'bg-blue-400' : 'bg-emerald-400'
+                                  product.id === 'distro' ? 'bg-primary/60' :
+                                  product.id === 'retail' ? 'bg-amber-400' :
+                                  product.id === 'channel' ? 'bg-pink-400' : 'bg-emerald-400'
                                 }`}
                                 style={{ height: `${h}px` }}
                               />
@@ -161,12 +167,12 @@ export function Products() {
                           </div>
                         </div>
                         <div className="rounded-lg bg-background p-4 shadow-sm">
-                          <div className="text-xs font-medium text-muted-foreground mb-2">Tổng quan</div>
+                          <div className="text-xs font-medium text-muted-foreground mb-2">Hiệu suất</div>
                           <div className="flex items-center justify-center">
                             <div className={`h-16 w-16 rounded-full border-8 ${
-                              product.id === 'collect' ? 'border-primary/30 border-t-primary' :
-                              product.id === 'transport' ? 'border-amber-200 border-t-amber-500' :
-                              product.id === 'process' ? 'border-blue-200 border-t-blue-500' : 'border-emerald-200 border-t-emerald-500'
+                              product.id === 'distro' ? 'border-primary/30 border-t-primary' :
+                              product.id === 'retail' ? 'border-amber-200 border-t-amber-500' :
+                              product.id === 'channel' ? 'border-pink-200 border-t-pink-500' : 'border-emerald-200 border-t-emerald-500'
                             }`} />
                           </div>
                         </div>
@@ -176,9 +182,27 @@ export function Products() {
                       <div className="rounded-lg bg-background p-3 shadow-sm">
                         <div className="space-y-2">
                           {[
-                            { text: product.id === 'collect' ? 'Tuyến 01 - Hoàn thành' : product.id === 'transport' ? 'Xe 48B-12345 - Đang chạy' : product.id === 'process' ? 'Lò đốt #1 - Hoạt động' : 'Nhựa - 850kg thu gom', status: 'success' },
-                            { text: product.id === 'collect' ? 'Tuyến 02 - Đang thực hiện' : product.id === 'transport' ? 'Xe 48B-67890 - Bảo trì' : product.id === 'process' ? 'Lò đốt #2 - Bảo trì' : 'Giấy - 1,200kg thu gom', status: 'warning' },
-                            { text: product.id === 'collect' ? 'Tuyến 03 - Chờ xử lý' : product.id === 'transport' ? 'Xe 48B-11111 - Chờ lệnh' : product.id === 'process' ? 'Bãi chôn lấp - 60%' : 'Kim loại - 320kg thu gom', status: 'info' },
+                            { 
+                              text: product.id === 'distro' ? 'ĐH-B2B-0523 - Đã giao hàng' : 
+                                    product.id === 'retail' ? 'Panadol Extra - Bán 5 hộp' : 
+                                    product.id === 'channel' ? 'Shopee #SP847 - Chờ lấy hàng' : 
+                                    'Lô A2024-05 - Nhập kho', 
+                              status: 'success' 
+                            },
+                            { 
+                              text: product.id === 'distro' ? 'ĐH-B2B-0522 - Đang giao' : 
+                                    product.id === 'retail' ? 'Vitamin C 1000 - Còn 12 hộp' : 
+                                    product.id === 'channel' ? 'Lazada #LZ156 - Đang đóng gói' : 
+                                    'Lô B2024-03 - HSD còn 45 ngày', 
+                              status: 'warning' 
+                            },
+                            { 
+                              text: product.id === 'distro' ? 'Công nợ - NT An Khang' : 
+                                    product.id === 'retail' ? 'Efferalgan - Cần nhập thêm' : 
+                                    product.id === 'channel' ? 'TikTok #TK089 - Mới' : 
+                                    'Kiểm kê kho A - Hoàn thành', 
+                              status: 'info' 
+                            },
                           ].map((item, index) => (
                             <div key={index} className="flex items-center gap-3 rounded bg-muted/30 p-2">
                               <div className={`h-2 w-2 rounded-full ${

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Phone, Leaf } from "lucide-react"
+import { ArrowRight, Phone, Pill } from "lucide-react"
 
 export function CTA() {
   return (
@@ -14,14 +14,14 @@ export function CTA() {
       <div className="container relative mx-auto px-4 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-1.5 text-sm text-primary-foreground">
-            <Leaf className="h-4 w-4" />
-            <span>Cùng nhau bảo vệ môi trường</span>
+            <Pill className="h-4 w-4" />
+            <span>Chuyển đổi số ngành dược phẩm</span>
           </div>
           <h2 className="text-2xl font-bold text-primary-foreground sm:text-3xl lg:text-4xl text-balance">
-            Sẵn sàng chuyển đổi số ngành môi trường?
+            Sẵn sàng nâng cấp hệ thống quản lý dược?
           </h2>
           <p className="mt-4 text-primary-foreground/80 text-pretty">
-            Đăng ký ngay hôm nay để nhận 14 ngày dùng thử miễn phí và tư vấn chuyên sâu từ đội ngũ chuyên gia của EcoWaste Pro
+            Đăng ký ngay hôm nay để nhận 14 ngày dùng thử miễn phí và tư vấn chuyên sâu từ đội ngũ chuyên gia của PharmaPro
           </p>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
@@ -36,7 +36,7 @@ export function CTA() {
           </div>
 
           <p className="mt-6 text-sm text-primary-foreground/60">
-            Không cần thẻ tín dụng - Hỗ trợ triển khai - Huấn luyện sử dụng miễn phí
+            Không cần thẻ tín dụng - Hỗ trợ triển khai - Đào tạo sử dụng miễn phí
           </p>
         </div>
       </div>
