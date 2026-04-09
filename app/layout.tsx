@@ -15,8 +15,8 @@ const beVietnamPro = Be_Vietnam_Pro({
 });
 
 export const metadata: Metadata = {
-  title: 'PharmaPro - Phần mềm Quản lý Phân phối & Bán lẻ Dược phẩm',
-  description: 'Giải pháp phần mềm quản lý dược phẩm toàn diện cho nhà phân phối, nhà thuốc và bán hàng đa kênh. Tuân thủ GDP/GPP, quản lý lô hàng, hạn sử dụng và kết nối sàn TMĐT.',
+  title: 'LabQC - Hệ thống Quản lý Mẫu Kiểm nghiệm Dược phẩm',
+  description: 'Giải pháp phần mềm quản lý quy trình kiểm nghiệm dược phẩm cho Viện Kiểm nghiệm và cơ quan quản lý nhà nước. Số hóa quy trình lấy mẫu, kiểm nghiệm và trả kết quả theo chuẩn ISO/IEC 17025.',
   generator: 'v0.app',
   icons: {
     icon: [

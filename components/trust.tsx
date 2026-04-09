@@ -1,27 +1,27 @@
-import { Cloud, Headphones, Zap, Shield, FileCheck, Thermometer } from "lucide-react"
+import { Cloud, Headphones, Zap, Shield, FileCheck, Lock } from "lucide-react"
 
 const trustFeatures = [
   {
     icon: Cloud,
-    title: "Hạ tầng Cloud bảo mật",
-    description: "Triển khai trên AWS với chứng chỉ ISO 27001, đảm bảo an toàn dữ liệu dược phẩm và backup tự động hàng ngày.",
+    title: "Hạ tầng đám mây bảo mật",
+    description: "Triển khai trên hạ tầng Cloud chính phủ hoặc on-premise, đảm bảo an toàn dữ liệu theo quy định nhà nước.",
   },
   {
     icon: Headphones,
-    title: "Hỗ trợ kỹ thuật 24/7",
-    description: "Đội ngũ kỹ thuật chuyên ngành dược sẵn sàng hỗ trợ mọi lúc, đảm bảo hệ thống vận hành liên tục.",
+    title: "Hỗ trợ kỹ thuật chuyên biệt",
+    description: "Đội ngũ kỹ thuật am hiểu nghiệp vụ kiểm nghiệm, sẵn sàng hỗ trợ 24/7 và đào tạo sử dụng tại chỗ.",
   },
   {
     icon: Zap,
-    title: "Triển khai nhanh chóng",
-    description: "Quy trình triển khai tối ưu, nhà thuốc có thể bắt đầu sử dụng chỉ trong 3-5 ngày với đầy đủ tính năng.",
+    title: "Triển khai linh hoạt",
+    description: "Hỗ trợ triển khai tập trung hoặc phân tán, tích hợp với hệ thống hiện có của đơn vị.",
   },
 ]
 
 const securityFeatures = [
-  { icon: Shield, label: "Bảo mật đa lớp" },
-  { icon: FileCheck, label: "Tuân thủ GDP/GPP" },
-  { icon: Thermometer, label: "Giám sát kho lạnh" },
+  { icon: Shield, label: "ISO/IEC 17025" },
+  { icon: FileCheck, label: "Chữ ký số" },
+  { icon: Lock, label: "Bảo mật dữ liệu" },
 ]
 
 export function Trust() {
@@ -30,10 +30,11 @@ export function Trust() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl text-balance">
-            Nền tảng an toàn, đáng tin cậy
+            Nền tảng an toàn, tuân thủ chuẩn mực
           </h2>
           <p className="mt-4 text-muted-foreground text-pretty">
-            PharmaPro được thiết kế với tiêu chuẩn bảo mật cao nhất, tuân thủ quy định GDP/GPP của Bộ Y tế và các tiêu chuẩn quốc tế về quản lý dược phẩm.
+            LabQC được thiết kế theo tiêu chuẩn ISO/IEC 17025 về năng lực phòng thử nghiệm, 
+            tích hợp chữ ký số và tuân thủ quy định về chứng từ điện tử của nhà nước.
           </p>
         </div>
 
@@ -42,9 +43,9 @@ export function Trust() {
           {trustFeatures.map((feature, index) => (
             <div
               key={index}
-              className="group rounded-2xl border border-border bg-card p-8 text-center transition-all hover:border-primary/30 hover:shadow-xl"
+              className="group rounded-xl border border-border bg-card p-8 text-center transition-all hover:border-primary/30 hover:shadow-xl"
             >
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                 <feature.icon className="h-8 w-8" />
               </div>
               <h3 className="mt-6 text-xl font-semibold text-foreground">

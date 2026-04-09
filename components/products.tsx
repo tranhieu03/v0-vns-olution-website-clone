@@ -1,64 +1,64 @@
-import { CheckCircle, Truck, Store, ShoppingCart, Boxes, Building2, Users, BarChart3, Package, Calendar, Zap, Globe } from "lucide-react"
+import { CheckCircle, ClipboardList, FlaskConical, FileCheck, BarChart3, Users, Microscope, Clock, FileText, Send, Shield, Search } from "lucide-react"
 
 const products = [
   {
-    id: "distro",
-    name: "PharmaDistro",
-    title: "Hệ thống Quản lý Phân phối Dược phẩm",
-    description: "PharmaDistro là giải pháp quản lý phân phối dược phẩm toàn diện cho các đại lý cấp 1, cấp 2. Quản lý đơn hàng B2B, công nợ đại lý, chính sách giá theo khách hàng, và tracking lô hàng theo chuẩn GDP.",
+    id: "sample",
+    name: "LabSample",
+    title: "Module Tiếp nhận & Quản lý Mẫu",
+    description: "LabSample là module quản lý toàn bộ quy trình tiếp nhận mẫu kiểm nghiệm. Từ đăng ký mẫu, gắn mã định danh (barcode/QR), phân loại theo loại mẫu, đến lưu trữ thông tin khách hàng và theo dõi trạng thái mẫu theo thời gian thực.",
     features: [
-      "Quản lý đơn hàng B2B và công nợ đại lý",
-      "Chính sách giá phân cấp theo khách hàng",
-      "Tracking lô hàng, số đăng ký thuốc",
-      "Báo cáo doanh số theo vùng miền",
+      "Đăng ký mẫu online, gắn mã barcode/QR tự động",
+      "Phân loại mẫu theo loại: thuốc, mỹ phẩm, thực phẩm chức năng",
+      "Quản lý thông tin đơn vị gửi mẫu, người liên hệ",
+      "Theo dõi trạng thái mẫu realtime trên dashboard",
     ],
-    icon: Truck,
-    secondaryIcon: Building2,
+    icon: ClipboardList,
+    secondaryIcon: Search,
     reverse: false,
   },
   {
-    id: "retail",
-    name: "PharmaRetail",
-    title: "Phần mềm Quản lý Nhà thuốc GPP",
-    description: "PharmaRetail là giải pháp quản lý nhà thuốc bán lẻ tuân thủ chuẩn GPP. Hỗ trợ bán hàng nhanh, quản lý tồn kho theo lô, cảnh báo hạn sử dụng, tra cứu tương tác thuốc và xuất báo cáo Bộ Y tế tự động.",
+    id: "test",
+    name: "LabTest",
+    title: "Module Quy trình Kiểm nghiệm",
+    description: "LabTest số hóa toàn bộ quy trình kiểm nghiệm từ phân công kiểm nghiệm viên, thực hiện các chỉ tiêu phân tích, ghi nhận kết quả đến kiểm tra chéo. Tích hợp các phương pháp kiểm nghiệm chuẩn DĐVN, USP, BP.",
     features: [
-      "POS bán hàng nhanh, quét barcode",
-      "Cảnh báo hạn sử dụng tự động",
-      "Tra cứu tương tác thuốc realtime",
-      "Xuất báo cáo GPP theo chuẩn Bộ Y tế",
+      "Phân công kiểm nghiệm viên tự động theo năng lực",
+      "Tích hợp phương pháp kiểm nghiệm DĐVN, USP, BP",
+      "Ghi nhận kết quả phân tích, tính toán tự động",
+      "Kiểm tra chéo, xác nhận kết quả giữa các KNV",
     ],
-    icon: Store,
-    secondaryIcon: Users,
+    icon: FlaskConical,
+    secondaryIcon: Microscope,
     reverse: true,
   },
   {
-    id: "channel",
-    name: "PharmaChannel",
-    title: "Bán hàng Đa kênh & Sàn TMĐT",
-    description: "PharmaChannel kết nối và đồng bộ đơn hàng từ Shopee, Lazada, TikTok Shop, Sendo về một hệ thống duy nhất. Tự động cập nhật tồn kho, in vận đơn, và quản lý đánh giá khách hàng.",
+    id: "report",
+    name: "LabReport",
+    title: "Module Phê duyệt & Trả Kết quả",
+    description: "LabReport quản lý quy trình phê duyệt kết quả kiểm nghiệm theo nhiều cấp. Tự động tạo phiếu kết quả kiểm nghiệm theo mẫu chuẩn, ký số điện tử và gửi kết quả cho khách hàng qua email hoặc cổng tra cứu.",
     features: [
-      "Tích hợp Shopee, Lazada, TikTok Shop",
-      "Đồng bộ tồn kho realtime giữa các kênh",
-      "Tự động in vận đơn GHN, GHTK, J&T",
-      "Quản lý đánh giá và phản hồi khách hàng",
+      "Phê duyệt kết quả theo quy trình nhiều cấp",
+      "Tự động tạo phiếu KQ theo mẫu Viện/Trung tâm",
+      "Ký số điện tử theo quy định chứng từ điện tử",
+      "Gửi kết quả qua email, cổng tra cứu công khai",
     ],
-    icon: ShoppingCart,
-    secondaryIcon: Globe,
+    icon: FileCheck,
+    secondaryIcon: Send,
     reverse: false,
   },
   {
-    id: "stock",
-    name: "PharmaStock",
-    title: "Quản lý Kho Dược phẩm Thông minh",
-    description: "PharmaStock là hệ thống quản lý kho dược phẩm với tính năng theo dõi lô hàng, hạn sử dụng, điều kiện bảo quản và xuất nhập kho theo FIFO/FEFO. Tích hợp mã vạch và QR code theo chuẩn ngành dược.",
+    id: "analytics",
+    name: "LabAnalytics",
+    title: "Module Thống kê & Báo cáo",
+    description: "LabAnalytics cung cấp hệ thống báo cáo thống kê toàn diện về hoạt động kiểm nghiệm. Tự động tổng hợp số liệu theo ngày/tuần/tháng/quý/năm, xuất báo cáo theo biểu mẫu Bộ Y tế và các cơ quan cấp trên.",
     features: [
-      "Quản lý theo lô, số lô, hạn sử dụng",
-      "Xuất kho theo FIFO/FEFO tự động",
-      "Cảnh báo nhiệt độ, độ ẩm kho lạnh",
-      "Kiểm kê kho bằng thiết bị cầm tay",
+      "Dashboard tổng quan hoạt động kiểm nghiệm",
+      "Báo cáo theo biểu mẫu Bộ Y tế, Cục QLD",
+      "Thống kê năng suất kiểm nghiệm viên",
+      "Phân tích xu hướng chất lượng thuốc theo thời gian",
     ],
-    icon: Boxes,
-    secondaryIcon: Calendar,
+    icon: BarChart3,
+    secondaryIcon: FileText,
     reverse: true,
   },
 ]
@@ -100,29 +100,29 @@ export function Products() {
 
               {/* Product Preview */}
               <div className={product.reverse ? "lg:order-1" : ""}>
-                <div className="rounded-2xl border border-border bg-card p-2 shadow-xl">
-                  <div className="rounded-xl bg-muted/50 p-4">
+                <div className="rounded-xl border border-border bg-card p-2 shadow-xl">
+                  <div className="rounded-lg bg-muted/50 p-4">
                     {/* Mock Dashboard */}
                     <div className="space-y-4">
                       {/* Header */}
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <div className={`h-8 w-8 rounded flex items-center justify-center ${
-                            product.id === 'distro' ? 'bg-primary/20' :
-                            product.id === 'retail' ? 'bg-amber-100' :
-                            product.id === 'channel' ? 'bg-pink-100' : 'bg-emerald-100'
+                            product.id === 'sample' ? 'bg-primary/20' :
+                            product.id === 'test' ? 'bg-amber-100' :
+                            product.id === 'report' ? 'bg-green-100' : 'bg-purple-100'
                           }`}>
                             <product.icon className={`h-4 w-4 ${
-                              product.id === 'distro' ? 'text-primary' :
-                              product.id === 'retail' ? 'text-amber-600' :
-                              product.id === 'channel' ? 'text-pink-600' : 'text-emerald-600'
+                              product.id === 'sample' ? 'text-primary' :
+                              product.id === 'test' ? 'text-amber-600' :
+                              product.id === 'report' ? 'text-green-600' : 'text-purple-600'
                             }`} />
                           </div>
                           <div className="text-sm font-medium">{product.name}</div>
                         </div>
                         <div className="flex gap-2">
                           <div className="h-2 w-2 rounded-full bg-green-400" />
-                          <span className="text-xs text-muted-foreground">Online</span>
+                          <span className="text-xs text-muted-foreground">Hoạt động</span>
                         </div>
                       </div>
 
@@ -130,14 +130,14 @@ export function Products() {
                       <div className="grid grid-cols-3 gap-3">
                         {[
                           { 
-                            label: product.id === 'distro' ? 'Đại lý' : product.id === 'retail' ? 'Đơn hôm nay' : product.id === 'channel' ? 'Đơn chờ xử lý' : 'Sản phẩm', 
-                            value: product.id === 'distro' ? '245' : product.id === 'retail' ? '89' : product.id === 'channel' ? '156' : '12,458' 
+                            label: product.id === 'sample' ? 'Mẫu mới' : product.id === 'test' ? 'Đang KN' : product.id === 'report' ? 'Chờ duyệt' : 'Tổng mẫu', 
+                            value: product.id === 'sample' ? '45' : product.id === 'test' ? '32' : product.id === 'report' ? '18' : '1,247' 
                           },
                           { 
-                            label: product.id === 'distro' ? 'Đơn B2B' : product.id === 'retail' ? 'Doanh thu' : product.id === 'channel' ? 'Shopee' : 'Sắp hết hạn', 
-                            value: product.id === 'distro' ? '67' : product.id === 'retail' ? '45.2 tr' : product.id === 'channel' ? '89 đơn' : '24' 
+                            label: product.id === 'sample' ? 'Chờ xử lý' : product.id === 'test' ? 'Hoàn thành' : product.id === 'report' ? 'Đã gửi' : 'Đạt chuẩn', 
+                            value: product.id === 'sample' ? '12' : product.id === 'test' ? '89' : product.id === 'report' ? '156' : '98.5%' 
                           },
-                          { label: 'Tăng trưởng', value: '+18%' },
+                          { label: product.id === 'analytics' ? 'Tháng này' : 'Hôm nay', value: product.id === 'analytics' ? '+15%' : '+8' },
                         ].map((stat, i) => (
                           <div key={i} className="rounded-lg bg-background p-3 shadow-sm">
                             <div className="text-xs text-muted-foreground">{stat.label}</div>
@@ -150,16 +150,16 @@ export function Products() {
                       <div className="grid grid-cols-3 gap-3">
                         <div className="col-span-2 rounded-lg bg-background p-4 shadow-sm">
                           <div className="text-xs font-medium text-muted-foreground mb-2">
-                            {product.id === 'distro' ? 'Doanh số theo vùng' : product.id === 'retail' ? 'Doanh thu theo giờ' : product.id === 'channel' ? 'Đơn hàng theo sàn' : 'Tồn kho theo nhóm'}
+                            {product.id === 'sample' ? 'Mẫu theo loại' : product.id === 'test' ? 'Tiến độ KN' : product.id === 'report' ? 'KQ theo ngày' : 'Thống kê tháng'}
                           </div>
                           <div className="flex items-end gap-1">
                             {[30, 50, 40, 70, 55, 80, 65].map((h, i) => (
                               <div
                                 key={i}
                                 className={`flex-1 rounded-t ${
-                                  product.id === 'distro' ? 'bg-primary/60' :
-                                  product.id === 'retail' ? 'bg-amber-400' :
-                                  product.id === 'channel' ? 'bg-pink-400' : 'bg-emerald-400'
+                                  product.id === 'sample' ? 'bg-primary/60' :
+                                  product.id === 'test' ? 'bg-amber-400' :
+                                  product.id === 'report' ? 'bg-green-400' : 'bg-purple-400'
                                 }`}
                                 style={{ height: `${h}px` }}
                               />
@@ -170,9 +170,9 @@ export function Products() {
                           <div className="text-xs font-medium text-muted-foreground mb-2">Hiệu suất</div>
                           <div className="flex items-center justify-center">
                             <div className={`h-16 w-16 rounded-full border-8 ${
-                              product.id === 'distro' ? 'border-primary/30 border-t-primary' :
-                              product.id === 'retail' ? 'border-amber-200 border-t-amber-500' :
-                              product.id === 'channel' ? 'border-pink-200 border-t-pink-500' : 'border-emerald-200 border-t-emerald-500'
+                              product.id === 'sample' ? 'border-primary/30 border-t-primary' :
+                              product.id === 'test' ? 'border-amber-200 border-t-amber-500' :
+                              product.id === 'report' ? 'border-green-200 border-t-green-500' : 'border-purple-200 border-t-purple-500'
                             }`} />
                           </div>
                         </div>
@@ -183,24 +183,24 @@ export function Products() {
                         <div className="space-y-2">
                           {[
                             { 
-                              text: product.id === 'distro' ? 'ĐH-B2B-0523 - Đã giao hàng' : 
-                                    product.id === 'retail' ? 'Panadol Extra - Bán 5 hộp' : 
-                                    product.id === 'channel' ? 'Shopee #SP847 - Chờ lấy hàng' : 
-                                    'Lô A2024-05 - Nhập kho', 
+                              text: product.id === 'sample' ? 'KN-2024-0847 - Tiếp nhận mẫu mới' : 
+                                    product.id === 'test' ? 'KN-2024-0845 - Đang phân tích HPLC' : 
+                                    product.id === 'report' ? 'KN-2024-0840 - Đã phê duyệt cấp 2' : 
+                                    'Báo cáo tháng 03/2024 - Đã xuất', 
                               status: 'success' 
                             },
                             { 
-                              text: product.id === 'distro' ? 'ĐH-B2B-0522 - Đang giao' : 
-                                    product.id === 'retail' ? 'Vitamin C 1000 - Còn 12 hộp' : 
-                                    product.id === 'channel' ? 'Lazada #LZ156 - Đang đóng gói' : 
-                                    'Lô B2024-03 - HSD còn 45 ngày', 
+                              text: product.id === 'sample' ? 'KN-2024-0846 - Chờ phân loại' : 
+                                    product.id === 'test' ? 'KN-2024-0844 - Kiểm tra vi sinh' : 
+                                    product.id === 'report' ? 'KN-2024-0839 - Chờ ký số' : 
+                                    'Năng suất KNV tháng 03 - Đang xử lý', 
                               status: 'warning' 
                             },
                             { 
-                              text: product.id === 'distro' ? 'Công nợ - NT An Khang' : 
-                                    product.id === 'retail' ? 'Efferalgan - Cần nhập thêm' : 
-                                    product.id === 'channel' ? 'TikTok #TK089 - Mới' : 
-                                    'Kiểm kê kho A - Hoàn thành', 
+                              text: product.id === 'sample' ? 'KN-2024-0845 - Đã gán mã QR' : 
+                                    product.id === 'test' ? 'KN-2024-0843 - Hoàn thành' : 
+                                    product.id === 'report' ? 'KN-2024-0838 - Đã gửi email' : 
+                                    'So sánh quý I/2024 vs 2023', 
                               status: 'info' 
                             },
                           ].map((item, index) => (

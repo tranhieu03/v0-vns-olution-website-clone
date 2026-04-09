@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Phone, Pill } from "lucide-react"
+import { ArrowRight, Phone, FlaskConical } from "lucide-react"
 
 export function CTA() {
   return (
@@ -14,19 +14,20 @@ export function CTA() {
       <div className="container relative mx-auto px-4 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-1.5 text-sm text-primary-foreground">
-            <Pill className="h-4 w-4" />
-            <span>Chuyển đổi số ngành dược phẩm</span>
+            <FlaskConical className="h-4 w-4" />
+            <span>Số hóa quy trình kiểm nghiệm</span>
           </div>
           <h2 className="text-2xl font-bold text-primary-foreground sm:text-3xl lg:text-4xl text-balance">
-            Sẵn sàng nâng cấp hệ thống quản lý dược?
+            Sẵn sàng nâng cấp hệ thống kiểm nghiệm?
           </h2>
           <p className="mt-4 text-primary-foreground/80 text-pretty">
-            Đăng ký ngay hôm nay để nhận 14 ngày dùng thử miễn phí và tư vấn chuyên sâu từ đội ngũ chuyên gia của PharmaPro
+            Liên hệ ngay để được tư vấn giải pháp phù hợp với quy mô và nhu cầu của đơn vị. 
+            Chúng tôi hỗ trợ triển khai, đào tạo và bảo trì toàn diện.
           </p>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
             <Button size="lg" variant="secondary" className="gap-2 font-semibold">
-              Đăng ký dùng thử
+              Yêu cầu Demo
               <ArrowRight className="h-4 w-4" />
             </Button>
             <Button size="lg" variant="outline" className="gap-2 border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
@@ -36,7 +37,7 @@ export function CTA() {
           </div>
 
           <p className="mt-6 text-sm text-primary-foreground/60">
-            Không cần thẻ tín dụng - Hỗ trợ triển khai - Đào tạo sử dụng miễn phí
+            Hỗ trợ triển khai tập trung hoặc phân tán - Đào tạo sử dụng tại chỗ
           </p>
         </div>
       </div>

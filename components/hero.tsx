@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Play, ShieldCheck, Truck, Store, ShoppingCart, Boxes, TrendingUp, AlertTriangle } from "lucide-react"
+import { ArrowRight, Play, ShieldCheck, FlaskConical, FileCheck, ClipboardList, CheckCircle2, Clock, AlertCircle } from "lucide-react"
 
 export function Hero() {
   return (
@@ -17,27 +17,27 @@ export function Hero() {
           <div className="text-center lg:text-left">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-1.5 text-sm text-primary-foreground">
               <ShieldCheck className="h-4 w-4" />
-              <span>Tuân thủ GDP/GPP - Chuẩn Bộ Y tế</span>
+              <span>Tuân thủ ISO/IEC 17025 - Chuẩn quốc tế</span>
             </div>
             <h1 className="text-3xl font-bold leading-tight text-primary-foreground sm:text-4xl lg:text-5xl text-balance">
-              Phần mềm Quản lý Dược phẩm Toàn diện
+              Hệ thống Quản lý Mẫu Kiểm nghiệm Dược phẩm
             </h1>
             <p className="mt-6 text-lg text-primary-foreground/80 text-pretty">
-              Giải pháp số hóa cho nhà phân phối, chuỗi nhà thuốc và bán hàng đa kênh. 
-              Quản lý lô hàng, hạn sử dụng, kết nối sàn TMĐT Shopee, Lazada, TikTok Shop.
+              Giải pháp số hóa toàn bộ quy trình kiểm nghiệm cho Viện Kiểm nghiệm và cơ quan quản lý nhà nước. 
+              Từ tiếp nhận mẫu, phân công kiểm nghiệm đến trả kết quả - tất cả trên một nền tảng duy nhất.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
               <Button size="lg" variant="secondary" className="gap-2 font-semibold">
-                Dùng thử miễn phí
+                Yêu cầu Demo
                 <ArrowRight className="h-4 w-4" />
               </Button>
               <Button size="lg" variant="outline" className="gap-2 border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
                 <Play className="h-4 w-4" />
-                Xem Demo
+                Xem giới thiệu
               </Button>
             </div>
             <p className="mt-4 text-sm text-primary-foreground/60">
-              Miễn phí 14 ngày - Không cần thẻ tín dụng
+              Đã triển khai tại 15+ Viện/Trung tâm Kiểm nghiệm trên toàn quốc
             </p>
           </div>
 
@@ -45,8 +45,8 @@ export function Hero() {
           <div className="relative">
             <div className="relative mx-auto max-w-lg lg:max-w-none">
               {/* Main Dashboard Card */}
-              <div className="rounded-2xl border border-white/20 bg-white/10 p-2 shadow-2xl backdrop-blur-sm">
-                <div className="rounded-xl bg-white p-4 shadow-lg">
+              <div className="rounded-xl border border-white/20 bg-white/10 p-2 shadow-2xl backdrop-blur-sm">
+                <div className="rounded-lg bg-white p-4 shadow-lg">
                   {/* Dashboard Header */}
                   <div className="mb-4 flex items-center justify-between">
                     <div className="flex items-center gap-2">
@@ -54,7 +54,7 @@ export function Hero() {
                       <div className="h-3 w-3 rounded-full bg-yellow-400" />
                       <div className="h-3 w-3 rounded-full bg-green-400" />
                     </div>
-                    <div className="text-xs font-medium text-muted-foreground">PharmaPro Dashboard</div>
+                    <div className="text-xs font-medium text-muted-foreground">LabQC - Quản lý Mẫu</div>
                   </div>
                   
                   {/* Dashboard Content */}
@@ -62,9 +62,9 @@ export function Hero() {
                     {/* Stats Row */}
                     <div className="grid grid-cols-3 gap-2">
                       {[
-                        { label: "Sản phẩm", value: "12,458", icon: Boxes, color: "bg-primary/10 text-primary" },
-                        { label: "Đơn hàng", value: "847", icon: ShoppingCart, color: "bg-amber-100 text-amber-600" },
-                        { label: "Doanh thu", value: "2.8 tỷ", icon: TrendingUp, color: "bg-green-100 text-green-600" },
+                        { label: "Mẫu tiếp nhận", value: "1,247", icon: ClipboardList, color: "bg-primary/10 text-primary" },
+                        { label: "Đang kiểm nghiệm", value: "89", icon: FlaskConical, color: "bg-amber-100 text-amber-600" },
+                        { label: "Đã trả kết quả", value: "1,158", icon: FileCheck, color: "bg-green-100 text-green-600" },
                       ].map((stat) => (
                         <div key={stat.label} className={`rounded-lg p-3 ${stat.color}`}>
                           <div className="flex items-center gap-1">
@@ -76,53 +76,57 @@ export function Hero() {
                       ))}
                     </div>
                     
-                    {/* Chart Placeholder - Revenue by channel */}
+                    {/* Progress Pipeline */}
                     <div className="rounded-lg bg-muted/50 p-4">
-                      <p className="mb-2 text-xs font-medium text-muted-foreground">Doanh thu theo kênh bán</p>
-                      <div className="flex items-end justify-between gap-1 h-16">
-                        {[70, 55, 40, 35, 25, 45, 60, 50, 65, 40, 55, 75].map((height, i) => (
-                          <div
-                            key={i}
-                            className="flex-1 rounded-t bg-primary/60"
-                            style={{ height: `${height}%` }}
-                          />
+                      <p className="mb-3 text-xs font-medium text-muted-foreground">Quy trình kiểm nghiệm mẫu</p>
+                      <div className="flex items-center justify-between">
+                        {[
+                          { label: "Tiếp nhận", count: 45, color: "bg-primary" },
+                          { label: "Phân tích", count: 32, color: "bg-amber-500" },
+                          { label: "Kiểm tra", count: 28, color: "bg-blue-500" },
+                          { label: "Phê duyệt", count: 15, color: "bg-purple-500" },
+                          { label: "Trả KQ", count: 12, color: "bg-green-500" },
+                        ].map((step, i) => (
+                          <div key={step.label} className="flex flex-col items-center">
+                            <div className={`h-10 w-10 rounded-full ${step.color} flex items-center justify-center text-white text-xs font-bold`}>
+                              {step.count}
+                            </div>
+                            <span className="text-[9px] mt-1 text-muted-foreground">{step.label}</span>
+                            {i < 4 && <div className="absolute translate-x-8 w-6 h-0.5 bg-border" />}
+                          </div>
                         ))}
                       </div>
-                      <div className="flex justify-between text-[9px] text-muted-foreground mt-1">
-                        <span>Phân phối</span>
-                        <span>Bán lẻ</span>
-                        <span>Shopee</span>
-                        <span>Lazada</span>
-                      </div>
                     </div>
                     
-                    {/* Alert - Expiry Warning */}
-                    <div className="flex items-center gap-3 rounded-lg bg-amber-50 border border-amber-200 p-3">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-amber-100">
-                        <AlertTriangle className="h-4 w-4 text-amber-600" />
-                      </div>
-                      <div className="flex-1">
-                        <p className="text-xs font-medium text-amber-800">Cảnh báo hạn sử dụng</p>
-                        <p className="text-[10px] text-amber-600">24 sản phẩm sắp hết hạn trong 60 ngày</p>
-                      </div>
-                    </div>
-                    
-                    {/* Recent Orders */}
+                    {/* Recent Samples */}
                     <div className="space-y-2">
+                      <p className="text-xs font-medium text-muted-foreground">Mẫu mới tiếp nhận</p>
                       {[
-                        { code: "ĐH-2024-0847", customer: "Nhà thuốc An Khang", amount: "45.2 tr", status: "success" },
-                        { code: "ĐH-2024-0846", customer: "Pharmacity Q.1", amount: "32.8 tr", status: "warning" },
-                        { code: "ĐH-2024-0845", customer: "Long Châu Bình Thạnh", amount: "28.5 tr", status: "success" },
-                      ].map((order, index) => (
+                        { code: "KN-2024-0847", name: "Paracetamol 500mg", status: "testing", statusText: "Đang KN" },
+                        { code: "KN-2024-0846", name: "Amoxicillin 250mg", status: "pending", statusText: "Chờ phân tích" },
+                        { code: "KN-2024-0845", name: "Vitamin C 1000mg", status: "completed", statusText: "Đạt" },
+                      ].map((sample, index) => (
                         <div key={index} className="flex items-center gap-3 rounded-lg bg-muted/30 p-2">
-                          <div className={`h-8 w-8 rounded-full flex items-center justify-center ${order.status === 'success' ? 'bg-green-100' : 'bg-amber-100'}`}>
-                            <Store className={`h-4 w-4 ${order.status === 'success' ? 'text-green-600' : 'text-amber-600'}`} />
+                          <div className={`h-8 w-8 rounded-full flex items-center justify-center ${
+                            sample.status === 'completed' ? 'bg-green-100' : 
+                            sample.status === 'testing' ? 'bg-amber-100' : 'bg-blue-100'
+                          }`}>
+                            {sample.status === 'completed' ? (
+                              <CheckCircle2 className="h-4 w-4 text-green-600" />
+                            ) : sample.status === 'testing' ? (
+                              <FlaskConical className="h-4 w-4 text-amber-600" />
+                            ) : (
+                              <Clock className="h-4 w-4 text-blue-600" />
+                            )}
                           </div>
                           <div className="flex-1">
-                            <p className="text-xs font-medium">{order.code}</p>
-                            <p className="text-[10px] text-muted-foreground">{order.customer}</p>
+                            <p className="text-xs font-medium">{sample.code}</p>
+                            <p className="text-[10px] text-muted-foreground">{sample.name}</p>
                           </div>
-                          <span className="text-xs font-semibold text-primary">{order.amount}</span>
+                          <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full ${
+                            sample.status === 'completed' ? 'bg-green-100 text-green-700' : 
+                            sample.status === 'testing' ? 'bg-amber-100 text-amber-700' : 'bg-blue-100 text-blue-700'
+                          }`}>{sample.statusText}</span>
                         </div>
                       ))}
                     </div>
@@ -133,12 +137,12 @@ export function Hero() {
               {/* Floating Card 1 */}
               <div className="absolute -left-4 top-1/4 hidden rounded-lg bg-white p-3 shadow-lg lg:block">
                 <div className="flex items-center gap-2">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10">
-                    <Truck className="h-4 w-4 text-primary" />
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-green-100">
+                    <CheckCircle2 className="h-4 w-4 text-green-600" />
                   </div>
                   <div>
-                    <p className="text-xs text-muted-foreground">Đơn giao hôm nay</p>
-                    <p className="text-sm font-semibold text-primary">156 đơn</p>
+                    <p className="text-xs text-muted-foreground">Tỷ lệ đạt chuẩn</p>
+                    <p className="text-sm font-semibold text-green-600">98.5%</p>
                   </div>
                 </div>
               </div>
@@ -146,12 +150,12 @@ export function Hero() {
               {/* Floating Card 2 */}
               <div className="absolute -right-4 bottom-1/4 hidden rounded-lg bg-white p-3 shadow-lg lg:block">
                 <div className="flex items-center gap-2">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-green-100">
-                    <ShieldCheck className="h-4 w-4 text-green-600" />
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-amber-100">
+                    <AlertCircle className="h-4 w-4 text-amber-600" />
                   </div>
                   <div>
-                    <p className="text-xs text-muted-foreground">Tuân thủ</p>
-                    <p className="text-sm font-semibold text-green-600">GDP/GPP</p>
+                    <p className="text-xs text-muted-foreground">Mẫu cần xử lý gấp</p>
+                    <p className="text-sm font-semibold text-amber-600">12 mẫu</p>
                   </div>
                 </div>
               </div>
