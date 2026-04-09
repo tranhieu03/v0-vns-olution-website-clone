@@ -1,25 +1,25 @@
-import { Calendar, Boxes, ShoppingCart, BarChart3 } from "lucide-react"
+import { FileText, Clock, Users, BarChart3 } from "lucide-react"
 
 const problems = [
   {
-    icon: Calendar,
-    title: "Quản lý hạn sử dụng thủ công",
-    description: "Theo dõi lô hàng, hạn sử dụng bằng Excel dễ sai sót, gây tồn kho thuốc hết hạn và thiệt hại tài chính lớn.",
+    icon: FileText,
+    title: "Quản lý mẫu bằng sổ sách",
+    description: "Theo dõi mẫu kiểm nghiệm bằng sổ giấy hoặc Excel, dễ thất lạc, khó tra cứu lịch sử và không đảm bảo tính toàn vẹn dữ liệu.",
   },
   {
-    icon: Boxes,
-    title: "Tồn kho phân tán nhiều nơi",
-    description: "Hàng tồn kho phân bố rời rạc giữa các kho, nhà thuốc, khó kiểm soát số lượng và điều phối hàng hóa kịp thời.",
+    icon: Clock,
+    title: "Quy trình thủ công, chậm trễ",
+    description: "Luân chuyển mẫu giữa các bộ phận bằng giấy, mất thời gian chờ đợi, khó theo dõi tiến độ và thường xuyên trễ hạn trả kết quả.",
   },
   {
-    icon: ShoppingCart,
-    title: "Bán đa kênh thiếu đồng bộ",
-    description: "Quản lý đơn hàng từ nhiều sàn TMĐT (Shopee, Lazada, TikTok Shop) riêng lẻ, dễ bị trùng đơn, sót đơn.",
+    icon: Users,
+    title: "Phân công thiếu tối ưu",
+    description: "Phân công kiểm nghiệm viên thủ công, không cân đối khối lượng công việc, dẫn đến quá tải hoặc lãng phí nguồn lực.",
   },
   {
     icon: BarChart3,
-    title: "Thiếu báo cáo GDP/GPP",
-    description: "Không có hệ thống báo cáo tự động theo chuẩn GDP/GPP, mất nhiều thời gian chuẩn bị khi thanh tra.",
+    title: "Báo cáo thống kê khó khăn",
+    description: "Tổng hợp số liệu báo cáo định kỳ tốn nhiều công sức, thiếu chính xác và không đáp ứng yêu cầu của cơ quan cấp trên.",
   },
 ]
 
@@ -29,10 +29,11 @@ export function Problems() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl text-balance">
-            Doanh nghiệp dược đang gặp vấn đề gì?
+            Viện Kiểm nghiệm đang gặp vấn đề gì?
           </h2>
           <p className="mt-4 text-muted-foreground text-pretty">
-            Hàng trăm nhà phân phối, nhà thuốc và doanh nghiệp dược phẩm đang gặp khó khăn với quy trình quản lý thủ công, thiếu công nghệ số hóa.
+            Nhiều Viện/Trung tâm Kiểm nghiệm vẫn đang gặp khó khăn với quy trình thủ công, 
+            gây ảnh hưởng đến chất lượng và tiến độ kiểm nghiệm.
           </p>
         </div>
 

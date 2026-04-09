@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ChevronDown, Menu, X, Pill } from "lucide-react"
+import { ChevronDown, Menu, X, FlaskConical } from "lucide-react"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -18,19 +18,19 @@ export function Header() {
     {
       label: "Sản phẩm",
       hasDropdown: true,
-      items: ["PharmaDistro - Phân phối", "PharmaRetail - Bán lẻ", "PharmaChannel - Đa kênh", "PharmaStock - Quản lý kho"],
+      items: ["LabSample - Quản lý mẫu", "LabTest - Kiểm nghiệm", "LabReport - Báo cáo kết quả", "LabTrack - Theo dõi tiến độ"],
     },
     {
       label: "Giải pháp",
       hasDropdown: true,
-      items: ["Cho nhà phân phối dược", "Cho chuỗi nhà thuốc GPP", "Cho bệnh viện & phòng khám", "Bán hàng trên sàn TMĐT"],
+      items: ["Cho Viện Kiểm nghiệm TW", "Cho Trung tâm KN Tỉnh/TP", "Cho Cục Quản lý Dược", "Cho Sở Y tế các tỉnh"],
     },
-    { label: "Khách hàng", hasDropdown: false },
-    { label: "Tài nguyên", hasDropdown: false },
+    { label: "Đơn vị triển khai", hasDropdown: false },
+    { label: "Tài liệu", hasDropdown: false },
     {
       label: "Giới thiệu",
       hasDropdown: true,
-      items: ["Về chúng tôi", "Đội ngũ", "Tuyển dụng"],
+      items: ["Về chúng tôi", "Đội ngũ chuyên gia", "Đối tác"],
     },
   ]
 
@@ -40,15 +40,15 @@ export function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <div className="flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary">
-              <Pill className="h-6 w-6 text-primary-foreground" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
+              <FlaskConical className="h-6 w-6 text-primary-foreground" />
             </div>
             <div className="flex flex-col">
               <span className="text-lg font-bold text-primary">
-                Pharma<span className="text-foreground">Pro</span>
+                Lab<span className="text-foreground">QC</span>
               </span>
               <span className="text-[9px] text-muted-foreground -mt-1 uppercase tracking-wide">
-                Giải pháp dược phẩm số
+                Hệ thống Kiểm nghiệm
               </span>
             </div>
           </div>
@@ -86,10 +86,10 @@ export function Header() {
         {/* CTA Buttons */}
         <div className="hidden items-center gap-3 lg:flex">
           <Button variant="outline" size="sm">
-            Đăng nhập
+            Đăng nhập hệ thống
           </Button>
           <Button size="sm">
-            Dùng thử miễn phí
+            Yêu cầu Demo
           </Button>
         </div>
 
@@ -119,10 +119,10 @@ export function Header() {
             ))}
             <div className="mt-4 flex flex-col gap-2">
               <Button variant="outline" size="sm" className="w-full">
-                Đăng nhập
+                Đăng nhập hệ thống
               </Button>
               <Button size="sm" className="w-full">
-                Dùng thử miễn phí
+                Yêu cầu Demo
               </Button>
             </div>
           </nav>

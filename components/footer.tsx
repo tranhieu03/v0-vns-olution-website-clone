@@ -1,49 +1,49 @@
 import Link from "next/link"
-import { Facebook, Youtube, Linkedin, Mail, Phone, MapPin, Pill } from "lucide-react"
+import { Facebook, Youtube, Linkedin, Mail, Phone, MapPin, FlaskConical } from "lucide-react"
 
 const footerLinks = {
   products: {
     title: "Sản phẩm",
     links: [
-      { label: "PharmaDistro - Phân phối", href: "#" },
-      { label: "PharmaRetail - Bán lẻ", href: "#" },
-      { label: "PharmaChannel - Đa kênh", href: "#" },
-      { label: "PharmaStock - Quản lý kho", href: "#" },
+      { label: "LabSample - Quản lý mẫu", href: "#" },
+      { label: "LabTest - Kiểm nghiệm", href: "#" },
+      { label: "LabReport - Trả kết quả", href: "#" },
+      { label: "LabAnalytics - Báo cáo", href: "#" },
     ],
   },
   solutions: {
     title: "Giải pháp",
     links: [
-      { label: "Cho nhà phân phối dược", href: "#" },
-      { label: "Cho chuỗi nhà thuốc GPP", href: "#" },
-      { label: "Cho bệnh viện & phòng khám", href: "#" },
-      { label: "Bán hàng trên sàn TMĐT", href: "#" },
+      { label: "Cho Viện Kiểm nghiệm TW", href: "#" },
+      { label: "Cho Trung tâm KN Tỉnh/TP", href: "#" },
+      { label: "Cho Cục Quản lý Dược", href: "#" },
+      { label: "Cho Sở Y tế các tỉnh", href: "#" },
     ],
   },
   resources: {
-    title: "Tài nguyên",
+    title: "Tài liệu",
     links: [
-      { label: "Blog dược phẩm", href: "#" },
       { label: "Hướng dẫn sử dụng", href: "#" },
-      { label: "Case Studies", href: "#" },
-      { label: "Quy định GDP/GPP", href: "#" },
+      { label: "Tài liệu kỹ thuật", href: "#" },
+      { label: "Quy trình nghiệp vụ", href: "#" },
+      { label: "Tiêu chuẩn ISO 17025", href: "#" },
     ],
   },
   company: {
     title: "Liên hệ",
     links: [
       { label: "Giới thiệu", href: "#" },
-      { label: "Đội ngũ", href: "#" },
-      { label: "Tuyển dụng", href: "#" },
+      { label: "Đội ngũ chuyên gia", href: "#" },
       { label: "Đối tác", href: "#" },
+      { label: "Tin tức", href: "#" },
     ],
   },
 }
 
 const contactInfo = [
-  { icon: Phone, text: "Hotline: 1900 636 789" },
-  { icon: Mail, text: "Email: contact@pharmapro.vn" },
-  { icon: MapPin, text: "Tầng 12, Tòa nhà Pharma Tower, Quận 1, TP.HCM" },
+  { icon: Phone, text: "Hotline: 1900 888 789" },
+  { icon: Mail, text: "Email: contact@labqc.gov.vn" },
+  { icon: MapPin, text: "Tầng 10, Tòa nhà Bộ Y tế, Quận Ba Đình, Hà Nội" },
 ]
 
 const socialLinks = [
@@ -60,17 +60,17 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary">
-                <Pill className="h-6 w-6 text-primary-foreground" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
+                <FlaskConical className="h-6 w-6 text-primary-foreground" />
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-bold text-primary">
-                  Pharma<span className="text-foreground">Pro</span>
+                  Lab<span className="text-foreground">QC</span>
                 </span>
               </div>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
-              Giải pháp phần mềm quản lý dược phẩm toàn diện cho nhà phân phối, chuỗi nhà thuốc và bán hàng đa kênh.
+              Hệ thống quản lý mẫu kiểm nghiệm dược phẩm toàn diện cho các Viện Kiểm nghiệm và cơ quan quản lý nhà nước.
             </p>
 
             {/* Contact Info */}
@@ -121,7 +121,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
           <p className="text-sm text-muted-foreground">
-            © 2024 PharmaPro. Tất cả quyền được bảo lưu.
+            © 2024 LabQC - Bộ Y tế. Tất cả quyền được bảo lưu.
           </p>
           <div className="flex gap-6">
             <Link href="#" className="text-sm text-muted-foreground hover:text-primary">

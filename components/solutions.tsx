@@ -1,41 +1,41 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Truck, Store, ShoppingCart, Boxes } from "lucide-react"
+import { ArrowRight, ClipboardList, FlaskConical, FileCheck, BarChart3 } from "lucide-react"
 
 const stats = [
-  { value: "500+", label: "Nhà thuốc sử dụng" },
-  { value: "50,000+", label: "SKU quản lý" },
+  { value: "15+", label: "Viện/Trung tâm triển khai" },
+  { value: "50,000+", label: "Mẫu đã xử lý" },
   { value: "99.9%", label: "Uptime hệ thống" },
-  { value: "24/7", label: "Hỗ trợ kỹ thuật" },
+  { value: "ISO 17025", label: "Tuân thủ tiêu chuẩn" },
 ]
 
 const products = [
   {
-    id: "distro",
-    name: "PharmaDistro",
-    description: "Quản lý phân phối",
-    icon: Truck,
+    id: "sample",
+    name: "LabSample",
+    description: "Tiếp nhận & Quản lý mẫu",
+    icon: ClipboardList,
     color: "bg-primary text-primary-foreground",
   },
   {
-    id: "retail",
-    name: "PharmaRetail",
-    description: "Quản lý bán lẻ GPP",
-    icon: Store,
+    id: "test",
+    name: "LabTest",
+    description: "Quy trình kiểm nghiệm",
+    icon: FlaskConical,
     color: "bg-amber-500 text-white",
   },
   {
-    id: "channel",
-    name: "PharmaChannel",
-    description: "Bán hàng đa kênh",
-    icon: ShoppingCart,
-    color: "bg-pink-500 text-white",
+    id: "report",
+    name: "LabReport",
+    description: "Phê duyệt & Trả kết quả",
+    icon: FileCheck,
+    color: "bg-green-600 text-white",
   },
   {
-    id: "stock",
-    name: "PharmaStock",
-    description: "Quản lý kho & lô hàng",
-    icon: Boxes,
-    color: "bg-emerald-500 text-white",
+    id: "analytics",
+    name: "LabAnalytics",
+    description: "Thống kê & Báo cáo",
+    icon: BarChart3,
+    color: "bg-purple-600 text-white",
   },
 ]
 
@@ -47,10 +47,11 @@ export function Solutions() {
           {/* Content */}
           <div>
             <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl text-balance">
-              Giải pháp toàn diện cho ngành dược phẩm
+              Giải pháp toàn diện cho quy trình kiểm nghiệm
             </h2>
             <p className="mt-4 text-muted-foreground text-pretty">
-              Hệ sinh thái PharmaPro là giải pháp số hóa toàn bộ quy trình từ phân phối, bán lẻ, bán đa kênh đến quản lý kho và tuân thủ quy định GDP/GPP.
+              Hệ sinh thái LabQC số hóa toàn bộ quy trình từ tiếp nhận mẫu, phân công kiểm nghiệm, 
+              thực hiện phân tích đến phê duyệt và trả kết quả - tuân thủ chuẩn ISO/IEC 17025.
             </p>
 
             {/* Stats Grid */}
@@ -69,11 +70,11 @@ export function Solutions() {
 
           {/* Product Ecosystem Visualization */}
           <div className="relative">
-            <div className="rounded-2xl border border-border bg-card p-6 shadow-lg lg:p-8">
+            <div className="rounded-xl border border-border bg-card p-6 shadow-lg lg:p-8">
               {/* Central Hub */}
               <div className="mb-6 text-center">
                 <p className="text-sm text-muted-foreground">
-                  Hệ sinh thái PharmaPro tích hợp liền mạch các module quản lý dược phẩm
+                  Hệ sinh thái LabQC tích hợp liền mạch các module quản lý kiểm nghiệm
                 </p>
               </div>
 
@@ -105,7 +106,7 @@ export function Solutions() {
                   <ArrowRight className="h-4 w-4" />
                 </Button>
                 <Button variant="outline">
-                  Tải Brochure
+                  Tải Tài liệu
                 </Button>
               </div>
             </div>
