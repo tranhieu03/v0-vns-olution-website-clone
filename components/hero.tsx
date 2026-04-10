@@ -18,8 +18,8 @@ const solutions = [
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-background">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(0,102,179,0.08),transparent)]" />
+    <section className="relative overflow-hidden bg-[#F5F7F9]">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(62,142,208,0.1),transparent)]" />
       
       <div className="container relative mx-auto px-4 lg:px-8 py-16 lg:py-24">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
@@ -34,23 +34,23 @@ export function Hero() {
               </span>
             </div>
 
-            <h1 className="text-3xl font-bold leading-tight text-foreground sm:text-4xl lg:text-5xl">
+            <h1 className="text-3xl font-bold leading-tight text-[#333333] sm:text-4xl lg:text-5xl">
               Giải pháp{" "}
               <span className="text-primary">Phần mềm Doanh nghiệp</span>
               <br />
-              <span className="text-foreground/80">Toàn diện & Chuyên sâu</span>
+              <span className="text-[#333333]/80">Toàn diện & Chuyên sâu</span>
             </h1>
 
-            <p className="mt-6 text-base text-muted-foreground leading-relaxed max-w-xl">
+            <p className="mt-6 text-base text-[#333333]/70 leading-relaxed max-w-xl">
               VNSolution chuyên cung cấp các giải pháp phần mềm quản lý cho doanh nghiệp 
-              trong lĩnh vực <strong className="text-foreground">môi trường, phòng thí nghiệm</strong> và 
-              <strong className="text-foreground"> quản trị doanh nghiệp</strong>. 
+              trong lĩnh vực <strong className="text-[#333333]">môi trường, phòng thí nghiệm</strong> và 
+              <strong className="text-[#333333]"> quản trị doanh nghiệp</strong>. 
               Chúng tôi đồng hành cùng hơn 200 doanh nghiệp trên toàn quốc.
             </p>
 
             <ul className="mt-6 space-y-2.5">
               {solutions.map((item) => (
-                <li key={item} className="flex items-center gap-3 text-sm text-foreground">
+                <li key={item} className="flex items-center gap-3 text-sm text-[#333333]">
                   <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
                   <span>{item}</span>
                 </li>

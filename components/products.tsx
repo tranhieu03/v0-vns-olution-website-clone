@@ -64,7 +64,7 @@ const integrationFeatures = [
 
 export function Products() {
   return (
-    <section id="products" className="bg-background py-16 lg:py-24">
+    <section id="products" className="bg-white py-16 lg:py-24">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="mx-auto max-w-2xl text-center mb-14">
           <p className="text-sm font-medium text-primary mb-3">Sản phẩm phần mềm</p>
@@ -81,7 +81,7 @@ export function Products() {
           {products.map((product, index) => (
             <div
               key={product.id}
-              className={`group rounded-xl border border-border bg-card p-6 transition-smooth hover-lift opacity-0 animate-fade-up stagger-${index + 1}`}
+              className={`group rounded-xl border border-gray-200 bg-white p-6 transition-smooth hover-lift opacity-0 animate-fade-up stagger-${index + 1}`}
               style={{ animationFillMode: 'forwards' }}
             >
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-smooth group-hover:bg-primary/15">
