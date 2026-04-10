@@ -18,40 +18,43 @@ const solutions = [
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#F5F7F9]">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(62,142,208,0.1),transparent)]" />
+    <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/90 to-[#2563eb]">
+      {/* Decorative elements */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-60" />
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/5 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
       
-      <div className="container relative mx-auto px-4 lg:px-8 py-16 lg:py-24">
+      <div className="container relative mx-auto px-4 lg:px-8 py-20 lg:py-28">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="order-2 lg:order-1">
-            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm px-4 py-2 mb-6">
               <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-white"></span>
               </span>
-              <span className="text-sm font-medium text-primary">
+              <span className="text-sm font-medium text-white">
                 Công ty phần mềm hàng đầu Việt Nam
               </span>
             </div>
 
-            <h1 className="text-3xl font-bold leading-tight text-[#333333] sm:text-4xl lg:text-5xl">
+            <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl xl:text-6xl">
               Giải pháp{" "}
-              <span className="text-primary">Phần mềm Doanh nghiệp</span>
+              <span className="text-white">Phần mềm Doanh nghiệp</span>
               <br />
-              <span className="text-[#333333]/80">Toàn diện & Chuyên sâu</span>
+              <span className="text-white/90">Toàn diện & Chuyên sâu</span>
             </h1>
 
-            <p className="mt-6 text-base text-[#333333]/70 leading-relaxed max-w-xl">
+            <p className="mt-6 text-base text-white/80 leading-relaxed max-w-xl lg:text-lg">
               VNSolution chuyên cung cấp các giải pháp phần mềm quản lý cho doanh nghiệp 
-              trong lĩnh vực <strong className="text-[#333333]">môi trường, phòng thí nghiệm</strong> và 
-              <strong className="text-[#333333]"> quản trị doanh nghiệp</strong>. 
+              trong lĩnh vực <strong className="text-white">môi trường, phòng thí nghiệm</strong> và 
+              <strong className="text-white"> quản trị doanh nghiệp</strong>. 
               Chúng tôi đồng hành cùng hơn 200 doanh nghiệp trên toàn quốc.
             </p>
 
             <ul className="mt-6 space-y-2.5">
               {solutions.map((item) => (
-                <li key={item} className="flex items-center gap-3 text-sm text-[#333333]">
-                  <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
+                <li key={item} className="flex items-center gap-3 text-sm text-white/90">
+                  <CheckCircle2 className="h-5 w-5 text-white shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -60,7 +63,7 @@ export function Hero() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button
                 size="lg"
-                className="gap-2 font-medium px-6 transition-smooth hover:shadow-lg hover:shadow-primary/20"
+                className="gap-2 font-semibold px-8 bg-white text-primary hover:bg-white/90 transition-smooth hover:shadow-xl"
               >
                 Nhận tư vấn miễn phí
                 <ArrowRight className="h-4 w-4" />
@@ -68,18 +71,18 @@ export function Hero() {
               <Button
                 size="lg"
                 variant="outline"
-                className="gap-2 font-medium transition-smooth"
+                className="gap-2 font-medium border-white/30 text-white hover:bg-white/10 transition-smooth"
               >
                 <Play className="h-4 w-4" />
                 Xem giới thiệu
               </Button>
             </div>
 
-            <div className="mt-10 flex items-center gap-8 pt-8 border-t border-border">
+            <div className="mt-10 flex items-center gap-8 pt-8 border-t border-white/20">
               {stats.map((stat, index) => (
-                <div key={stat.label} className={index > 0 ? "pl-8 border-l border-border" : ""}>
-                  <p className="text-2xl font-bold text-primary lg:text-3xl">{stat.value}</p>
-                  <p className="text-xs text-muted-foreground mt-0.5">{stat.label}</p>
+                <div key={stat.label} className={index > 0 ? "pl-8 border-l border-white/20" : ""}>
+                  <p className="text-2xl font-bold text-white lg:text-3xl">{stat.value}</p>
+                  <p className="text-xs text-white/70 mt-0.5">{stat.label}</p>
                 </div>
               ))}
             </div>
