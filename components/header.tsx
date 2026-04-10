@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ChevronDown, Menu, X, FlaskConical } from "lucide-react"
+import { ChevronDown, Menu, X, Layers } from "lucide-react"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,21 +16,21 @@ export function Header() {
 
   const navItems = [
     {
-      label: "Sản phẩm",
+      label: "Solutions",
       hasDropdown: true,
-      items: ["LabSample - Quản lý mẫu", "LabTest - Kiểm nghiệm", "LabReport - Báo cáo kết quả", "LabTrack - Theo dõi tiến độ"],
+      items: ["Waste Management System", "Laboratory Information System", "Industry-Specific Solutions"],
     },
     {
-      label: "Giải pháp",
+      label: "Products",
       hasDropdown: true,
-      items: ["Cho Viện Kiểm nghiệm TW", "Cho Trung tâm KN Tỉnh/TP", "Cho Cục Quản lý Dược", "Cho Sở Y tế các tỉnh"],
+      items: ["ERP - Enterprise Resource Planning", "CRM - Customer Relationship", "HRM - Human Resource Management", "DMS - Document Management"],
     },
-    { label: "Đơn vị triển khai", hasDropdown: false },
-    { label: "Tài liệu", hasDropdown: false },
+    { label: "Case Studies", hasDropdown: false },
+    { label: "Resources", hasDropdown: false },
     {
-      label: "Giới thiệu",
+      label: "Company",
       hasDropdown: true,
-      items: ["Về chúng tôi", "Đội ngũ chuyên gia", "Đối tác"],
+      items: ["About Us", "Our Team", "Partners", "Careers"],
     },
   ]
 
@@ -39,23 +39,23 @@ export function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2.5">
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-              <FlaskConical className="h-6 w-6 text-primary-foreground" />
+              <Layers className="h-5 w-5 text-primary-foreground" />
             </div>
             <div className="flex flex-col">
-              <span className="text-lg font-bold text-primary">
-                Lab<span className="text-foreground">QC</span>
+              <span className="text-lg font-bold text-foreground tracking-tight">
+                VN<span className="text-accent">Solution</span>
               </span>
-              <span className="text-[9px] text-muted-foreground -mt-1 uppercase tracking-wide">
-                Hệ thống Kiểm nghiệm
+              <span className="text-[9px] text-muted-foreground -mt-0.5 uppercase tracking-wider">
+                Enterprise Software
               </span>
             </div>
           </div>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-0.5 lg:flex">
           {navItems.map((item) =>
             item.hasDropdown ? (
               <DropdownMenu key={item.label}>
@@ -65,7 +65,7 @@ export function Header() {
                     <ChevronDown className="h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="center" className="w-56">
+                <DropdownMenuContent align="center" className="w-64">
                   {item.items?.map((subItem) => (
                     <DropdownMenuItem key={subItem} asChild>
                       <Link href="#" className="cursor-pointer">
@@ -85,11 +85,11 @@ export function Header() {
 
         {/* CTA Buttons */}
         <div className="hidden items-center gap-3 lg:flex">
-          <Button variant="outline" size="sm">
-            Đăng nhập hệ thống
+          <Button variant="ghost" size="sm">
+            Sign In
           </Button>
-          <Button size="sm">
-            Yêu cầu Demo
+          <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+            Request Demo
           </Button>
         </div>
 
@@ -119,10 +119,10 @@ export function Header() {
             ))}
             <div className="mt-4 flex flex-col gap-2">
               <Button variant="outline" size="sm" className="w-full">
-                Đăng nhập hệ thống
+                Sign In
               </Button>
-              <Button size="sm" className="w-full">
-                Yêu cầu Demo
+              <Button size="sm" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
+                Request Demo
               </Button>
             </div>
           </nav>

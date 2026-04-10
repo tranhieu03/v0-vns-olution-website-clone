@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter, Be_Vietnam_Pro } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
@@ -15,9 +15,10 @@ const beVietnamPro = Be_Vietnam_Pro({
 });
 
 export const metadata: Metadata = {
-  title: 'LabQC - Hệ thống Quản lý Mẫu Kiểm nghiệm Dược phẩm',
-  description: 'Giải pháp phần mềm quản lý quy trình kiểm nghiệm dược phẩm cho Viện Kiểm nghiệm và cơ quan quản lý nhà nước. Số hóa quy trình lấy mẫu, kiểm nghiệm và trả kết quả theo chuẩn ISO/IEC 17025.',
+  title: 'VNSolution - Enterprise Software Solutions | ERP, CRM, HRM, DMS & Industry Solutions',
+  description: 'VNSolution delivers cutting-edge enterprise software solutions including ERP, CRM, HRM, DMS, Waste Management Systems, and Testing Laboratory Solutions. 15+ years of innovation serving businesses across Vietnam.',
   generator: 'v0.app',
+  keywords: ['ERP software', 'CRM system', 'HRM solution', 'DMS', 'waste management software', 'laboratory information system', 'enterprise software Vietnam'],
   icons: {
     icon: [
       {
@@ -37,13 +38,19 @@ export const metadata: Metadata = {
   },
 }
 
+export const viewport: Viewport = {
+  themeColor: '#1a1a2e',
+  width: 'device-width',
+  initialScale: 1,
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html lang="vi">
+    <html lang="en">
       <body className={`${inter.variable} ${beVietnamPro.variable} font-sans antialiased`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}

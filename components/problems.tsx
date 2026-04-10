@@ -1,56 +1,57 @@
-import { FileText, Clock, Users, BarChart3 } from "lucide-react"
+import { FileText, Clock, Layers, BarChart3 } from "lucide-react"
 
-const problems = [
+const challenges = [
   {
     icon: FileText,
-    title: "Quản lý mẫu bằng sổ sách",
-    description: "Theo dõi mẫu kiểm nghiệm bằng sổ giấy hoặc Excel, dễ thất lạc, khó tra cứu lịch sử và không đảm bảo tính toàn vẹn dữ liệu.",
+    title: "Fragmented Systems",
+    description: "Managing operations across multiple disconnected platforms leads to data silos, duplicate entries, and inconsistent information across departments.",
   },
   {
     icon: Clock,
-    title: "Quy trình thủ công, chậm trễ",
-    description: "Luân chuyển mẫu giữa các bộ phận bằng giấy, mất thời gian chờ đợi, khó theo dõi tiến độ và thường xuyên trễ hạn trả kết quả.",
+    title: "Manual Processes",
+    description: "Time-consuming manual workflows slow down operations, increase error rates, and prevent your team from focusing on strategic initiatives.",
   },
   {
-    icon: Users,
-    title: "Phân công thiếu tối ưu",
-    description: "Phân công kiểm nghiệm viên thủ công, không cân đối khối lượng công việc, dẫn đến quá tải hoặc lãng phí nguồn lực.",
+    icon: Layers,
+    title: "Scalability Limits",
+    description: "Legacy systems struggle to keep pace with business growth, creating bottlenecks and limiting your ability to expand operations efficiently.",
   },
   {
     icon: BarChart3,
-    title: "Báo cáo thống kê khó khăn",
-    description: "Tổng hợp số liệu báo cáo định kỳ tốn nhiều công sức, thiếu chính xác và không đáp ứng yêu cầu của cơ quan cấp trên.",
+    title: "Limited Visibility",
+    description: "Without real-time analytics and unified reporting, making data-driven decisions becomes challenging and reactive rather than proactive.",
   },
 ]
 
 export function Problems() {
   return (
-    <section className="py-16 lg:py-24">
+    <section className="py-20 lg:py-28 bg-muted/30">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl text-balance">
-            Viện Kiểm nghiệm đang gặp vấn đề gì?
+        <div className="mx-auto max-w-2xl text-center mb-14">
+          <p className="text-sm font-medium uppercase tracking-wider text-accent mb-3">The Challenge</p>
+          <h2 className="text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl text-balance">
+            Is Your Business Held Back By These Issues?
           </h2>
           <p className="mt-4 text-muted-foreground text-pretty">
-            Nhiều Viện/Trung tâm Kiểm nghiệm vẫn đang gặp khó khăn với quy trình thủ công, 
-            gây ảnh hưởng đến chất lượng và tiến độ kiểm nghiệm.
+            Many organizations struggle with outdated processes and disconnected systems 
+            that limit growth and operational efficiency.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {problems.map((problem, index) => (
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {challenges.map((challenge, index) => (
             <div
               key={index}
-              className="group rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/30 hover:shadow-lg"
+              className="group rounded-2xl border border-border bg-card p-6 transition-all hover:border-primary/30 hover:shadow-lg"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                <problem.icon className="h-6 w-6" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                <challenge.icon className="h-6 w-6" />
               </div>
               <h3 className="mt-4 text-lg font-semibold text-foreground">
-                {problem.title}
+                {challenge.title}
               </h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                {problem.description}
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                {challenge.description}
               </p>
             </div>
           ))}

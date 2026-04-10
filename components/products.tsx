@@ -1,225 +1,170 @@
-import { CheckCircle, ClipboardList, FlaskConical, FileCheck, BarChart3, Users, Microscope, Clock, FileText, Send, Shield, Search } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { ArrowRight, Building2, Users, FileText, BarChart3, CheckCircle, Layers, Database, Shield, Zap } from "lucide-react"
 
 const products = [
   {
-    id: "sample",
-    name: "LabSample",
-    title: "Module Tiếp nhận & Quản lý Mẫu",
-    description: "LabSample là module quản lý toàn bộ quy trình tiếp nhận mẫu kiểm nghiệm. Từ đăng ký mẫu, gắn mã định danh (barcode/QR), phân loại theo loại mẫu, đến lưu trữ thông tin khách hàng và theo dõi trạng thái mẫu theo thời gian thực.",
+    id: "erp",
+    name: "ERP",
+    fullName: "Enterprise Resource Planning",
+    description: "Unified platform integrating finance, operations, supply chain, and business intelligence for complete organizational visibility and control.",
+    icon: Building2,
+    color: "bg-primary",
     features: [
-      "Đăng ký mẫu online, gắn mã barcode/QR tự động",
-      "Phân loại mẫu theo loại: thuốc, mỹ phẩm, thực phẩm chức năng",
-      "Quản lý thông tin đơn vị gửi mẫu, người liên hệ",
-      "Theo dõi trạng thái mẫu realtime trên dashboard",
+      "Financial management & accounting",
+      "Supply chain & inventory",
+      "Manufacturing operations",
+      "Business intelligence & reporting",
     ],
-    icon: ClipboardList,
-    secondaryIcon: Search,
-    reverse: false,
   },
   {
-    id: "test",
-    name: "LabTest",
-    title: "Module Quy trình Kiểm nghiệm",
-    description: "LabTest số hóa toàn bộ quy trình kiểm nghiệm từ phân công kiểm nghiệm viên, thực hiện các chỉ tiêu phân tích, ghi nhận kết quả đến kiểm tra chéo. Tích hợp các phương pháp kiểm nghiệm chuẩn DĐVN, USP, BP.",
+    id: "crm",
+    name: "CRM",
+    fullName: "Customer Relationship Management",
+    description: "360-degree customer view with sales automation, marketing campaigns, and service management to drive growth and retention.",
+    icon: Users,
+    color: "bg-accent",
     features: [
-      "Phân công kiểm nghiệm viên tự động theo năng lực",
-      "Tích hợp phương pháp kiểm nghiệm DĐVN, USP, BP",
-      "Ghi nhận kết quả phân tích, tính toán tự động",
-      "Kiểm tra chéo, xác nhận kết quả giữa các KNV",
+      "Sales pipeline management",
+      "Marketing automation",
+      "Customer service portal",
+      "Analytics & forecasting",
     ],
-    icon: FlaskConical,
-    secondaryIcon: Microscope,
-    reverse: true,
   },
   {
-    id: "report",
-    name: "LabReport",
-    title: "Module Phê duyệt & Trả Kết quả",
-    description: "LabReport quản lý quy trình phê duyệt kết quả kiểm nghiệm theo nhiều cấp. Tự động tạo phiếu kết quả kiểm nghiệm theo mẫu chuẩn, ký số điện tử và gửi kết quả cho khách hàng qua email hoặc cổng tra cứu.",
+    id: "hrm",
+    name: "HRM",
+    fullName: "Human Resource Management",
+    description: "Complete HR lifecycle management from recruitment to retirement, with payroll, performance tracking, and employee self-service.",
+    icon: Layers,
+    color: "bg-primary",
     features: [
-      "Phê duyệt kết quả theo quy trình nhiều cấp",
-      "Tự động tạo phiếu KQ theo mẫu Viện/Trung tâm",
-      "Ký số điện tử theo quy định chứng từ điện tử",
-      "Gửi kết quả qua email, cổng tra cứu công khai",
+      "Recruitment & onboarding",
+      "Payroll & benefits",
+      "Performance management",
+      "Learning & development",
     ],
-    icon: FileCheck,
-    secondaryIcon: Send,
-    reverse: false,
   },
   {
-    id: "analytics",
-    name: "LabAnalytics",
-    title: "Module Thống kê & Báo cáo",
-    description: "LabAnalytics cung cấp hệ thống báo cáo thống kê toàn diện về hoạt động kiểm nghiệm. Tự động tổng hợp số liệu theo ngày/tuần/tháng/quý/năm, xuất báo cáo theo biểu mẫu Bộ Y tế và các cơ quan cấp trên.",
+    id: "dms",
+    name: "DMS",
+    fullName: "Document Management System",
+    description: "Secure, centralized document repository with version control, workflow automation, and compliance tracking for paperless operations.",
+    icon: FileText,
+    color: "bg-accent",
     features: [
-      "Dashboard tổng quan hoạt động kiểm nghiệm",
-      "Báo cáo theo biểu mẫu Bộ Y tế, Cục QLD",
-      "Thống kê năng suất kiểm nghiệm viên",
-      "Phân tích xu hướng chất lượng thuốc theo thời gian",
+      "Secure document storage",
+      "Version control & audit trail",
+      "Workflow automation",
+      "Search & retrieval",
     ],
-    icon: BarChart3,
-    secondaryIcon: FileText,
-    reverse: true,
   },
+]
+
+const integrationFeatures = [
+  { icon: Database, text: "Unified Data Architecture" },
+  { icon: Shield, text: "Enterprise Security" },
+  { icon: Zap, text: "Real-time Sync" },
+  { icon: BarChart3, text: "Cross-module Analytics" },
 ]
 
 export function Products() {
   return (
-    <section className="py-16 lg:py-24">
+    <section className="bg-muted/30 py-20 lg:py-28">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="space-y-24">
+        {/* Section Header */}
+        <div className="mx-auto max-w-2xl text-center mb-16">
+          <p className="text-sm font-medium uppercase tracking-wider text-accent mb-3">Enterprise Products</p>
+          <h2 className="text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl text-balance">
+            Integrated Business Management Suite
+          </h2>
+          <p className="mt-4 text-muted-foreground text-pretty">
+            Modular, scalable solutions that work seamlessly together or standalone 
+            to address every aspect of your business operations.
+          </p>
+        </div>
+
+        {/* Products Grid */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {products.map((product) => (
             <div
               key={product.id}
-              className={`grid items-center gap-12 lg:grid-cols-2 ${
-                product.reverse ? "lg:flex-row-reverse" : ""
-              }`}
+              className="group relative rounded-2xl border border-border bg-card p-6 transition-all hover:border-primary/30 hover:shadow-lg"
             >
-              {/* Content */}
-              <div className={product.reverse ? "lg:order-2" : ""}>
-                <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
-                  <product.icon className="h-4 w-4" />
+              <div className={`mb-4 flex h-14 w-14 items-center justify-center rounded-xl ${product.color}/10`}>
+                <product.icon className={`h-7 w-7 ${product.color === 'bg-accent' ? 'text-accent' : 'text-primary'}`} />
+              </div>
+              
+              <div className="mb-2">
+                <span className={`text-2xl font-bold ${product.color === 'bg-accent' ? 'text-accent' : 'text-primary'}`}>
                   {product.name}
                 </span>
-                <h3 className="mt-4 text-2xl font-bold text-foreground sm:text-3xl">
-                  {product.title}
-                </h3>
-                <p className="mt-4 text-muted-foreground text-pretty">
-                  {product.description}
-                </p>
-
-                <ul className="mt-6 space-y-3">
-                  {product.features.map((feature, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
-                      <span className="text-foreground">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
+              <h3 className="text-sm font-medium text-muted-foreground mb-3">
+                {product.fullName}
+              </h3>
+              <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
+                {product.description}
+              </p>
 
-              {/* Product Preview */}
-              <div className={product.reverse ? "lg:order-1" : ""}>
-                <div className="rounded-xl border border-border bg-card p-2 shadow-xl">
-                  <div className="rounded-lg bg-muted/50 p-4">
-                    {/* Mock Dashboard */}
-                    <div className="space-y-4">
-                      {/* Header */}
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                          <div className={`h-8 w-8 rounded flex items-center justify-center ${
-                            product.id === 'sample' ? 'bg-primary/20' :
-                            product.id === 'test' ? 'bg-amber-100' :
-                            product.id === 'report' ? 'bg-green-100' : 'bg-purple-100'
-                          }`}>
-                            <product.icon className={`h-4 w-4 ${
-                              product.id === 'sample' ? 'text-primary' :
-                              product.id === 'test' ? 'text-amber-600' :
-                              product.id === 'report' ? 'text-green-600' : 'text-purple-600'
-                            }`} />
-                          </div>
-                          <div className="text-sm font-medium">{product.name}</div>
-                        </div>
-                        <div className="flex gap-2">
-                          <div className="h-2 w-2 rounded-full bg-green-400" />
-                          <span className="text-xs text-muted-foreground">Hoạt động</span>
-                        </div>
-                      </div>
+              <ul className="space-y-2 mb-6">
+                {product.features.map((feature) => (
+                  <li key={feature} className="flex items-center gap-2 text-sm text-foreground">
+                    <CheckCircle className={`h-4 w-4 shrink-0 ${product.color === 'bg-accent' ? 'text-accent' : 'text-primary'}`} />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
 
-                      {/* Stats */}
-                      <div className="grid grid-cols-3 gap-3">
-                        {[
-                          { 
-                            label: product.id === 'sample' ? 'Mẫu mới' : product.id === 'test' ? 'Đang KN' : product.id === 'report' ? 'Chờ duyệt' : 'Tổng mẫu', 
-                            value: product.id === 'sample' ? '45' : product.id === 'test' ? '32' : product.id === 'report' ? '18' : '1,247' 
-                          },
-                          { 
-                            label: product.id === 'sample' ? 'Chờ xử lý' : product.id === 'test' ? 'Hoàn thành' : product.id === 'report' ? 'Đã gửi' : 'Đạt chuẩn', 
-                            value: product.id === 'sample' ? '12' : product.id === 'test' ? '89' : product.id === 'report' ? '156' : '98.5%' 
-                          },
-                          { label: product.id === 'analytics' ? 'Tháng này' : 'Hôm nay', value: product.id === 'analytics' ? '+15%' : '+8' },
-                        ].map((stat, i) => (
-                          <div key={i} className="rounded-lg bg-background p-3 shadow-sm">
-                            <div className="text-xs text-muted-foreground">{stat.label}</div>
-                            <div className={`mt-1 text-lg font-bold ${i === 2 ? 'text-green-600' : 'text-foreground'}`}>{stat.value}</div>
-                          </div>
-                        ))}
-                      </div>
+              <Button variant="ghost" className="w-full justify-between group-hover:text-primary">
+                Learn More
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </div>
+          ))}
+        </div>
 
-                      {/* Content Area */}
-                      <div className="grid grid-cols-3 gap-3">
-                        <div className="col-span-2 rounded-lg bg-background p-4 shadow-sm">
-                          <div className="text-xs font-medium text-muted-foreground mb-2">
-                            {product.id === 'sample' ? 'Mẫu theo loại' : product.id === 'test' ? 'Tiến độ KN' : product.id === 'report' ? 'KQ theo ngày' : 'Thống kê tháng'}
-                          </div>
-                          <div className="flex items-end gap-1">
-                            {[30, 50, 40, 70, 55, 80, 65].map((h, i) => (
-                              <div
-                                key={i}
-                                className={`flex-1 rounded-t ${
-                                  product.id === 'sample' ? 'bg-primary/60' :
-                                  product.id === 'test' ? 'bg-amber-400' :
-                                  product.id === 'report' ? 'bg-green-400' : 'bg-purple-400'
-                                }`}
-                                style={{ height: `${h}px` }}
-                              />
-                            ))}
-                          </div>
-                        </div>
-                        <div className="rounded-lg bg-background p-4 shadow-sm">
-                          <div className="text-xs font-medium text-muted-foreground mb-2">Hiệu suất</div>
-                          <div className="flex items-center justify-center">
-                            <div className={`h-16 w-16 rounded-full border-8 ${
-                              product.id === 'sample' ? 'border-primary/30 border-t-primary' :
-                              product.id === 'test' ? 'border-amber-200 border-t-amber-500' :
-                              product.id === 'report' ? 'border-green-200 border-t-green-500' : 'border-purple-200 border-t-purple-500'
-                            }`} />
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Activity List */}
-                      <div className="rounded-lg bg-background p-3 shadow-sm">
-                        <div className="space-y-2">
-                          {[
-                            { 
-                              text: product.id === 'sample' ? 'KN-2024-0847 - Tiếp nhận mẫu mới' : 
-                                    product.id === 'test' ? 'KN-2024-0845 - Đang phân tích HPLC' : 
-                                    product.id === 'report' ? 'KN-2024-0840 - Đã phê duyệt cấp 2' : 
-                                    'Báo cáo tháng 03/2024 - Đã xuất', 
-                              status: 'success' 
-                            },
-                            { 
-                              text: product.id === 'sample' ? 'KN-2024-0846 - Chờ phân loại' : 
-                                    product.id === 'test' ? 'KN-2024-0844 - Kiểm tra vi sinh' : 
-                                    product.id === 'report' ? 'KN-2024-0839 - Chờ ký số' : 
-                                    'Năng suất KNV tháng 03 - Đang xử lý', 
-                              status: 'warning' 
-                            },
-                            { 
-                              text: product.id === 'sample' ? 'KN-2024-0845 - Đã gán mã QR' : 
-                                    product.id === 'test' ? 'KN-2024-0843 - Hoàn thành' : 
-                                    product.id === 'report' ? 'KN-2024-0838 - Đã gửi email' : 
-                                    'So sánh quý I/2024 vs 2023', 
-                              status: 'info' 
-                            },
-                          ].map((item, index) => (
-                            <div key={index} className="flex items-center gap-3 rounded bg-muted/30 p-2">
-                              <div className={`h-2 w-2 rounded-full ${
-                                item.status === 'success' ? 'bg-green-500' :
-                                item.status === 'warning' ? 'bg-amber-500' : 'bg-blue-500'
-                              }`} />
-                              <span className="text-xs">{item.text}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
+        {/* Integration Banner */}
+        <div className="mt-16 rounded-2xl border border-border bg-card p-8 lg:p-12">
+          <div className="grid items-center gap-8 lg:grid-cols-2">
+            <div>
+              <h3 className="text-2xl font-bold text-foreground sm:text-3xl">
+                Seamless Integration Across All Modules
+              </h3>
+              <p className="mt-4 text-muted-foreground">
+                Our products are designed to work together, sharing data and workflows 
+                to eliminate silos and provide a unified view of your organization.
+              </p>
+              <div className="mt-6 grid grid-cols-2 gap-4">
+                {integrationFeatures.map((feature) => (
+                  <div key={feature.text} className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10">
+                      <feature.icon className="h-5 w-5 text-accent" />
                     </div>
+                    <span className="text-sm font-medium text-foreground">{feature.text}</span>
                   </div>
+                ))}
+              </div>
+            </div>
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative">
+                {/* Integration Visual */}
+                <div className="grid grid-cols-2 gap-4">
+                  {products.map((product) => (
+                    <div
+                      key={product.id}
+                      className={`flex h-20 w-20 items-center justify-center rounded-xl border border-border bg-background shadow-sm`}
+                    >
+                      <product.icon className={`h-8 w-8 ${product.color === 'bg-accent' ? 'text-accent' : 'text-primary'}`} />
+                    </div>
+                  ))}
+                </div>
+                {/* Connection lines */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="h-16 w-16 rounded-full border-2 border-dashed border-accent/30" />
                 </div>
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
