@@ -1,56 +1,58 @@
-import { FileText, Clock, Users, BarChart3 } from "lucide-react"
+import { FileX, Clock, TrendingDown, BarChart3 } from "lucide-react"
 
-const problems = [
+const challenges = [
   {
-    icon: FileText,
-    title: "Quản lý mẫu bằng sổ sách",
-    description: "Theo dõi mẫu kiểm nghiệm bằng sổ giấy hoặc Excel, dễ thất lạc, khó tra cứu lịch sử và không đảm bảo tính toàn vẹn dữ liệu.",
+    icon: FileX,
+    title: "Dữ liệu phân tán",
+    description: "Thông tin nằm rải rác trên nhiều file Excel, phần mềm không liên kết, gây khó khăn trong việc tổng hợp và đồng bộ dữ liệu.",
   },
   {
     icon: Clock,
-    title: "Quy trình thủ công, chậm trễ",
-    description: "Luân chuyển mẫu giữa các bộ phận bằng giấy, mất thời gian chờ đợi, khó theo dõi tiến độ và thường xuyên trễ hạn trả kết quả.",
+    title: "Quy trình thủ công",
+    description: "Xử lý công việc bằng tay tốn nhiều thời gian, dễ sai sót và khiến nhân viên không thể tập trung vào công việc có giá trị cao hơn.",
   },
   {
-    icon: Users,
-    title: "Phân công thiếu tối ưu",
-    description: "Phân công kiểm nghiệm viên thủ công, không cân đối khối lượng công việc, dẫn đến quá tải hoặc lãng phí nguồn lực.",
+    icon: TrendingDown,
+    title: "Khó mở rộng quy mô",
+    description: "Hệ thống cũ không đáp ứng được khi doanh nghiệp phát triển, tạo ra điểm nghẽn và hạn chế tăng trưởng.",
   },
   {
     icon: BarChart3,
-    title: "Báo cáo thống kê khó khăn",
-    description: "Tổng hợp số liệu báo cáo định kỳ tốn nhiều công sức, thiếu chính xác và không đáp ứng yêu cầu của cơ quan cấp trên.",
+    title: "Thiếu thông tin ra quyết định",
+    description: "Không có báo cáo tổng hợp thời gian thực, lãnh đạo khó nắm bắt tình hình và đưa ra quyết định kịp thời, chính xác.",
   },
 ]
 
 export function Problems() {
   return (
-    <section className="py-16 lg:py-24">
+    <section className="py-16 lg:py-24 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl text-balance">
-            Viện Kiểm nghiệm đang gặp vấn đề gì?
+        <div className="mx-auto max-w-2xl text-center mb-14">
+          <p className="text-sm font-medium text-primary mb-3">Thách thức phổ biến</p>
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">
+            Doanh nghiệp của bạn đang gặp những vấn đề này?
           </h2>
-          <p className="mt-4 text-muted-foreground text-pretty">
-            Nhiều Viện/Trung tâm Kiểm nghiệm vẫn đang gặp khó khăn với quy trình thủ công, 
-            gây ảnh hưởng đến chất lượng và tiến độ kiểm nghiệm.
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            Đây là những thách thức mà hầu hết doanh nghiệp đều gặp phải khi vận hành 
+            với quy trình thủ công và hệ thống không đồng bộ.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {problems.map((problem, index) => (
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {challenges.map((challenge, index) => (
             <div
               key={index}
-              className="group rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/30 hover:shadow-lg"
+              className={`group rounded-2xl border border-border bg-card p-6 transition-smooth hover-lift opacity-0 animate-fade-up stagger-${index + 1}`}
+              style={{ animationFillMode: 'forwards' }}
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                <problem.icon className="h-6 w-6" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-destructive/10 text-destructive transition-smooth group-hover:bg-primary group-hover:text-primary-foreground">
+                <challenge.icon className="h-6 w-6" />
               </div>
-              <h3 className="mt-4 text-lg font-semibold text-foreground">
-                {problem.title}
+              <h3 className="mt-5 text-lg font-semibold text-foreground">
+                {challenge.title}
               </h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                {problem.description}
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                {challenge.description}
               </p>
             </div>
           ))}

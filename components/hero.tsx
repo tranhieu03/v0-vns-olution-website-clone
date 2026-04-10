@@ -1,162 +1,144 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Play, ShieldCheck, FlaskConical, FileCheck, ClipboardList, CheckCircle2, Clock, AlertCircle } from "lucide-react"
+import { ArrowRight, Play, CheckCircle2 } from "lucide-react"
+import Image from "next/image"
+
+const stats = [
+  { value: "15+", label: "Năm kinh nghiệm" },
+  { value: "200+", label: "Khách hàng" },
+  { value: "50+", label: "Chuyên gia" },
+]
+
+const solutions = [
+  "Phần mềm quản lý chất thải",
+  "Hệ thống phòng thí nghiệm LIMS",
+  "Giải pháp ERP, CRM, HRM, DMS",
+]
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-primary/90 py-16 lg:py-24">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }} />
-      </div>
-
-      <div className="container relative mx-auto px-4 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          {/* Content */}
-          <div className="text-center lg:text-left">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-1.5 text-sm text-primary-foreground">
-              <ShieldCheck className="h-4 w-4" />
-              <span>Tuân thủ ISO/IEC 17025 - Chuẩn quốc tế</span>
+    <section className="relative overflow-hidden bg-background">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(0,102,179,0.08),transparent)]" />
+      
+      <div className="container relative mx-auto px-4 lg:px-8 py-16 lg:py-24">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="order-2 lg:order-1">
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 mb-6">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+              </span>
+              <span className="text-sm font-medium text-primary">
+                Công ty phần mềm hàng đầu Việt Nam
+              </span>
             </div>
-            <h1 className="text-3xl font-bold leading-tight text-primary-foreground sm:text-4xl lg:text-5xl text-balance">
-              Hệ thống Quản lý Mẫu Kiểm nghiệm Dược phẩm
+
+            <h1 className="text-3xl font-bold leading-tight text-foreground sm:text-4xl lg:text-5xl">
+              Giải pháp{" "}
+              <span className="text-primary">Phần mềm Doanh nghiệp</span>
+              <br />
+              <span className="text-foreground/80">Toàn diện & Chuyên sâu</span>
             </h1>
-            <p className="mt-6 text-lg text-primary-foreground/80 text-pretty">
-              Giải pháp số hóa toàn bộ quy trình kiểm nghiệm cho Viện Kiểm nghiệm và cơ quan quản lý nhà nước. 
-              Từ tiếp nhận mẫu, phân công kiểm nghiệm đến trả kết quả - tất cả trên một nền tảng duy nhất.
+
+            <p className="mt-6 text-base text-muted-foreground leading-relaxed max-w-xl">
+              VNSolution chuyên cung cấp các giải pháp phần mềm quản lý cho doanh nghiệp 
+              trong lĩnh vực <strong className="text-foreground">môi trường, phòng thí nghiệm</strong> và 
+              <strong className="text-foreground"> quản trị doanh nghiệp</strong>. 
+              Chúng tôi đồng hành cùng hơn 200 doanh nghiệp trên toàn quốc.
             </p>
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
-              <Button size="lg" variant="secondary" className="gap-2 font-semibold">
-                Yêu cầu Demo
+
+            <ul className="mt-6 space-y-2.5">
+              {solutions.map((item) => (
+                <li key={item} className="flex items-center gap-3 text-sm text-foreground">
+                  <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Button
+                size="lg"
+                className="gap-2 font-medium px-6 transition-smooth hover:shadow-lg hover:shadow-primary/20"
+              >
+                Nhận tư vấn miễn phí
                 <ArrowRight className="h-4 w-4" />
               </Button>
-              <Button size="lg" variant="outline" className="gap-2 border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
+              <Button
+                size="lg"
+                variant="outline"
+                className="gap-2 font-medium transition-smooth"
+              >
                 <Play className="h-4 w-4" />
                 Xem giới thiệu
               </Button>
             </div>
-            <p className="mt-4 text-sm text-primary-foreground/60">
-              Đã triển khai tại 15+ Viện/Trung tâm Kiểm nghiệm trên toàn quốc
-            </p>
+
+            <div className="mt-10 flex items-center gap-8 pt-8 border-t border-border">
+              {stats.map((stat, index) => (
+                <div key={stat.label} className={index > 0 ? "pl-8 border-l border-border" : ""}>
+                  <p className="text-2xl font-bold text-primary lg:text-3xl">{stat.value}</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">{stat.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Dashboard Preview */}
-          <div className="relative">
-            <div className="relative mx-auto max-w-lg lg:max-w-none">
-              {/* Main Dashboard Card */}
-              <div className="rounded-xl border border-white/20 bg-white/10 p-2 shadow-2xl backdrop-blur-sm">
-                <div className="rounded-lg bg-white p-4 shadow-lg">
-                  {/* Dashboard Header */}
-                  <div className="mb-4 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <div className="h-3 w-3 rounded-full bg-red-400" />
-                      <div className="h-3 w-3 rounded-full bg-yellow-400" />
-                      <div className="h-3 w-3 rounded-full bg-green-400" />
-                    </div>
-                    <div className="text-xs font-medium text-muted-foreground">LabQC - Quản lý Mẫu</div>
+          <div className="relative order-1 lg:order-2">
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-primary/5 to-accent/5 border border-border shadow-xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
+              
+              <div className="relative h-full p-6 lg:p-8">
+                <div className="h-full rounded-xl bg-background/80 backdrop-blur-sm border border-border/50 shadow-sm overflow-hidden">
+                  <div className="h-8 bg-muted/50 border-b border-border/50 flex items-center px-3 gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-destructive/60"></span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/60"></span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-green-500/60"></span>
+                    <span className="ml-4 text-xs text-muted-foreground">VNSolution Dashboard</span>
                   </div>
                   
-                  {/* Dashboard Content */}
-                  <div className="grid gap-3">
-                    {/* Stats Row */}
-                    <div className="grid grid-cols-3 gap-2">
-                      {[
-                        { label: "Mẫu tiếp nhận", value: "1,247", icon: ClipboardList, color: "bg-primary/10 text-primary" },
-                        { label: "Đang kiểm nghiệm", value: "89", icon: FlaskConical, color: "bg-amber-100 text-amber-600" },
-                        { label: "Đã trả kết quả", value: "1,158", icon: FileCheck, color: "bg-green-100 text-green-600" },
-                      ].map((stat) => (
-                        <div key={stat.label} className={`rounded-lg p-3 ${stat.color}`}>
-                          <div className="flex items-center gap-1">
-                            <stat.icon className="h-3 w-3" />
-                            <p className="text-xs opacity-70">{stat.label}</p>
-                          </div>
-                          <p className="text-base font-bold">{stat.value}</p>
-                        </div>
-                      ))}
-                    </div>
-                    
-                    {/* Progress Pipeline */}
-                    <div className="rounded-lg bg-muted/50 p-4">
-                      <p className="mb-3 text-xs font-medium text-muted-foreground">Quy trình kiểm nghiệm mẫu</p>
-                      <div className="flex items-center justify-between">
-                        {[
-                          { label: "Tiếp nhận", count: 45, color: "bg-primary" },
-                          { label: "Phân tích", count: 32, color: "bg-amber-500" },
-                          { label: "Kiểm tra", count: 28, color: "bg-blue-500" },
-                          { label: "Phê duyệt", count: 15, color: "bg-purple-500" },
-                          { label: "Trả KQ", count: 12, color: "bg-green-500" },
-                        ].map((step, i) => (
-                          <div key={step.label} className="flex flex-col items-center">
-                            <div className={`h-10 w-10 rounded-full ${step.color} flex items-center justify-center text-white text-xs font-bold`}>
-                              {step.count}
-                            </div>
-                            <span className="text-[9px] mt-1 text-muted-foreground">{step.label}</span>
-                            {i < 4 && <div className="absolute translate-x-8 w-6 h-0.5 bg-border" />}
-                          </div>
-                        ))}
+                  <div className="p-4 space-y-4">
+                    <div className="flex items-center justify-between">
+                      <div className="space-y-1">
+                        <div className="h-3 w-24 rounded bg-muted animate-pulse-slow"></div>
+                        <div className="h-2 w-16 rounded bg-muted/60"></div>
                       </div>
+                      <div className="h-8 w-20 rounded-lg bg-primary/10"></div>
                     </div>
                     
-                    {/* Recent Samples */}
-                    <div className="space-y-2">
-                      <p className="text-xs font-medium text-muted-foreground">Mẫu mới tiếp nhận</p>
-                      {[
-                        { code: "KN-2024-0847", name: "Paracetamol 500mg", status: "testing", statusText: "Đang KN" },
-                        { code: "KN-2024-0846", name: "Amoxicillin 250mg", status: "pending", statusText: "Chờ phân tích" },
-                        { code: "KN-2024-0845", name: "Vitamin C 1000mg", status: "completed", statusText: "Đạt" },
-                      ].map((sample, index) => (
-                        <div key={index} className="flex items-center gap-3 rounded-lg bg-muted/30 p-2">
-                          <div className={`h-8 w-8 rounded-full flex items-center justify-center ${
-                            sample.status === 'completed' ? 'bg-green-100' : 
-                            sample.status === 'testing' ? 'bg-amber-100' : 'bg-blue-100'
-                          }`}>
-                            {sample.status === 'completed' ? (
-                              <CheckCircle2 className="h-4 w-4 text-green-600" />
-                            ) : sample.status === 'testing' ? (
-                              <FlaskConical className="h-4 w-4 text-amber-600" />
-                            ) : (
-                              <Clock className="h-4 w-4 text-blue-600" />
-                            )}
-                          </div>
-                          <div className="flex-1">
-                            <p className="text-xs font-medium">{sample.code}</p>
-                            <p className="text-[10px] text-muted-foreground">{sample.name}</p>
-                          </div>
-                          <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full ${
-                            sample.status === 'completed' ? 'bg-green-100 text-green-700' : 
-                            sample.status === 'testing' ? 'bg-amber-100 text-amber-700' : 'bg-blue-100 text-blue-700'
-                          }`}>{sample.statusText}</span>
+                    <div className="grid grid-cols-3 gap-3">
+                      {[1, 2, 3].map((i) => (
+                        <div key={i} className="p-3 rounded-lg bg-muted/30 space-y-2">
+                          <div className="h-6 w-6 rounded bg-primary/20"></div>
+                          <div className="h-2 w-full rounded bg-muted/60"></div>
+                          <div className="h-4 w-12 rounded bg-primary/30"></div>
                         </div>
+                      ))}
+                    </div>
+                    
+                    <div className="h-24 rounded-lg bg-gradient-to-r from-primary/10 via-accent/10 to-primary/5 flex items-end p-3 gap-1">
+                      {[40, 65, 45, 80, 55, 70, 50].map((h, i) => (
+                        <div 
+                          key={i} 
+                          className="flex-1 bg-primary/40 rounded-t transition-all"
+                          style={{ height: `${h}%` }}
+                        ></div>
                       ))}
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
 
-              {/* Floating Card 1 */}
-              <div className="absolute -left-4 top-1/4 hidden rounded-lg bg-white p-3 shadow-lg lg:block">
-                <div className="flex items-center gap-2">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-green-100">
-                    <CheckCircle2 className="h-4 w-4 text-green-600" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground">Tỷ lệ đạt chuẩn</p>
-                    <p className="text-sm font-semibold text-green-600">98.5%</p>
-                  </div>
+            <div className="absolute -bottom-4 -left-4 rounded-xl bg-background border border-border shadow-lg p-4 hidden lg:block animate-float">
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-full bg-green-500/10 flex items-center justify-center">
+                  <CheckCircle2 className="h-5 w-5 text-green-600" />
                 </div>
-              </div>
-
-              {/* Floating Card 2 */}
-              <div className="absolute -right-4 bottom-1/4 hidden rounded-lg bg-white p-3 shadow-lg lg:block">
-                <div className="flex items-center gap-2">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-amber-100">
-                    <AlertCircle className="h-4 w-4 text-amber-600" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground">Mẫu cần xử lý gấp</p>
-                    <p className="text-sm font-semibold text-amber-600">12 mẫu</p>
-                  </div>
+                <div>
+                  <p className="text-sm font-medium text-foreground">Uptime 99.9%</p>
+                  <p className="text-xs text-muted-foreground">Hoạt động ổn định</p>
                 </div>
               </div>
             </div>

@@ -1,119 +1,208 @@
+"use client"
+
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, ClipboardList, FlaskConical, FileCheck, BarChart3 } from "lucide-react"
+import { ArrowRight, Recycle, FlaskConical, Factory, Truck, TestTube, FileCheck, BarChart3, Shield, ChevronRight } from "lucide-react"
 
-const stats = [
-  { value: "15+", label: "Viện/Trung tâm triển khai" },
-  { value: "50,000+", label: "Mẫu đã xử lý" },
-  { value: "99.9%", label: "Uptime hệ thống" },
-  { value: "ISO 17025", label: "Tuân thủ tiêu chuẩn" },
-]
-
-const products = [
+const solutions = [
   {
-    id: "sample",
-    name: "LabSample",
-    description: "Tiếp nhận & Quản lý mẫu",
-    icon: ClipboardList,
-    color: "bg-primary text-primary-foreground",
+    id: "waste",
+    category: "Giải pháp Môi trường",
+    name: "Hệ thống Quản lý Chất thải",
+    shortName: "Quản lý Chất thải",
+    description: "Nền tảng số hóa toàn diện cho việc thu gom, vận chuyển, xử lý và báo cáo chất thải. Giúp doanh nghiệp tuân thủ quy định pháp luật về môi trường, tối ưu chi phí và nâng cao hiệu quả vận hành.",
+    features: [
+      { icon: Truck, text: "Quản lý thu gom & vận chuyển" },
+      { icon: Factory, text: "Theo dõi xử lý chất thải" },
+      { icon: BarChart3, text: "Báo cáo môi trường tự động" },
+      { icon: Shield, text: "Tuân thủ quy định pháp luật" },
+    ],
   },
   {
-    id: "test",
-    name: "LabTest",
-    description: "Quy trình kiểm nghiệm",
-    icon: FlaskConical,
-    color: "bg-amber-500 text-white",
-  },
-  {
-    id: "report",
-    name: "LabReport",
-    description: "Phê duyệt & Trả kết quả",
-    icon: FileCheck,
-    color: "bg-green-600 text-white",
-  },
-  {
-    id: "analytics",
-    name: "LabAnalytics",
-    description: "Thống kê & Báo cáo",
-    icon: BarChart3,
-    color: "bg-purple-600 text-white",
+    id: "lab",
+    category: "Giải pháp Phòng Thí nghiệm",
+    name: "Hệ thống Quản lý Phòng Thí nghiệm",
+    shortName: "LIMS",
+    description: "Hệ thống LIMS (Laboratory Information Management System) giúp quản lý toàn bộ quy trình phòng thí nghiệm từ tiếp nhận mẫu, xét nghiệm đến trả kết quả. Đáp ứng tiêu chuẩn ISO 17025 và các quy định ngành.",
+    features: [
+      { icon: TestTube, text: "Quản lý mẫu & xét nghiệm" },
+      { icon: FlaskConical, text: "Kiểm soát chất lượng QA/QC" },
+      { icon: FileCheck, text: "Xuất kết quả & chứng chỉ" },
+      { icon: Shield, text: "Đạt chuẩn ISO 17025" },
+    ],
   },
 ]
 
 export function Solutions() {
+  const [activeTab, setActiveTab] = useState(0)
+  const activeSolution = solutions[activeTab]
+
   return (
-    <section className="bg-muted/30 py-16 lg:py-24">
+    <section id="solutions" className="py-16 lg:py-24 bg-muted/30">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          {/* Content */}
-          <div>
-            <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl text-balance">
-              Giải pháp toàn diện cho quy trình kiểm nghiệm
-            </h2>
-            <p className="mt-4 text-muted-foreground text-pretty">
-              Hệ sinh thái LabQC số hóa toàn bộ quy trình từ tiếp nhận mẫu, phân công kiểm nghiệm, 
-              thực hiện phân tích đến phê duyệt và trả kết quả - tuân thủ chuẩn ISO/IEC 17025.
+        <div className="mx-auto max-w-2xl text-center mb-12">
+          <p className="text-sm font-medium text-primary mb-3">Giải pháp chuyên ngành</p>
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">
+            Phần mềm chuyên biệt theo lĩnh vực
+          </h2>
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            Các giải pháp được thiết kế riêng cho ngành môi trường và phòng thí nghiệm, 
+            đáp ứng đầy đủ yêu cầu nghiệp vụ và quy định pháp luật.
+          </p>
+        </div>
+
+        <div className="flex justify-center mb-8">
+          <div className="inline-flex rounded-xl bg-background border border-border p-1.5">
+            {solutions.map((solution, index) => (
+              <button
+                key={solution.id}
+                onClick={() => setActiveTab(index)}
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium transition-smooth ${
+                  activeTab === index
+                    ? "bg-primary text-primary-foreground shadow-sm"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {solution.id === "waste" ? (
+                  <Recycle className="h-4 w-4" />
+                ) : (
+                  <FlaskConical className="h-4 w-4" />
+                )}
+                {solution.shortName}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="grid items-center gap-10 lg:grid-cols-2">
+          <div className="animate-fade-in" key={activeSolution.id}>
+            <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+              {activeSolution.category}
+            </span>
+            <h3 className="mt-4 text-2xl font-bold text-foreground lg:text-3xl">
+              {activeSolution.name}
+            </h3>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              {activeSolution.description}
             </p>
 
-            {/* Stats Grid */}
-            <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
-              {stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="rounded-lg border border-border bg-card p-4 text-center"
-                >
-                  <p className="text-2xl font-bold text-primary">{stat.value}</p>
-                  <p className="text-sm text-muted-foreground">{stat.label}</p>
+            <div className="mt-8 grid grid-cols-2 gap-4">
+              {activeSolution.features.map((feature) => (
+                <div key={feature.text} className="flex items-start gap-3 p-4 rounded-xl bg-background border border-border transition-smooth hover:border-primary/20 hover:shadow-sm">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                    <feature.icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <span className="text-sm text-foreground font-medium pt-2">{feature.text}</span>
                 </div>
               ))}
             </div>
+
+            <div className="mt-8 flex gap-3">
+              <Button className="gap-2 transition-smooth hover:shadow-md">
+                Tìm hiểu chi tiết
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+              <Button variant="outline" className="gap-2 transition-smooth">
+                Xem demo
+                <ChevronRight className="h-4 w-4" />
+              </Button>
+            </div>
           </div>
 
-          {/* Product Ecosystem Visualization */}
-          <div className="relative">
-            <div className="rounded-xl border border-border bg-card p-6 shadow-lg lg:p-8">
-              {/* Central Hub */}
-              <div className="mb-6 text-center">
-                <p className="text-sm text-muted-foreground">
-                  Hệ sinh thái LabQC tích hợp liền mạch các module quản lý kiểm nghiệm
-                </p>
+          <div className="animate-scale-in" key={`dashboard-${activeSolution.id}`}>
+            <div className="rounded-2xl border border-border bg-card shadow-xl overflow-hidden">
+              <div className="h-10 bg-muted/50 border-b border-border flex items-center px-4 gap-2">
+                <span className="w-3 h-3 rounded-full bg-red-400/70"></span>
+                <span className="w-3 h-3 rounded-full bg-yellow-400/70"></span>
+                <span className="w-3 h-3 rounded-full bg-green-400/70"></span>
+                <span className="ml-4 text-xs text-muted-foreground font-medium">
+                  {activeSolution.shortName} Dashboard
+                </span>
               </div>
-
-              {/* Products Grid */}
-              <div className="grid grid-cols-2 gap-4">
-                {products.map((product) => (
-                  <div
-                    key={product.id}
-                    className="group relative rounded-xl border border-border bg-background p-4 transition-all hover:border-primary/50 hover:shadow-md"
-                  >
-                    <div className={`mb-3 flex h-10 w-10 items-center justify-center rounded-lg ${product.color}`}>
-                      <product.icon className="h-5 w-5" />
+              
+              <div className="p-6 space-y-5">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                      {activeSolution.id === "waste" ? (
+                        <Recycle className="h-5 w-5 text-primary" />
+                      ) : (
+                        <FlaskConical className="h-5 w-5 text-primary" />
+                      )}
                     </div>
-                    <h3 className="font-semibold text-foreground">{product.name}</h3>
-                    <p className="text-sm text-muted-foreground">{product.description}</p>
+                    <div>
+                      <p className="text-sm font-semibold text-foreground">{activeSolution.shortName}</p>
+                      <p className="text-xs text-muted-foreground">Tổng quan hệ thống</p>
+                    </div>
                   </div>
-                ))}
-              </div>
+                  <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-green-500/10">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                    <span className="text-xs text-green-600 font-medium">Hoạt động</span>
+                  </div>
+                </div>
 
-              {/* Connection Lines Visualization */}
-              <div className="mt-6 flex items-center justify-center gap-2">
-                <div className="h-1 flex-1 rounded bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
-              </div>
+                <div className="grid grid-cols-3 gap-3">
+                  {activeSolution.id === "waste" ? (
+                    <>
+                      <div className="rounded-xl bg-muted/50 p-4">
+                        <p className="text-xs text-muted-foreground">Điểm thu gom</p>
+                        <p className="text-2xl font-bold text-foreground mt-1">2,847</p>
+                        <p className="text-xs text-green-600 mt-1">+12% tháng</p>
+                      </div>
+                      <div className="rounded-xl bg-muted/50 p-4">
+                        <p className="text-xs text-muted-foreground">Chuyến hôm nay</p>
+                        <p className="text-2xl font-bold text-primary mt-1">42</p>
+                        <p className="text-xs text-muted-foreground mt-1">Đang vận hành</p>
+                      </div>
+                      <div className="rounded-xl bg-muted/50 p-4">
+                        <p className="text-xs text-muted-foreground">Đã xử lý</p>
+                        <p className="text-2xl font-bold text-foreground mt-1">156T</p>
+                        <p className="text-xs text-muted-foreground mt-1">Tuần này</p>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="rounded-xl bg-muted/50 p-4">
+                        <p className="text-xs text-muted-foreground">Mẫu tiếp nhận</p>
+                        <p className="text-2xl font-bold text-foreground mt-1">1,247</p>
+                        <p className="text-xs text-green-600 mt-1">+8% tuần</p>
+                      </div>
+                      <div className="rounded-xl bg-muted/50 p-4">
+                        <p className="text-xs text-muted-foreground">Đang xét nghiệm</p>
+                        <p className="text-2xl font-bold text-primary mt-1">89</p>
+                        <p className="text-xs text-muted-foreground mt-1">Trong tiến độ</p>
+                      </div>
+                      <div className="rounded-xl bg-muted/50 p-4">
+                        <p className="text-xs text-muted-foreground">Hoàn thành</p>
+                        <p className="text-2xl font-bold text-foreground mt-1">1,158</p>
+                        <p className="text-xs text-green-600 mt-1">92.8% đúng hạn</p>
+                      </div>
+                    </>
+                  )}
+                </div>
 
-              {/* CTAs */}
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
-                <Button className="gap-2">
-                  Xem Chi Tiết
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
-                <Button variant="outline">
-                  Tải Tài liệu
-                </Button>
+                <div className="rounded-xl bg-muted/30 p-4">
+                  <div className="flex items-center justify-between mb-3">
+                    <p className="text-sm font-medium text-foreground">Hiệu suất 7 ngày qua</p>
+                    <p className="text-xs text-muted-foreground">Cập nhật: Hôm nay</p>
+                  </div>
+                  <div className="flex items-end gap-2 h-20">
+                    {[45, 62, 58, 75, 68, 82, 78].map((h, i) => (
+                      <div
+                        key={i}
+                        className="flex-1 bg-primary/60 rounded-t-sm transition-all hover:bg-primary"
+                        style={{ height: `${h}%` }}
+                      />
+                    ))}
+                  </div>
+                  <div className="flex justify-between mt-2">
+                    {["T2", "T3", "T4", "T5", "T6", "T7", "CN"].map((day) => (
+                      <span key={day} className="text-[10px] text-muted-foreground flex-1 text-center">{day}</span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
-
-            {/* Decorative Elements */}
-            <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-primary/5 blur-2xl" />
-            <div className="absolute -bottom-4 -left-4 h-32 w-32 rounded-full bg-amber-500/5 blur-2xl" />
           </div>
         </div>
       </div>

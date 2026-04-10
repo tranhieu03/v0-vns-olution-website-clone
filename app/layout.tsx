@@ -1,23 +1,19 @@
-import type { Metadata } from 'next'
-import { Inter, Be_Vietnam_Pro } from 'next/font/google'
+import type { Metadata, Viewport } from 'next'
+import { Be_Vietnam_Pro } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const inter = Inter({ 
-  subsets: ["latin", "vietnamese"],
-  variable: "--font-inter"
-});
-
-const beVietnamPro = Be_Vietnam_Pro({ 
+const beVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin", "vietnamese"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-be-vietnam"
 });
 
 export const metadata: Metadata = {
-  title: 'LabQC - Hệ thống Quản lý Mẫu Kiểm nghiệm Dược phẩm',
-  description: 'Giải pháp phần mềm quản lý quy trình kiểm nghiệm dược phẩm cho Viện Kiểm nghiệm và cơ quan quản lý nhà nước. Số hóa quy trình lấy mẫu, kiểm nghiệm và trả kết quả theo chuẩn ISO/IEC 17025.',
+  title: 'VNSolution - Giải pháp Phần mềm Doanh nghiệp | ERP, CRM, HRM, DMS',
+  description: 'VNSolution cung cấp giải pháp phần mềm doanh nghiệp toàn diện bao gồm ERP, CRM, HRM, DMS, Hệ thống Quản lý Chất thải và Giải pháp Phòng thí nghiệm. Hơn 15 năm kinh nghiệm phục vụ doanh nghiệp tại Việt Nam.',
   generator: 'v0.app',
+  keywords: ['phần mềm ERP', 'hệ thống CRM', 'giải pháp HRM', 'DMS', 'phần mềm quản lý chất thải', 'hệ thống thông tin phòng thí nghiệm', 'phần mềm doanh nghiệp Việt Nam'],
   icons: {
     icon: [
       {
@@ -37,6 +33,12 @@ export const metadata: Metadata = {
   },
 }
 
+export const viewport: Viewport = {
+  themeColor: '#3b5998',
+  width: 'device-width',
+  initialScale: 1,
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -44,7 +46,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi">
-      <body className={`${inter.variable} ${beVietnamPro.variable} font-sans antialiased`}>
+      <body className={`${beVietnamPro.variable} font-sans`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

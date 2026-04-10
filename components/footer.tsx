@@ -1,49 +1,47 @@
 import Link from "next/link"
-import { Facebook, Youtube, Linkedin, Mail, Phone, MapPin, FlaskConical } from "lucide-react"
+import Image from "next/image"
+import { Facebook, Youtube, Linkedin, Mail, Phone, MapPin } from "lucide-react"
 
 const footerLinks = {
-  products: {
-    title: "Sản phẩm",
-    links: [
-      { label: "LabSample - Quản lý mẫu", href: "#" },
-      { label: "LabTest - Kiểm nghiệm", href: "#" },
-      { label: "LabReport - Trả kết quả", href: "#" },
-      { label: "LabAnalytics - Báo cáo", href: "#" },
-    ],
-  },
   solutions: {
     title: "Giải pháp",
     links: [
-      { label: "Cho Viện Kiểm nghiệm TW", href: "#" },
-      { label: "Cho Trung tâm KN Tỉnh/TP", href: "#" },
-      { label: "Cho Cục Quản lý Dược", href: "#" },
-      { label: "Cho Sở Y tế các tỉnh", href: "#" },
+      { label: "Quản lý Chất thải", href: "#solutions" },
+      { label: "Phòng Thí nghiệm LIMS", href: "#solutions" },
+      { label: "Giải pháp theo ngành", href: "#solutions" },
+    ],
+  },
+  products: {
+    title: "Sản phẩm",
+    links: [
+      { label: "ERP - Hoạch định nguồn lực", href: "#products" },
+      { label: "CRM - Quản lý khách hàng", href: "#products" },
+      { label: "HRM - Quản lý nhân sự", href: "#products" },
+      { label: "DMS - Quản lý nhà phân phối", href: "#products" },
     ],
   },
   resources: {
-    title: "Tài liệu",
+    title: "Tài nguyên",
     links: [
-      { label: "Hướng dẫn sử dụng", href: "#" },
-      { label: "Tài liệu kỹ thuật", href: "#" },
-      { label: "Quy trình nghiệp vụ", href: "#" },
-      { label: "Tiêu chuẩn ISO 17025", href: "#" },
+      { label: "Tài liệu hướng dẫn", href: "#" },
+      { label: "Dự án tiêu biểu", href: "#clients" },
+      { label: "Blog & Tin tức", href: "#" },
     ],
   },
   company: {
-    title: "Liên hệ",
+    title: "Công ty",
     links: [
-      { label: "Giới thiệu", href: "#" },
-      { label: "Đội ngũ chuyên gia", href: "#" },
-      { label: "Đối tác", href: "#" },
-      { label: "Tin tức", href: "#" },
+      { label: "Giới thiệu", href: "#company" },
+      { label: "Tuyển dụng", href: "#" },
+      { label: "Liên hệ", href: "#contact" },
     ],
   },
 }
 
 const contactInfo = [
-  { icon: Phone, text: "Hotline: 1900 888 789" },
-  { icon: Mail, text: "Email: contact@labqc.gov.vn" },
-  { icon: MapPin, text: "Tầng 10, Tòa nhà Bộ Y tế, Quận Ba Đình, Hà Nội" },
+  { icon: Phone, text: "1900 1234" },
+  { icon: Mail, text: "contact@vnsolution.com.vn" },
+  { icon: MapPin, text: "Quận 1, TP. Hồ Chí Minh" },
 ]
 
 const socialLinks = [
@@ -56,40 +54,37 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-muted/30">
       <div className="container mx-auto px-4 py-12 lg:px-8 lg:py-16">
-        <div className="grid gap-8 lg:grid-cols-6">
-          {/* Brand Column */}
+        <div className="grid gap-10 lg:grid-cols-6">
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-                <FlaskConical className="h-6 w-6 text-primary-foreground" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-lg font-bold text-primary">
-                  Lab<span className="text-foreground">QC</span>
-                </span>
-              </div>
+            <Link href="/" className="inline-block">
+              <Image
+                src="/images/logo.png"
+                alt="VNSolution"
+                width={160}
+                height={44}
+                className="h-10 w-auto"
+              />
             </Link>
-            <p className="mt-4 text-sm text-muted-foreground">
-              Hệ thống quản lý mẫu kiểm nghiệm dược phẩm toàn diện cho các Viện Kiểm nghiệm và cơ quan quản lý nhà nước.
+            <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-xs">
+              Giải pháp phần mềm quản lý toàn diện cho doanh nghiệp: Môi trường, 
+              Phòng thí nghiệm, ERP, CRM, HRM và DMS.
             </p>
 
-            {/* Contact Info */}
-            <div className="mt-6 space-y-3">
+            <div className="mt-6 space-y-2.5">
               {contactInfo.map((item, index) => (
-                <div key={index} className="flex items-center gap-2 text-sm text-muted-foreground">
+                <div key={index} className="flex items-center gap-3 text-sm text-muted-foreground">
                   <item.icon className="h-4 w-4 text-primary" />
                   <span>{item.text}</span>
                 </div>
               ))}
             </div>
 
-            {/* Social Links */}
-            <div className="mt-6 flex gap-3">
+            <div className="mt-6 flex gap-2">
               {socialLinks.map((social, index) => (
                 <Link
                   key={index}
                   href={social.href}
-                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground transition-smooth hover:border-primary hover:text-primary hover:bg-primary/5"
                   aria-label={social.label}
                 >
                   <social.icon className="h-5 w-5" />
@@ -98,16 +93,15 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Links Columns */}
           {Object.values(footerLinks).map((section, index) => (
             <div key={index}>
-              <h3 className="font-semibold text-foreground">{section.title}</h3>
+              <h3 className="text-sm font-semibold text-foreground">{section.title}</h3>
               <ul className="mt-4 space-y-3">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     <Link
                       href={link.href}
-                      className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                      className="text-sm text-muted-foreground transition-colors-smooth hover:text-primary"
                     >
                       {link.label}
                     </Link>
@@ -118,17 +112,16 @@ export function Footer() {
           ))}
         </div>
 
-        {/* Bottom Bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
           <p className="text-sm text-muted-foreground">
-            © 2024 LabQC - Bộ Y tế. Tất cả quyền được bảo lưu.
+            © 2024 VNSolution. Bảo lưu mọi quyền.
           </p>
           <div className="flex gap-6">
-            <Link href="#" className="text-sm text-muted-foreground hover:text-primary">
-              Điều khoản sử dụng
+            <Link href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors-smooth">
+              Điều khoản Dịch vụ
             </Link>
-            <Link href="#" className="text-sm text-muted-foreground hover:text-primary">
-              Chính sách bảo mật
+            <Link href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors-smooth">
+              Chính sách Bảo mật
             </Link>
           </div>
         </div>
