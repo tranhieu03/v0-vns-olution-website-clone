@@ -38,7 +38,7 @@ export function Solutions() {
   const activeSolution = solutions[activeTab]
 
   return (
-    <section id="solutions" className="py-16 lg:py-24 bg-[#F5F7F9]">
+    <section id="solutions" className="py-16 lg:py-24 bg-slate-50">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="mx-auto max-w-2xl text-center mb-12">
           <p className="text-sm font-medium text-primary mb-3">Giải pháp chuyên ngành</p>
@@ -52,15 +52,15 @@ export function Solutions() {
         </div>
 
         <div className="flex justify-center mb-8">
-          <div className="inline-flex rounded-xl bg-background border border-border p-1.5">
+          <div className="inline-flex rounded-xl bg-white border border-slate-200 p-1.5 shadow-lg shadow-slate-200/50">
             {solutions.map((solution, index) => (
               <button
                 key={solution.id}
                 onClick={() => setActiveTab(index)}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium transition-smooth ${
+                className={`flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-medium transition-all ${
                   activeTab === index
-                    ? "bg-primary text-primary-foreground shadow-sm"
-                    : "text-muted-foreground hover:text-foreground"
+                    ? "bg-gradient-to-r from-primary to-cyan-500 text-white shadow-md shadow-primary/30"
+                    : "text-slate-600 hover:text-primary hover:bg-slate-50"
                 }`}
               >
                 {solution.id === "waste" ? (
@@ -98,11 +98,11 @@ export function Solutions() {
             </div>
 
             <div className="mt-8 flex gap-3">
-              <Button className="gap-2 transition-smooth hover:shadow-md">
+              <Button className="gap-2 bg-gradient-to-r from-primary to-cyan-500 hover:from-primary/90 hover:to-cyan-500/90 transition-all shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30">
                 Tìm hiểu chi tiết
                 <ArrowRight className="h-4 w-4" />
               </Button>
-              <Button variant="outline" className="gap-2 transition-smooth">
+              <Button variant="outline" className="gap-2 transition-smooth border-slate-300 hover:border-primary hover:text-primary">
                 Xem demo
                 <ChevronRight className="h-4 w-4" />
               </Button>
@@ -110,7 +110,7 @@ export function Solutions() {
           </div>
 
           <div className="animate-scale-in" key={`dashboard-${activeSolution.id}`}>
-            <div className="rounded-2xl border-2 border-primary/30 bg-white shadow-xl overflow-hidden">
+            <div className="rounded-2xl border border-slate-200 bg-white shadow-2xl shadow-primary/10 overflow-hidden">
               <div className="h-10 bg-muted/50 border-b border-border flex items-center px-4 gap-2">
                 <span className="w-3 h-3 rounded-full bg-red-400/70"></span>
                 <span className="w-3 h-3 rounded-full bg-yellow-400/70"></span>

@@ -69,14 +69,19 @@ export function Clients() {
   const current = testimonials[currentIndex]
 
   return (
-    <section id="clients" className="py-16 lg:py-24 bg-[#1A1E24]">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section id="clients" className="py-16 lg:py-24 bg-slate-800 relative overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_-10%,rgba(62,142,208,0.1),transparent)]" />
+      <div className="absolute top-20 right-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
+      
+      <div className="container relative mx-auto px-4 lg:px-8">
         <div className="mx-auto max-w-2xl text-center mb-14">
           <p className="text-sm font-medium text-primary mb-3">Khách hàng nói gì</p>
           <h2 className="text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
             Được tin tưởng bởi hơn 200 doanh nghiệp
           </h2>
-          <p className="mt-4 text-white/70 leading-relaxed">
+          <p className="mt-4 text-slate-300 leading-relaxed">
             Lắng nghe chia sẻ từ khách hàng về cách giải pháp của VNSolution 
             đã góp phần vào sự phát triển của doanh nghiệp.
           </p>
@@ -87,10 +92,10 @@ export function Clients() {
           onMouseEnter={() => setIsAutoPlaying(false)}
           onMouseLeave={() => setIsAutoPlaying(true)}
         >
-          <div className="relative rounded-2xl border border-white/10 bg-white p-8 lg:p-10 shadow-xl">
+          <div className="relative rounded-2xl border border-slate-700/50 bg-white p-8 lg:p-10 shadow-2xl shadow-primary/10">
             <div className="absolute -top-4 left-8">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary shadow-lg">
-                <Quote className="h-5 w-5 text-primary-foreground" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-cyan-500 shadow-lg shadow-primary/30">
+                <Quote className="h-5 w-5 text-white" />
               </div>
             </div>
 
@@ -160,18 +165,18 @@ export function Clients() {
         </div>
 
         <div className="mt-16">
-          <p className="text-center text-sm text-white/60 mb-8">
+          <p className="text-center text-sm text-slate-400 mb-8">
             Tin tưởng bởi các doanh nghiệp hàng đầu Việt Nam
           </p>
           <div className="grid grid-cols-3 gap-4 sm:grid-cols-6">
             {clients.map((client, index) => (
               <div
                 key={client.name}
-                className={`flex items-center justify-center rounded-xl border border-white/10 bg-[#F5F7F9] p-5 transition-smooth hover:border-primary/30 hover:shadow-sm opacity-0 animate-fade-up stagger-${index + 1}`}
+                className={`flex items-center justify-center rounded-xl border border-slate-700/50 bg-slate-800/50 p-5 transition-all hover:border-primary/40 hover:bg-slate-700/50 opacity-0 animate-fade-up stagger-${index + 1}`}
                 style={{ animationFillMode: 'forwards' }}
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white">
-                  <span className="text-sm font-bold text-[#333333]">{client.initials}</span>
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-primary/10 to-cyan-500/10">
+                  <span className="text-sm font-bold text-primary">{client.initials}</span>
                 </div>
               </div>
             ))}
