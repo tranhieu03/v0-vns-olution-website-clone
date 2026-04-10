@@ -38,7 +38,7 @@ export function Solutions() {
   const activeSolution = solutions[activeTab]
 
   return (
-    <section id="solutions" className="py-16 lg:py-24 bg-muted/30">
+    <section id="solutions" className="py-16 lg:py-24 bg-[#F5F7F9]">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="mx-auto max-w-2xl text-center mb-12">
           <p className="text-sm font-medium text-primary mb-3">Giải pháp chuyên ngành</p>
@@ -110,7 +110,7 @@ export function Solutions() {
           </div>
 
           <div className="animate-scale-in" key={`dashboard-${activeSolution.id}`}>
-            <div className="rounded-2xl border border-border bg-card shadow-xl overflow-hidden">
+            <div className="rounded-2xl border-2 border-primary/30 bg-white shadow-xl overflow-hidden">
               <div className="h-10 bg-muted/50 border-b border-border flex items-center px-4 gap-2">
                 <span className="w-3 h-3 rounded-full bg-red-400/70"></span>
                 <span className="w-3 h-3 rounded-full bg-yellow-400/70"></span>

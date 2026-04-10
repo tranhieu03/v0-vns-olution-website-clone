@@ -36,7 +36,7 @@ const values = [
 
 export function Company() {
   return (
-    <section id="company" className="py-16 lg:py-24 bg-background">
+    <section id="company" className="py-16 lg:py-24 bg-white">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <div>

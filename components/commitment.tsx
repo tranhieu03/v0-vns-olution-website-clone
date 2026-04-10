@@ -30,14 +30,14 @@ const supportFeatures = [
 
 export function Commitment() {
   return (
-    <section className="bg-primary py-16 lg:py-24">
+    <section className="bg-gradient-to-br from-[#3E8ED0] to-[#1A1E24] py-16 lg:py-24">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="mx-auto max-w-2xl text-center mb-14">
-          <p className="text-sm font-medium text-accent mb-3">Cam kết của chúng tôi</p>
-          <h2 className="text-2xl font-bold text-primary-foreground sm:text-3xl lg:text-4xl">
+          <p className="text-sm font-medium text-white/80 mb-3">Cam kết của chúng tôi</p>
+          <h2 className="text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
             Tiêu chuẩn chất lượng hàng đầu
           </h2>
-          <p className="mt-4 text-primary-foreground/70 leading-relaxed">
+          <p className="mt-4 text-white/70 leading-relaxed">
             Chúng tôi cam kết mang đến giá trị bền vững thông qua chất lượng sản phẩm, 
             đổi mới công nghệ và sự tận tâm với thành công của khách hàng.
           </p>
@@ -47,20 +47,20 @@ export function Commitment() {
           {commitments.map((commitment, index) => (
             <div
               key={commitment.title}
-              className={`rounded-2xl border border-primary-foreground/10 bg-primary-foreground/5 p-7 backdrop-blur-sm transition-smooth hover:bg-primary-foreground/8 opacity-0 animate-fade-up stagger-${index + 1}`}
+              className={`rounded-2xl border border-white/10 bg-white/5 p-7 backdrop-blur-sm transition-smooth hover:bg-white/10 opacity-0 animate-fade-up stagger-${index + 1}`}
               style={{ animationFillMode: 'forwards' }}
             >
-              <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/15">
-                <commitment.icon className="h-7 w-7 text-accent" />
+              <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10">
+                <commitment.icon className="h-7 w-7 text-white" />
               </div>
-              <h3 className="text-lg font-bold text-primary-foreground">{commitment.title}</h3>
-              <p className="mt-3 text-sm text-primary-foreground/70 leading-relaxed">
+              <h3 className="text-lg font-bold text-white">{commitment.title}</h3>
+              <p className="mt-3 text-sm text-white/70 leading-relaxed">
                 {commitment.description}
               </p>
               <ul className="mt-5 space-y-2">
                 {commitment.highlights.map((highlight) => (
-                  <li key={highlight} className="flex items-center gap-2.5 text-sm text-primary-foreground/80">
-                    <CheckCircle2 className="h-4 w-4 text-accent shrink-0" />
+                  <li key={highlight} className="flex items-center gap-2.5 text-sm text-white/80">
+                    <CheckCircle2 className="h-4 w-4 text-white/80 shrink-0" />
                     {highlight}
                   </li>
                 ))}
@@ -69,25 +69,25 @@ export function Commitment() {
           ))}
         </div>
 
-        <div className="mt-14 rounded-2xl border border-primary-foreground/10 bg-primary-foreground/5 p-8 lg:p-10">
+        <div className="mt-14 rounded-2xl border border-white/10 bg-white/5 p-8 lg:p-10">
           <div className="grid items-center gap-8 lg:grid-cols-2">
             <div>
-              <h3 className="text-2xl font-bold text-primary-foreground">
+              <h3 className="text-2xl font-bold text-white">
                 Hỗ trợ Doanh nghiệp Toàn diện
               </h3>
-              <p className="mt-4 text-primary-foreground/70 leading-relaxed">
+              <p className="mt-4 text-white/70 leading-relaxed">
                 Đội ngũ hỗ trợ chuyên trách sẵn sàng đồng hành 24/7, đảm bảo hệ thống 
                 hoạt động ổn định và giải đáp mọi thắc mắc kịp thời.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              {supportFeatures.map((feature, index) => (
+              {supportFeatures.map((feature) => (
                 <div
                   key={feature.text}
-                  className={`flex items-center gap-3 rounded-xl border border-primary-foreground/10 bg-primary-foreground/5 p-4 transition-smooth hover:bg-primary-foreground/8`}
+                  className={`flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-4 transition-smooth hover:bg-white/10`}
                 >
-                  <feature.icon className="h-5 w-5 text-accent shrink-0" />
-                  <span className="text-sm font-medium text-primary-foreground">{feature.text}</span>
+                  <feature.icon className="h-5 w-5 text-white/80 shrink-0" />
+                  <span className="text-sm font-medium text-white">{feature.text}</span>
                 </div>
               ))}
             </div>

@@ -25,14 +25,14 @@ const challenges = [
 
 export function Problems() {
   return (
-    <section className="py-16 lg:py-24 bg-background">
+    <section className="py-16 lg:py-24 bg-[#1A1E24]">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="mx-auto max-w-2xl text-center mb-14">
           <p className="text-sm font-medium text-primary mb-3">Thách thức phổ biến</p>
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">
+          <h2 className="text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
             Doanh nghiệp của bạn đang gặp những vấn đề này?
           </h2>
-          <p className="mt-4 text-muted-foreground leading-relaxed">
+          <p className="mt-4 text-white/70 leading-relaxed">
             Đây là những thách thức mà hầu hết doanh nghiệp đều gặp phải khi vận hành 
             với quy trình thủ công và hệ thống không đồng bộ.
           </p>
@@ -42,16 +42,16 @@ export function Problems() {
           {challenges.map((challenge, index) => (
             <div
               key={index}
-              className={`group rounded-2xl border border-border bg-card p-6 transition-smooth hover-lift opacity-0 animate-fade-up stagger-${index + 1}`}
+              className={`group rounded-2xl border border-white/10 bg-white p-6 transition-smooth hover-lift opacity-0 animate-fade-up stagger-${index + 1}`}
               style={{ animationFillMode: 'forwards' }}
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-destructive/10 text-destructive transition-smooth group-hover:bg-primary group-hover:text-primary-foreground">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-destructive/10 text-destructive transition-smooth group-hover:bg-primary group-hover:text-white">
                 <challenge.icon className="h-6 w-6" />
               </div>
-              <h3 className="mt-5 text-lg font-semibold text-foreground">
+              <h3 className="mt-5 text-lg font-semibold text-[#333333]">
                 {challenge.title}
               </h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+              <p className="mt-2 text-sm text-[#333333]/70 leading-relaxed">
                 {challenge.description}
               </p>
             </div>

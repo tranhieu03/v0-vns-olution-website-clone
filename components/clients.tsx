@@ -69,14 +69,14 @@ export function Clients() {
   const current = testimonials[currentIndex]
 
   return (
-    <section id="clients" className="py-16 lg:py-24 bg-muted/30">
+    <section id="clients" className="py-16 lg:py-24 bg-[#1A1E24]">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="mx-auto max-w-2xl text-center mb-14">
           <p className="text-sm font-medium text-primary mb-3">Khách hàng nói gì</p>
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">
+          <h2 className="text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
             Được tin tưởng bởi hơn 200 doanh nghiệp
           </h2>
-          <p className="mt-4 text-muted-foreground leading-relaxed">
+          <p className="mt-4 text-white/70 leading-relaxed">
             Lắng nghe chia sẻ từ khách hàng về cách giải pháp của VNSolution 
             đã góp phần vào sự phát triển của doanh nghiệp.
           </p>
@@ -87,7 +87,7 @@ export function Clients() {
           onMouseEnter={() => setIsAutoPlaying(false)}
           onMouseLeave={() => setIsAutoPlaying(true)}
         >
-          <div className="relative rounded-2xl border border-border bg-card p-8 lg:p-10 shadow-sm">
+          <div className="relative rounded-2xl border border-white/10 bg-white p-8 lg:p-10 shadow-xl">
             <div className="absolute -top-4 left-8">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary shadow-lg">
                 <Quote className="h-5 w-5 text-primary-foreground" />
@@ -101,7 +101,7 @@ export function Clients() {
                 ))}
               </div>
               
-              <blockquote className="text-lg text-foreground leading-relaxed lg:text-xl">
+              <blockquote className="text-lg text-[#333333] leading-relaxed lg:text-xl">
                 &ldquo;{current.quote}&rdquo;
               </blockquote>
 
@@ -111,8 +111,8 @@ export function Clients() {
                     {current.author.split(' ').map(n => n[0]).join('').slice(-2)}
                   </div>
                   <div>
-                    <p className="font-semibold text-foreground">{current.author}</p>
-                    <p className="text-sm text-muted-foreground">{current.role}</p>
+                    <p className="font-semibold text-[#333333]">{current.author}</p>
+                    <p className="text-sm text-[#333333]/60">{current.role}</p>
                     <p className="text-sm text-primary font-medium">{current.company}</p>
                   </div>
                 </div>
@@ -160,18 +160,18 @@ export function Clients() {
         </div>
 
         <div className="mt-16">
-          <p className="text-center text-sm text-muted-foreground mb-8">
+          <p className="text-center text-sm text-white/60 mb-8">
             Tin tưởng bởi các doanh nghiệp hàng đầu Việt Nam
           </p>
           <div className="grid grid-cols-3 gap-4 sm:grid-cols-6">
             {clients.map((client, index) => (
               <div
                 key={client.name}
-                className={`flex items-center justify-center rounded-xl border border-border bg-card p-5 transition-smooth hover:border-primary/20 hover:shadow-sm opacity-0 animate-fade-up stagger-${index + 1}`}
+                className={`flex items-center justify-center rounded-xl border border-white/10 bg-[#F5F7F9] p-5 transition-smooth hover:border-primary/30 hover:shadow-sm opacity-0 animate-fade-up stagger-${index + 1}`}
                 style={{ animationFillMode: 'forwards' }}
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-muted">
-                  <span className="text-sm font-bold text-muted-foreground">{client.initials}</span>
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white">
+                  <span className="text-sm font-bold text-[#333333]">{client.initials}</span>
                 </div>
               </div>
             ))}

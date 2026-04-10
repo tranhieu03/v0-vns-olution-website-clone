@@ -52,7 +52,7 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-muted/30">
+    <footer className="border-t border-white/10 bg-[#1A1E24]">
       <div className="container mx-auto px-4 py-12 lg:px-8 lg:py-16">
         <div className="grid gap-10 lg:grid-cols-6">
           <div className="lg:col-span-2">
@@ -65,14 +65,14 @@ export function Footer() {
                 className="h-10 w-auto"
               />
             </Link>
-            <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-xs">
+            <p className="mt-4 text-sm text-white/70 leading-relaxed max-w-xs">
               Giải pháp phần mềm quản lý toàn diện cho doanh nghiệp: Môi trường, 
               Phòng thí nghiệm, ERP, CRM, HRM và DMS.
             </p>
 
             <div className="mt-6 space-y-2.5">
               {contactInfo.map((item, index) => (
-                <div key={index} className="flex items-center gap-3 text-sm text-muted-foreground">
+                <div key={index} className="flex items-center gap-3 text-sm text-white/70">
                   <item.icon className="h-4 w-4 text-primary" />
                   <span>{item.text}</span>
                 </div>
@@ -84,7 +84,7 @@ export function Footer() {
                 <Link
                   key={index}
                   href={social.href}
-                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground transition-smooth hover:border-primary hover:text-primary hover:bg-primary/5"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white/70 transition-smooth hover:border-primary hover:text-primary hover:bg-primary/10"
                   aria-label={social.label}
                 >
                   <social.icon className="h-5 w-5" />
@@ -95,13 +95,13 @@ export function Footer() {
 
           {Object.values(footerLinks).map((section, index) => (
             <div key={index}>
-              <h3 className="text-sm font-semibold text-foreground">{section.title}</h3>
+              <h3 className="text-sm font-semibold text-white">{section.title}</h3>
               <ul className="mt-4 space-y-3">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     <Link
                       href={link.href}
-                      className="text-sm text-muted-foreground transition-colors-smooth hover:text-primary"
+                      className="text-sm text-white/60 transition-colors-smooth hover:text-primary"
                     >
                       {link.label}
                     </Link>
@@ -112,15 +112,15 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
-          <p className="text-sm text-muted-foreground">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
+          <p className="text-sm text-white/60">
             © 2024 VNSolution. Bảo lưu mọi quyền.
           </p>
           <div className="flex gap-6">
-            <Link href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors-smooth">
+            <Link href="#" className="text-sm text-white/60 hover:text-primary transition-colors-smooth">
               Điều khoản Dịch vụ
             </Link>
-            <Link href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors-smooth">
+            <Link href="#" className="text-sm text-white/60 hover:text-primary transition-colors-smooth">
               Chính sách Bảo mật
             </Link>
           </div>

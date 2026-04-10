@@ -28,14 +28,14 @@ const certifications = [
 
 export function Trust() {
   return (
-    <section className="py-16 lg:py-24 bg-background">
+    <section className="py-16 lg:py-24 bg-[#1A1E24]">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="mx-auto max-w-2xl text-center mb-14">
           <p className="text-sm font-medium text-primary mb-3">Tại sao chọn VNSolution</p>
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">
+          <h2 className="text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
             Nền tảng công nghệ đáng tin cậy
           </h2>
-          <p className="mt-4 text-muted-foreground leading-relaxed">
+          <p className="mt-4 text-white/70 leading-relaxed">
             Được xây dựng với tiêu chuẩn bảo mật cao nhất, VNSolution đáp ứng 
             đầy đủ yêu cầu của doanh nghiệp về độ ổn định và an toàn dữ liệu.
           </p>
@@ -45,16 +45,16 @@ export function Trust() {
           {trustFeatures.map((feature, index) => (
             <div
               key={index}
-              className={`group rounded-2xl border border-border bg-card p-8 text-center transition-smooth hover-lift opacity-0 animate-fade-up stagger-${index + 1}`}
+              className={`group rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 text-center transition-smooth hover-lift hover:bg-white/10 opacity-0 animate-fade-up stagger-${index + 1}`}
               style={{ animationFillMode: 'forwards' }}
             >
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-smooth group-hover:bg-primary group-hover:text-primary-foreground">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/20 text-primary transition-smooth group-hover:bg-primary group-hover:text-white">
                 <feature.icon className="h-7 w-7" />
               </div>
-              <h3 className="mt-5 text-lg font-semibold text-foreground">
+              <h3 className="mt-5 text-lg font-semibold text-white">
                 {feature.title}
               </h3>
-              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+              <p className="mt-3 text-sm text-white/70 leading-relaxed">
                 {feature.description}
               </p>
             </div>
@@ -62,17 +62,17 @@ export function Trust() {
         </div>
 
         <div className="mt-14">
-          <p className="text-center text-sm text-muted-foreground mb-6">
+          <p className="text-center text-sm text-white/60 mb-6">
             Chứng nhận & Cam kết
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             {certifications.map((cert, index) => (
               <div
                 key={index}
-                className="flex items-center gap-2.5 rounded-full border border-border bg-card px-5 py-2.5 transition-smooth hover:border-primary/20 hover:shadow-sm"
+                className="flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-5 py-2.5 transition-smooth hover:bg-white/10"
               >
                 <cert.icon className="h-5 w-5 text-primary" />
-                <span className="text-sm font-medium text-foreground">{cert.label}</span>
+                <span className="text-sm font-medium text-white">{cert.label}</span>
               </div>
             ))}
           </div>
