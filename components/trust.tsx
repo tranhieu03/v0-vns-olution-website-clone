@@ -1,72 +1,47 @@
-import { Cloud, Headphones, Zap, Shield, FileCheck, Server, Users, Award, Clock, TrendingUp } from "lucide-react"
-
-const bigNumbers = [
-  { value: "200+", label: "Doanh nghiệp tin dùng", icon: Users },
-  { value: "10,000+", label: "Người dùng mỗi ngày", icon: TrendingUp },
-  { value: "99.9%", label: "Uptime cam kết", icon: Server },
-  { value: "15+", label: "Năm kinh nghiệm", icon: Award },
-]
+import { Cloud, Headphones, Zap, Shield, FileCheck, Server, Users, Award } from "lucide-react"
 
 const trustFeatures = [
   {
     icon: Cloud,
-    title: "Cloud hoặc On-premise",
-    description: "Triển khai linh hoạt theo yêu cầu bảo mật. Dữ liệu lưu trữ tại Việt Nam, tuân thủ quy định ATTT.",
+    title: "Triển khai Linh hoạt",
+    description: "Hỗ trợ cài đặt trên Cloud hoặc máy chủ nội bộ (On-premise). Lựa chọn mô hình phù hợp với yêu cầu bảo mật và hạ tầng của doanh nghiệp.",
   },
   {
     icon: Headphones,
-    title: "Hỗ trợ 24/7 tiếng Việt",
-    description: "Đội ngũ kỹ thuật sẵn sàng hỗ trợ mọi lúc. Phản hồi trong 2 giờ với SLA cam kết rõ ràng.",
+    title: "Hỗ trợ Chuyên nghiệp",
+    description: "Đội ngũ kỹ thuật sẵn sàng hỗ trợ 24/7. Phản hồi nhanh chóng và giải quyết vấn đề hiệu quả với SLA cam kết rõ ràng.",
   },
   {
     icon: Zap,
-    title: "Go-live trong 7 ngày",
-    description: "Quy trình triển khai chuẩn hóa. Đào tạo tận nơi, nhân viên tự dùng được ngay sau 2 giờ.",
+    title: "Triển khai Nhanh chóng",
+    description: "Quy trình triển khai tối ưu, go-live trong thời gian ngắn. Đào tạo toàn diện cho người dùng đảm bảo sử dụng hiệu quả ngay từ đầu.",
   },
 ]
 
 const certifications = [
-  { icon: Shield, label: "ISO 27001", description: "Bảo mật thông tin" },
-  { icon: FileCheck, label: "ATTT", description: "Chứng nhận Việt Nam" },
-  { icon: Server, label: "SLA 99.9%", description: "Cam kết uptime" },
-  { icon: Clock, label: "2h SLA", description: "Phản hồi nhanh" },
+  { icon: Shield, label: "ISO 27001" },
+  { icon: FileCheck, label: "Bảo mật dữ liệu" },
+  { icon: Server, label: "Uptime 99.9%" },
+  { icon: Users, label: "200+ Khách hàng" },
+  { icon: Award, label: "15+ Năm kinh nghiệm" },
 ]
 
 export function Trust() {
   return (
-    <section className="py-16 lg:py-24 bg-muted/30">
+    <section className="py-16 lg:py-24 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
-        {/* Big Numbers - Make Trust "đập vào mắt" */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {bigNumbers.map((item, index) => (
-            <div
-              key={item.label}
-              className={`text-center p-6 rounded-2xl bg-card border border-border transition-smooth hover-lift opacity-0 animate-fade-up stagger-${index + 1}`}
-              style={{ animationFillMode: 'forwards' }}
-            >
-              <div className="flex justify-center mb-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                  <item.icon className="h-6 w-6 text-primary" />
-                </div>
-              </div>
-              <p className="text-3xl lg:text-4xl font-bold text-primary mb-1">{item.value}</p>
-              <p className="text-sm text-muted-foreground">{item.label}</p>
-            </div>
-          ))}
-        </div>
-
         <div className="mx-auto max-w-2xl text-center mb-14">
-          <p className="text-sm font-medium text-primary mb-3">Nền tảng đáng tin cậy</p>
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl text-balance">
-            An tâm về bảo mật & hỗ trợ kỹ thuật
+          <p className="text-sm font-medium text-primary mb-3">Tại sao chọn VNSolution</p>
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">
+            Nền tảng công nghệ đáng tin cậy
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Dữ liệu doanh nghiệp được bảo vệ với tiêu chuẩn quốc tế. 
-            Đội ngũ kỹ thuật sẵn sàng hỗ trợ 24/7, không để công việc gián đoạn.
+            Được xây dựng với tiêu chuẩn bảo mật cao nhất, VNSolution đáp ứng 
+            đầy đủ yêu cầu của doanh nghiệp về độ ổn định và an toàn dữ liệu.
           </p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-3 mb-14">
+        <div className="grid gap-6 lg:grid-cols-3">
           {trustFeatures.map((feature, index) => (
             <div
               key={index}
@@ -86,24 +61,18 @@ export function Trust() {
           ))}
         </div>
 
-        <div className="rounded-2xl bg-card border border-border p-8 lg:p-10">
-          <div className="text-center mb-8">
-            <p className="text-sm font-semibold text-foreground mb-2">Chứng nhận & Cam kết</p>
-            <p className="text-sm text-muted-foreground">Đạt các tiêu chuẩn bảo mật quốc tế và Việt Nam</p>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="mt-14">
+          <p className="text-center text-sm text-muted-foreground mb-6">
+            Chứng nhận & Cam kết
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
             {certifications.map((cert, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center gap-3 p-5 rounded-xl bg-muted/50 border border-border transition-smooth hover:border-primary/20 hover:shadow-sm"
+                className="flex items-center gap-2.5 rounded-full border border-border bg-card px-5 py-2.5 transition-smooth hover:border-primary/20 hover:shadow-sm"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                  <cert.icon className="h-6 w-6 text-primary" />
-                </div>
-                <div className="text-center">
-                  <p className="text-sm font-semibold text-foreground">{cert.label}</p>
-                  <p className="text-xs text-muted-foreground">{cert.description}</p>
-                </div>
+                <cert.icon className="h-5 w-5 text-primary" />
+                <span className="text-sm font-medium text-foreground">{cert.label}</span>
               </div>
             ))}
           </div>

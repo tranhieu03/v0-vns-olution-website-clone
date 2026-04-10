@@ -111,8 +111,8 @@ export function Header() {
             <Phone className="h-4 w-4 text-primary" />
             <span className="font-medium">1900 1234</span>
           </div>
-          <Button className="font-semibold px-6 transition-smooth hover:shadow-md hover:shadow-primary/20" asChild>
-            <a href="#contact">Demo miễn phí</a>
+          <Button className="font-medium px-5 transition-smooth hover:shadow-md">
+            Nhận tư vấn
           </Button>
         </div>
 
@@ -140,8 +140,8 @@ export function Header() {
               </Link>
             ))}
             <div className="mt-4 pt-4 border-t border-border/50">
-              <Button className="w-full font-semibold" asChild>
-                <a href="#contact">Demo miễn phí - Chỉ 2 phút</a>
+              <Button className="w-full font-medium">
+                Nhận tư vấn miễn phí
               </Button>
             </div>
           </nav>

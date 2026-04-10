@@ -3,8 +3,6 @@ import { Hero } from "@/components/hero"
 import { Problems } from "@/components/problems"
 import { Solutions } from "@/components/solutions"
 import { Products } from "@/components/products"
-import { WhyChooseUs } from "@/components/why-choose-us"
-import { Ecosystem } from "@/components/ecosystem"
 import { Company } from "@/components/company"
 import { Commitment } from "@/components/commitment"
 import { Clients } from "@/components/clients"
@@ -28,12 +26,6 @@ export default function Home() {
         
         {/* Products - ERP, CRM, HRM, DMS */}
         <Products />
-        
-        {/* Why Choose Us - USP/Differentiation */}
-        <WhyChooseUs />
-        
-        {/* Ecosystem - All-in-one integration visualization */}
-        <Ecosystem />
         
         {/* Company - Overview, experience, milestones, values */}
         <Company />

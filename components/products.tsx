@@ -6,56 +6,52 @@ const products = [
     id: "erp",
     name: "ERP",
     fullName: "Hoạch định Nguồn lực Doanh nghiệp",
-    description: "Nắm toàn bộ tài chính, sản xuất, kho vận trên 1 màn hình. Không còn mất hàng giờ tổng hợp Excel mỗi cuối tháng.",
+    description: "Hệ thống quản trị tổng thể giúp tích hợp và kiểm soát toàn bộ hoạt động kinh doanh, từ tài chính, sản xuất đến chuỗi cung ứng.",
     icon: Building2,
-    highlight: "Giảm 60% thời gian làm báo cáo",
     features: [
-      "Tự động đối chiếu công nợ, hết sai sót",
-      "Cảnh báo tồn kho thấp realtime",
-      "Báo cáo lợi nhuận theo ngày, không chờ kế toán",
-      "Phê duyệt chi tiêu trên điện thoại",
+      "Quản lý tài chính & kế toán",
+      "Quản lý sản xuất & vật tư",
+      "Kiểm soát chi phí & ngân sách",
+      "Báo cáo phân tích kinh doanh",
     ],
   },
   {
     id: "crm",
     name: "CRM",
     fullName: "Quản lý Quan hệ Khách hàng",
-    description: "Theo dõi toàn bộ pipeline bán hàng, không bỏ sót khách nào. Nhân viên biết chính xác ai cần gọi, khi nào follow-up.",
+    description: "Giải pháp quản lý toàn diện hoạt động bán hàng, chăm sóc khách hàng và marketing, giúp tối ưu trải nghiệm khách hàng.",
     icon: Users,
-    highlight: "Tăng 30% tỷ lệ chốt deal",
     features: [
-      "Nhắc nhở tự động theo lịch chăm sóc",
-      "Lịch sử tương tác đầy đủ mọi kênh",
-      "Phân loại khách hàng theo giá trị",
-      "Dashboard doanh số realtime cho sếp",
+      "Quản lý cơ hội bán hàng",
+      "Chăm sóc khách hàng 360°",
+      "Tự động hóa marketing",
+      "Báo cáo doanh số & KPI",
     ],
   },
   {
     id: "hrm",
     name: "HRM",
     fullName: "Quản lý Nhân sự",
-    description: "Nhân viên tự chấm công, xin nghỉ trên app. HR không còn nhập liệu thủ công, tiết kiệm 5 ngày/tháng.",
+    description: "Phần mềm quản lý nhân sự toàn diện từ tuyển dụng, chấm công, tính lương đến đánh giá hiệu suất làm việc.",
     icon: Settings,
-    highlight: "Tiết kiệm 5 ngày công/tháng cho HR",
     features: [
-      "Chấm công GPS/WiFi chống gian lận",
-      "Tính lương tự động theo công thức",
-      "Quy trình onboarding chuẩn hóa",
-      "Đánh giá KPI minh bạch, rõ ràng",
+      "Tuyển dụng & đào tạo",
+      "Chấm công & tính lương",
+      "Quản lý KPI nhân viên",
+      "Quản lý phúc lợi & bảo hiểm",
     ],
   },
   {
     id: "dms",
     name: "DMS",
     fullName: "Quản lý Nhà Phân phối",
-    description: "Quản lý 500+ đại lý không cần gọi điện hỏi. Công nợ, tồn kho, đơn hàng - tất cả hiện trên 1 bảng.",
+    description: "Hệ thống quản lý kênh phân phối, theo dõi đơn hàng, công nợ và hoạt động của hệ thống đại lý, nhà phân phối.",
     icon: Truck,
-    highlight: "Quản lý 500+ NPP dễ dàng",
     features: [
-      "Đại lý tự đặt hàng qua app/web",
-      "Cảnh báo công nợ quá hạn tự động",
-      "GPS theo dõi salesman thực địa",
-      "Chính sách giá linh hoạt theo vùng",
+      "Quản lý mạng lưới đại lý",
+      "Theo dõi đơn hàng & giao nhận",
+      "Quản lý công nợ & thanh toán",
+      "Chính sách giá & khuyến mãi",
     ],
   },
 ]
@@ -92,12 +88,9 @@ export function Products() {
                 <product.icon className="h-6 w-6 text-primary" />
               </div>
 
-              <div className="mb-2 flex items-center justify-between">
+              <div className="mb-2">
                 <span className="text-2xl font-bold text-primary">
                   {product.name}
-                </span>
-                <span className="text-xs font-medium text-green-600 bg-green-500/10 px-2 py-1 rounded-full">
-                  {product.highlight}
                 </span>
               </div>
               <h3 className="text-sm font-medium text-foreground mb-2">

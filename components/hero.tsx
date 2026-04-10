@@ -1,19 +1,19 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Play, CheckCircle2, Clock, Zap, TrendingUp } from "lucide-react"
+import { ArrowRight, Play, CheckCircle2 } from "lucide-react"
 import Image from "next/image"
 
 const stats = [
-  { value: "50%", label: "Giảm thời gian quản lý", icon: Clock },
-  { value: "30%", label: "Tăng hiệu suất bán hàng", icon: TrendingUp },
-  { value: "7 ngày", label: "Triển khai nhanh chóng", icon: Zap },
+  { value: "15+", label: "Năm kinh nghiệm" },
+  { value: "200+", label: "Khách hàng" },
+  { value: "50+", label: "Chuyên gia" },
 ]
 
-const benefits = [
-  "Thay thế hoàn toàn Excel & phần mềm rời rạc",
-  "Tích hợp ERP + CRM + HRM + DMS trên 1 nền tảng",
-  "Dễ sử dụng, không cần kỹ thuật IT phức tạp",
+const solutions = [
+  "Phần mềm quản lý chất thải",
+  "Hệ thống phòng thí nghiệm LIMS",
+  "Giải pháp ERP, CRM, HRM, DMS",
 ]
 
 export function Hero() {
@@ -30,30 +30,29 @@ export function Hero() {
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
               </span>
               <span className="text-sm font-medium text-primary">
-                Triển khai trong 7 ngày - Dùng thử miễn phí
+                Công ty phần mềm hàng đầu Việt Nam
               </span>
             </div>
 
-            <h1 className="text-3xl font-bold leading-tight text-foreground sm:text-4xl lg:text-5xl text-balance">
-              Quản lý toàn bộ doanh nghiệp{" "}
-              <span className="text-primary">trên 1 nền tảng</span>
+            <h1 className="text-3xl font-bold leading-tight text-foreground sm:text-4xl lg:text-5xl">
+              Giải pháp{" "}
+              <span className="text-primary">Phần mềm Doanh nghiệp</span>
               <br />
-              <span className="text-foreground/80">thay thế Excel & phần mềm rời rạc</span>
+              <span className="text-foreground/80">Toàn diện & Chuyên sâu</span>
             </h1>
 
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-xl">
-              Doanh nghiệp của bạn đang dùng <strong className="text-foreground">5-10 phần mềm khác nhau</strong>? 
-              VNSolution giúp bạn <strong className="text-foreground">tích hợp tất cả vào 1 hệ thống</strong> - 
-              từ bán hàng, nhân sự đến vận hành - chỉ trong 7 ngày triển khai.
+            <p className="mt-6 text-base text-muted-foreground leading-relaxed max-w-xl">
+              VNSolution chuyên cung cấp các giải pháp phần mềm quản lý cho doanh nghiệp 
+              trong lĩnh vực <strong className="text-foreground">môi trường, phòng thí nghiệm</strong> và 
+              <strong className="text-foreground"> quản trị doanh nghiệp</strong>. 
+              Chúng tôi đồng hành cùng hơn 200 doanh nghiệp trên toàn quốc.
             </p>
 
-            <ul className="mt-6 space-y-3">
-              {benefits.map((item) => (
-                <li key={item} className="flex items-center gap-3 text-foreground">
-                  <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10">
-                    <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
-                  </div>
-                  <span className="font-medium">{item}</span>
+            <ul className="mt-6 space-y-2.5">
+              {solutions.map((item) => (
+                <li key={item} className="flex items-center gap-3 text-sm text-foreground">
+                  <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
@@ -61,33 +60,26 @@ export function Hero() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button
                 size="lg"
-                className="gap-2 font-semibold px-8 h-14 text-base transition-smooth hover:shadow-lg hover:shadow-primary/20"
+                className="gap-2 font-medium px-6 transition-smooth hover:shadow-lg hover:shadow-primary/20"
               >
-                Đăng ký Demo miễn phí 30 phút
-                <ArrowRight className="h-5 w-5" />
+                Nhận tư vấn miễn phí
+                <ArrowRight className="h-4 w-4" />
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="gap-2 font-medium h-14 transition-smooth"
+                className="gap-2 font-medium transition-smooth"
               >
                 <Play className="h-4 w-4" />
-                Xem demo 2 phút
+                Xem giới thiệu
               </Button>
             </div>
-            
-            <p className="mt-3 text-sm text-muted-foreground">
-              Chỉ mất 2 phút đăng ký - Không cần thẻ tín dụng
-            </p>
 
-            <div className="mt-10 grid grid-cols-3 gap-4 pt-8 border-t border-border">
-              {stats.map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <div className="flex items-center justify-center mb-2">
-                    <stat.icon className="h-5 w-5 text-primary mr-2" />
-                    <p className="text-2xl font-bold text-primary lg:text-3xl">{stat.value}</p>
-                  </div>
-                  <p className="text-xs text-muted-foreground">{stat.label}</p>
+            <div className="mt-10 flex items-center gap-8 pt-8 border-t border-border">
+              {stats.map((stat, index) => (
+                <div key={stat.label} className={index > 0 ? "pl-8 border-l border-border" : ""}>
+                  <p className="text-2xl font-bold text-primary lg:text-3xl">{stat.value}</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">{stat.label}</p>
                 </div>
               ))}
             </div>
