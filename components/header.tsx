@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ChevronDown, Menu, X, Layers } from "lucide-react"
+import { ChevronDown, Menu, X } from "lucide-react"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,59 +16,68 @@ export function Header() {
 
   const navItems = [
     {
-      label: "Solutions",
+      label: "Giải pháp",
       hasDropdown: true,
-      items: ["Waste Management System", "Laboratory Information System", "Industry-Specific Solutions"],
+      items: [
+        "Hệ thống quản lý chất thải",
+        "Phần mềm phòng thí nghiệm",
+        "Giải pháp theo ngành",
+      ],
     },
     {
-      label: "Products",
+      label: "Sản phẩm",
       hasDropdown: true,
-      items: ["ERP - Enterprise Resource Planning", "CRM - Customer Relationship", "HRM - Human Resource Management", "DMS - Document Management"],
+      items: [
+        "ERP - Quản trị doanh nghiệp",
+        "CRM - Quản lý khách hàng",
+        "HRM - Quản lý nhân sự",
+        "DMS - Quản lý tài liệu",
+      ],
     },
-    { label: "Case Studies", hasDropdown: false },
-    { label: "Resources", hasDropdown: false },
+    { label: "Dự án tiêu biểu", hasDropdown: false },
+    { label: "Tin tức", hasDropdown: false },
     {
-      label: "Company",
+      label: "Về chúng tôi",
       hasDropdown: true,
-      items: ["About Us", "Our Team", "Partners", "Careers"],
+      items: ["Giới thiệu", "Đội ngũ", "Đối tác", "Tuyển dụng"],
     },
   ]
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur-md supports-[backdrop-filter]:bg-background/85">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 lg:px-8">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <div className="flex items-center gap-2.5">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-              <Layers className="h-5 w-5 text-primary-foreground" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-lg font-bold text-foreground tracking-tight">
-                VN<span className="text-accent">Solution</span>
-              </span>
-              <span className="text-[9px] text-muted-foreground -mt-0.5 uppercase tracking-wider">
-                Enterprise Software
-              </span>
-            </div>
+        <Link href="/" className="flex items-center gap-2.5">
+          <div className="relative flex h-9 w-9 items-center justify-center">
+            <div className="absolute inset-0 rounded-lg bg-primary" />
+            <span className="relative text-sm font-bold text-primary-foreground">VN</span>
+          </div>
+          <div className="flex flex-col leading-none">
+            <span className="text-base font-semibold tracking-tight text-foreground">
+              VNSolution
+            </span>
+            <span className="text-[10px] text-muted-foreground tracking-wide">
+              Phần mềm doanh nghiệp
+            </span>
           </div>
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-0.5 lg:flex">
+        <nav className="hidden items-center gap-1 lg:flex">
           {navItems.map((item) =>
             item.hasDropdown ? (
               <DropdownMenu key={item.label}>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="gap-1 text-sm font-medium text-muted-foreground hover:text-foreground">
+                  <Button
+                    variant="ghost"
+                    className="gap-1 text-sm font-medium text-muted-foreground transition-smooth hover:text-foreground hover:bg-transparent"
+                  >
                     {item.label}
-                    <ChevronDown className="h-4 w-4" />
+                    <ChevronDown className="h-3.5 w-3.5 opacity-60" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="center" className="w-64">
+                <DropdownMenuContent align="center" className="w-56">
                   {item.items?.map((subItem) => (
                     <DropdownMenuItem key={subItem} asChild>
-                      <Link href="#" className="cursor-pointer">
+                      <Link href="#" className="cursor-pointer text-sm">
                         {subItem}
                       </Link>
                     </DropdownMenuItem>
@@ -76,24 +85,27 @@ export function Header() {
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              <Button key={item.label} variant="ghost" asChild className="text-sm font-medium text-muted-foreground hover:text-foreground">
+              <Button
+                key={item.label}
+                variant="ghost"
+                asChild
+                className="text-sm font-medium text-muted-foreground transition-smooth hover:text-foreground hover:bg-transparent"
+              >
                 <Link href="#">{item.label}</Link>
               </Button>
             )
           )}
         </nav>
 
-        {/* CTA Buttons */}
         <div className="hidden items-center gap-3 lg:flex">
-          <Button variant="ghost" size="sm">
-            Sign In
+          <Button variant="ghost" size="sm" className="text-sm font-medium">
+            Đăng nhập
           </Button>
-          <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-            Request Demo
+          <Button size="sm" className="text-sm font-medium">
+            Liên hệ tư vấn
           </Button>
         </div>
 
-        {/* Mobile Menu Button */}
         <Button
           variant="ghost"
           size="icon"
@@ -104,25 +116,24 @@ export function Header() {
         </Button>
       </div>
 
-      {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="border-t bg-background lg:hidden">
-          <nav className="container mx-auto flex flex-col gap-2 px-4 py-4">
+        <div className="border-t border-border/40 bg-background lg:hidden animate-fade-in">
+          <nav className="container mx-auto flex flex-col gap-1 px-4 py-4">
             {navItems.map((item) => (
               <Link
                 key={item.label}
                 href="#"
-                className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
+                className="rounded-md px-3 py-2.5 text-sm font-medium text-muted-foreground transition-smooth hover:bg-muted hover:text-foreground"
               >
                 {item.label}
               </Link>
             ))}
-            <div className="mt-4 flex flex-col gap-2">
+            <div className="mt-4 flex flex-col gap-2 pt-4 border-t border-border/40">
               <Button variant="outline" size="sm" className="w-full">
-                Sign In
+                Đăng nhập
               </Button>
-              <Button size="sm" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
-                Request Demo
+              <Button size="sm" className="w-full">
+                Liên hệ tư vấn
               </Button>
             </div>
           </nav>
