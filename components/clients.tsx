@@ -6,35 +6,43 @@ import { Button } from "@/components/ui/button"
 
 const testimonials = [
   {
-    quote: "Hệ thống quản lý chất thải của VNSolution đã giúp chúng tôi giảm 35% chi phí vận hành và cải thiện đáng kể hiệu quả thu gom. Đội ngũ VNSolution thực sự hiểu rõ thách thức trong ngành môi trường.",
+    quote: "Trước khi dùng VNSolution, tôi mất 2 ngày cuối tháng để tổng hợp Excel. Giờ chỉ cần 10 phút click vào dashboard. Tiết kiệm được 35% chi phí vận hành trong 6 tháng đầu.",
     author: "Nguyễn Văn Thành",
     role: "Giám đốc Vận hành",
     company: "Công ty TNHH Môi trường Xanh",
+    companySize: "150 nhân viên",
     industry: "Môi trường",
+    metric: "Giảm 35% chi phí",
     rating: 5,
   },
   {
-    quote: "Triển khai LIMS giúp chúng tôi số hóa hoàn toàn quy trình xét nghiệm. Từ tiếp nhận mẫu đến trả kết quả đều được kiểm soát chặt chẽ. Đây là yếu tố quan trọng giúp đạt chứng nhận ISO 17025.",
+    quote: "Triển khai chỉ mất 5 ngày, nhanh hơn nhiều so với dự kiến 3 tháng. Quy trình xét nghiệm số hóa 100%, giúp đạt ISO 17025 ngay lần audit đầu tiên.",
     author: "TS. Lê Thị Mai",
     role: "Giám đốc Phòng thí nghiệm",
     company: "Viện Kiểm nghiệm Chất lượng",
+    companySize: "80 nhân viên",
     industry: "Phòng thí nghiệm",
+    metric: "Triển khai 5 ngày",
     rating: 5,
   },
   {
-    quote: "Sau khi triển khai ERP cho 12 chi nhánh, chúng tôi có cái nhìn tổng quan về toàn bộ hoạt động kinh doanh. Việc ra quyết định nhanh hơn và chính xác hơn rất nhiều.",
+    quote: "Quản lý 12 chi nhánh trên 1 màn hình. Trước đây phải chờ báo cáo từ các chi nhánh 2 tuần, giờ thấy số liệu realtime. Doanh thu tăng 28% sau 1 năm vì ra quyết định nhanh hơn.",
     author: "Trần Minh Đức",
     role: "Tổng Giám đốc",
     company: "Tập đoàn Sản xuất Mekong",
+    companySize: "500+ nhân viên",
     industry: "Sản xuất",
+    metric: "Doanh thu +28%",
     rating: 5,
   },
   {
-    quote: "Module DMS giúp quản lý mạng lưới 500+ đại lý trên toàn quốc. Theo dõi đơn hàng, công nợ và doanh số thời gian thực. Dịch vụ hỗ trợ của VNSolution cũng rất tuyệt vời.",
+    quote: "Từ việc gọi điện hỏi 500 đại lý mỗi tuần, giờ tất cả tự nhập đơn qua app. Công nợ quá hạn giảm từ 15% xuống còn 3%. Salesman tăng 40% số điểm bán ghé thăm mỗi ngày.",
     author: "Phạm Hoàng Long",
     role: "Giám đốc Kinh doanh",
     company: "Công ty CP Phân phối Sài Gòn",
+    companySize: "200+ nhân viên, 500+ đại lý",
     industry: "Phân phối",
+    metric: "Công nợ giảm 80%",
     rating: 5,
   },
 ]
@@ -105,7 +113,12 @@ export function Clients() {
                 &ldquo;{current.quote}&rdquo;
               </blockquote>
 
-              <div className="mt-8 flex items-center justify-between">
+              <div className="mt-6 p-4 rounded-xl bg-primary/5 border border-primary/10">
+                <p className="text-sm text-muted-foreground mb-1">Kết quả đạt được</p>
+                <p className="text-xl font-bold text-primary">{current.metric}</p>
+              </div>
+
+              <div className="mt-6 flex items-center justify-between">
                 <div className="flex items-center gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary font-bold">
                     {current.author.split(' ').map(n => n[0]).join('').slice(-2)}
@@ -114,6 +127,7 @@ export function Clients() {
                     <p className="font-semibold text-foreground">{current.author}</p>
                     <p className="text-sm text-muted-foreground">{current.role}</p>
                     <p className="text-sm text-primary font-medium">{current.company}</p>
+                    <p className="text-xs text-muted-foreground">{current.companySize}</p>
                   </div>
                 </div>
                 <span className="hidden sm:inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
