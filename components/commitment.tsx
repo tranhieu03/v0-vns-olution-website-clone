@@ -30,10 +30,14 @@ const supportFeatures = [
 
 export function Commitment() {
   return (
-    <section className="bg-gradient-to-br from-[#3E8ED0] to-[#1A1E24] py-16 lg:py-24">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section className="bg-gradient-to-br from-primary via-cyan-600 to-slate-800 py-16 lg:py-24 relative overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(255,255,255,0.1),transparent)]" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-72 h-72 bg-cyan-400/10 rounded-full blur-3xl" />
+      <div className="container relative mx-auto px-4 lg:px-8">
         <div className="mx-auto max-w-2xl text-center mb-14">
-          <p className="text-sm font-medium text-white/80 mb-3">Cam kết của chúng tôi</p>
+          <p className="text-sm font-medium text-white/90 mb-3">Cam kết của chúng tôi</p>
           <h2 className="text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
             Tiêu chuẩn chất lượng hàng đầu
           </h2>
@@ -47,10 +51,10 @@ export function Commitment() {
           {commitments.map((commitment, index) => (
             <div
               key={commitment.title}
-              className={`rounded-2xl border border-white/10 bg-white/5 p-7 backdrop-blur-sm transition-smooth hover:bg-white/10 opacity-0 animate-fade-up stagger-${index + 1}`}
+              className={`rounded-2xl border border-white/20 bg-white/10 p-7 backdrop-blur-xl transition-all hover:bg-white/15 hover:border-white/30 hover:-translate-y-1 opacity-0 animate-fade-up stagger-${index + 1}`}
               style={{ animationFillMode: 'forwards' }}
             >
-              <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10">
+              <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/20 shadow-lg shadow-black/10">
                 <commitment.icon className="h-7 w-7 text-white" />
               </div>
               <h3 className="text-lg font-bold text-white">{commitment.title}</h3>
@@ -69,13 +73,13 @@ export function Commitment() {
           ))}
         </div>
 
-        <div className="mt-14 rounded-2xl border border-white/10 bg-white/5 p-8 lg:p-10">
+        <div className="mt-14 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-xl p-8 lg:p-10">
           <div className="grid items-center gap-8 lg:grid-cols-2">
             <div>
-              <h3 className="text-2xl font-bold text-white">
+              <h3 className="text-2xl font-bold text-white lg:text-3xl">
                 Hỗ trợ Doanh nghiệp Toàn diện
               </h3>
-              <p className="mt-4 text-white/70 leading-relaxed">
+              <p className="mt-4 text-white/80 leading-relaxed">
                 Đội ngũ hỗ trợ chuyên trách sẵn sàng đồng hành 24/7, đảm bảo hệ thống 
                 hoạt động ổn định và giải đáp mọi thắc mắc kịp thời.
               </p>
@@ -84,9 +88,9 @@ export function Commitment() {
               {supportFeatures.map((feature) => (
                 <div
                   key={feature.text}
-                  className={`flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-4 transition-smooth hover:bg-white/10`}
+                  className="flex items-center gap-3 rounded-xl border border-white/20 bg-white/10 p-4 transition-all hover:bg-white/20 hover:border-white/30"
                 >
-                  <feature.icon className="h-5 w-5 text-white/80 shrink-0" />
+                  <feature.icon className="h-5 w-5 text-white shrink-0" />
                   <span className="text-sm font-medium text-white">{feature.text}</span>
                 </div>
               ))}

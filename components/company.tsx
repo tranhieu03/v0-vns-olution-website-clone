@@ -36,7 +36,7 @@ const values = [
 
 export function Company() {
   return (
-    <section id="company" className="py-16 lg:py-24 bg-white">
+    <section id="company" className="py-16 lg:py-24 bg-slate-50">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
@@ -63,12 +63,12 @@ export function Company() {
                   className={`flex items-start gap-4 opacity-0 animate-fade-up stagger-${index + 1}`}
                   style={{ animationFillMode: 'forwards' }}
                 >
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-cyan-500/20">
                     <stat.icon className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <p className="text-3xl font-bold text-foreground">{stat.value}</p>
-                    <p className="text-sm text-muted-foreground">{stat.label}</p>
+                    <p className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-500">{stat.value}</p>
+                    <p className="text-sm text-slate-600">{stat.label}</p>
                   </div>
                 </div>
               ))}
@@ -118,14 +118,14 @@ export function Company() {
             {values.map((value, index) => (
               <div
                 key={value.title}
-                className={`group rounded-2xl border border-border bg-card p-8 text-center transition-smooth hover-lift opacity-0 animate-fade-up stagger-${index + 1}`}
+                className={`group rounded-2xl border border-slate-200 bg-white p-8 text-center transition-all hover-lift hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10 opacity-0 animate-fade-up stagger-${index + 1}`}
                 style={{ animationFillMode: 'forwards' }}
               >
-                <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 transition-smooth group-hover:bg-primary/15">
-                  <value.icon className="h-7 w-7 text-primary" />
+                <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-cyan-500/10 transition-all group-hover:from-primary group-hover:to-cyan-500 group-hover:shadow-lg group-hover:shadow-primary/30">
+                  <value.icon className="h-7 w-7 text-primary group-hover:text-white transition-colors" />
                 </div>
-                <h4 className="text-lg font-bold text-foreground">{value.title}</h4>
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                <h4 className="text-lg font-bold text-slate-800">{value.title}</h4>
+                <p className="mt-3 text-sm text-slate-600 leading-relaxed">
                   {value.description}
                 </p>
               </div>

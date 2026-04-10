@@ -49,15 +49,20 @@ export function CTA() {
   }
 
   return (
-    <section id="contact" className="py-16 lg:py-24 bg-white">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section id="contact" className="py-16 lg:py-24 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 relative overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_-10%,rgba(62,142,208,0.15),transparent)]" />
+      <div className="absolute top-20 right-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-20 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
+      
+      <div className="container relative mx-auto px-4 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <p className="text-sm font-medium text-primary mb-3">Liên hệ tư vấn</p>
-            <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">
+            <h2 className="text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
               Đăng ký Nhận tư vấn Miễn phí
             </h2>
-            <p className="mt-5 text-muted-foreground leading-relaxed">
+            <p className="mt-5 text-slate-300 leading-relaxed">
               Bạn đang tìm kiếm giải pháp phần mềm phù hợp? Đội ngũ chuyên gia của chúng tôi 
               sẵn sàng lắng nghe và tư vấn giải pháp tối ưu cho doanh nghiệp của bạn.
             </p>
@@ -69,27 +74,27 @@ export function CTA() {
                   className={`flex items-center gap-3 opacity-0 animate-slide-up stagger-${index + 1}`}
                   style={{ animationFillMode: 'forwards' }}
                 >
-                  <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10">
+                  <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/20">
                     <CheckCircle2 className="h-4 w-4 text-primary" />
                   </div>
-                  <span className="text-foreground">{benefit}</span>
+                  <span className="text-slate-200">{benefit}</span>
                 </li>
               ))}
             </ul>
 
-            <div className="mt-10 p-6 rounded-2xl bg-muted/50 border border-border">
-              <p className="text-sm font-semibold text-foreground mb-4">Thông tin liên hệ</p>
+            <div className="mt-10 p-6 rounded-2xl bg-slate-800/50 border border-slate-700/50 backdrop-blur-sm">
+              <p className="text-sm font-semibold text-white mb-4">Thông tin liên hệ</p>
               <div className="grid grid-cols-2 gap-4">
                 {contactInfo.map((item) => (
                   <div key={item.label} className="flex items-start gap-3">
                     <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${
-                      item.highlight ? "bg-primary text-primary-foreground" : "bg-background border border-border"
+                      item.highlight ? "bg-gradient-to-br from-primary to-cyan-500 text-white" : "bg-slate-700/50 border border-slate-600/50"
                     }`}>
                       <item.icon className={`h-5 w-5 ${item.highlight ? "" : "text-primary"}`} />
                     </div>
                     <div>
-                      <p className="text-xs text-muted-foreground">{item.label}</p>
-                      <p className={`text-sm font-medium ${item.highlight ? "text-primary" : "text-foreground"}`}>
+                      <p className="text-xs text-slate-400">{item.label}</p>
+                      <p className={`text-sm font-medium ${item.highlight ? "text-primary" : "text-slate-200"}`}>
                         {item.value}
                       </p>
                     </div>
@@ -100,7 +105,7 @@ export function CTA() {
           </div>
 
           <div>
-            <div className="rounded-2xl border border-border bg-card p-6 shadow-xl lg:p-8">
+            <div className="rounded-2xl border border-slate-700/50 bg-white p-6 shadow-2xl shadow-primary/10 lg:p-8">
               {isSubmitted ? (
                 <div className="text-center py-12">
                   <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-500/10">
@@ -213,7 +218,7 @@ export function CTA() {
 
                   <Button
                     type="submit"
-                    className="w-full gap-2 h-12 text-base font-medium transition-smooth hover:shadow-lg"
+                    className="w-full gap-2 h-12 text-base font-semibold bg-gradient-to-r from-primary to-cyan-500 hover:from-primary/90 hover:to-cyan-500/90 transition-all shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
