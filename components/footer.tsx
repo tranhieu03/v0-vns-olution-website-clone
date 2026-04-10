@@ -1,49 +1,47 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Facebook, Youtube, Linkedin, Mail, Phone, MapPin } from "lucide-react"
 
 const footerLinks = {
   solutions: {
     title: "Giải pháp",
     links: [
-      { label: "Quản lý Chất thải", href: "#" },
-      { label: "Hệ thống Phòng thí nghiệm", href: "#" },
-      { label: "Giải pháp theo ngành", href: "#" },
-      { label: "Phát triển tùy chỉnh", href: "#" },
+      { label: "Quản lý Chất thải", href: "#solutions" },
+      { label: "Phòng Thí nghiệm LIMS", href: "#solutions" },
+      { label: "Giải pháp theo ngành", href: "#solutions" },
     ],
   },
   products: {
     title: "Sản phẩm",
     links: [
-      { label: "Hệ thống ERP", href: "#" },
-      { label: "Nền tảng CRM", href: "#" },
-      { label: "Giải pháp HRM", href: "#" },
-      { label: "Nền tảng DMS", href: "#" },
+      { label: "ERP - Hoạch định nguồn lực", href: "#products" },
+      { label: "CRM - Quản lý khách hàng", href: "#products" },
+      { label: "HRM - Quản lý nhân sự", href: "#products" },
+      { label: "DMS - Quản lý nhà phân phối", href: "#products" },
     ],
   },
   resources: {
     title: "Tài nguyên",
     links: [
       { label: "Tài liệu hướng dẫn", href: "#" },
-      { label: "Dự án tiêu biểu", href: "#" },
+      { label: "Dự án tiêu biểu", href: "#clients" },
       { label: "Blog & Tin tức", href: "#" },
-      { label: "API Reference", href: "#" },
     ],
   },
   company: {
     title: "Công ty",
     links: [
-      { label: "Về chúng tôi", href: "#" },
+      { label: "Giới thiệu", href: "#company" },
       { label: "Tuyển dụng", href: "#" },
-      { label: "Đối tác", href: "#" },
-      { label: "Liên hệ", href: "#" },
+      { label: "Liên hệ", href: "#contact" },
     ],
   },
 }
 
 const contactInfo = [
-  { icon: Phone, text: "+84 28 3823 8888" },
+  { icon: Phone, text: "1900 1234" },
   { icon: Mail, text: "contact@vnsolution.com.vn" },
-  { icon: MapPin, text: "Quận 1, TP. Hồ Chí Minh, Việt Nam" },
+  { icon: MapPin, text: "Quận 1, TP. Hồ Chí Minh" },
 ]
 
 const socialLinks = [
@@ -54,42 +52,42 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-muted/40">
-      <div className="container mx-auto px-4 py-10 lg:px-8 lg:py-12">
-        <div className="grid gap-8 lg:grid-cols-6">
+    <footer className="border-t border-border bg-muted/30">
+      <div className="container mx-auto px-4 py-12 lg:px-8 lg:py-16">
+        <div className="grid gap-10 lg:grid-cols-6">
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2.5">
-              <div className="relative flex h-8 w-8 items-center justify-center">
-                <div className="absolute inset-0 rounded-md bg-primary" />
-                <span className="relative text-xs font-bold text-primary-foreground">VN</span>
-              </div>
-              <span className="text-base font-semibold tracking-tight text-foreground">
-                VNSolution
-              </span>
+            <Link href="/" className="inline-block">
+              <Image
+                src="/images/logo.png"
+                alt="VNSolution"
+                width={160}
+                height={44}
+                className="h-10 w-auto"
+              />
             </Link>
-            <p className="mt-3 text-xs text-muted-foreground leading-relaxed max-w-xs">
-              Giải pháp phần mềm doanh nghiệp cho quản lý chất thải, vận hành phòng thí nghiệm
-              và quản lý kinh doanh toàn diện. Phục vụ khách hàng tại Việt Nam và Đông Nam Á từ năm 2009.
+            <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-xs">
+              Giải pháp phần mềm quản lý toàn diện cho doanh nghiệp: Môi trường, 
+              Phòng thí nghiệm, ERP, CRM, HRM và DMS.
             </p>
 
-            <div className="mt-4 space-y-2">
+            <div className="mt-6 space-y-2.5">
               {contactInfo.map((item, index) => (
-                <div key={index} className="flex items-center gap-2 text-xs text-muted-foreground">
-                  <item.icon className="h-3.5 w-3.5 text-accent" />
+                <div key={index} className="flex items-center gap-3 text-sm text-muted-foreground">
+                  <item.icon className="h-4 w-4 text-primary" />
                   <span>{item.text}</span>
                 </div>
               ))}
             </div>
 
-            <div className="mt-4 flex gap-2">
+            <div className="mt-6 flex gap-2">
               {socialLinks.map((social, index) => (
                 <Link
                   key={index}
                   href={social.href}
-                  className="flex h-8 w-8 items-center justify-center rounded-md border border-border bg-card text-muted-foreground transition-smooth hover:border-accent hover:text-accent"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground transition-smooth hover:border-primary hover:text-primary hover:bg-primary/5"
                   aria-label={social.label}
                 >
-                  <social.icon className="h-4 w-4" />
+                  <social.icon className="h-5 w-5" />
                 </Link>
               ))}
             </div>
@@ -98,12 +96,12 @@ export function Footer() {
           {Object.values(footerLinks).map((section, index) => (
             <div key={index}>
               <h3 className="text-sm font-semibold text-foreground">{section.title}</h3>
-              <ul className="mt-3 space-y-2">
+              <ul className="mt-4 space-y-3">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     <Link
                       href={link.href}
-                      className="text-xs text-muted-foreground transition-smooth hover:text-accent"
+                      className="text-sm text-muted-foreground transition-colors-smooth hover:text-primary"
                     >
                       {link.label}
                     </Link>
@@ -114,19 +112,16 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-border pt-6 sm:flex-row">
-          <p className="text-xs text-muted-foreground">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
+          <p className="text-sm text-muted-foreground">
             © 2024 VNSolution. Bảo lưu mọi quyền.
           </p>
-          <div className="flex gap-5">
-            <Link href="#" className="text-xs text-muted-foreground hover:text-accent transition-smooth">
+          <div className="flex gap-6">
+            <Link href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors-smooth">
               Điều khoản Dịch vụ
             </Link>
-            <Link href="#" className="text-xs text-muted-foreground hover:text-accent transition-smooth">
+            <Link href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors-smooth">
               Chính sách Bảo mật
-            </Link>
-            <Link href="#" className="text-xs text-muted-foreground hover:text-accent transition-smooth">
-              Cookie
             </Link>
           </div>
         </div>
