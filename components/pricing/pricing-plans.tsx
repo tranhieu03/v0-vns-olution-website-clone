@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Check, ArrowRight, Building2, Rocket, Crown, Zap } from "lucide-react"
+import Link from "next/link"
 
 const plans = [
   {
@@ -73,18 +74,21 @@ const industryPricing = [
     icon: "🏭",
     description: "Hệ thống quản lý toàn diện cho ngành môi trường",
     modules: ["Thu gom & Vận chuyển", "Xử lý & Tái chế", "Báo cáo BTNMT"],
+    href: "/giai-phap/quan-ly-chat-thai",
   },
   {
     industry: "Phòng Thí nghiệm (LIMS)",
     icon: "🔬",
     description: "Giải pháp quản lý phòng thí nghiệm chuyên nghiệp",
     modules: ["Quản lý mẫu", "Kiểm soát chất lượng", "Báo cáo kết quả"],
+    href: "/giai-phap/lims",
   },
   {
     industry: "Quản trị Doanh nghiệp",
     icon: "🏢",
     description: "Bộ giải pháp ERP, CRM, HRM, DMS tích hợp",
     modules: ["ERP", "CRM", "HRM", "DMS"],
+    href: "/#products",
   },
 ]
 
@@ -235,13 +239,15 @@ export function PricingPlans() {
                   ))}
                 </div>
 
-                <Button 
-                  variant="outline" 
-                  className="w-full gap-2 border-slate-300 hover:border-[#3E8ED0] hover:text-[#3E8ED0] group-hover:bg-[#3E8ED0]/5"
-                >
-                  Xem chi tiết
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
+                <Link href={item.href}>
+                  <Button 
+                    variant="outline" 
+                    className="w-full gap-2 border-slate-300 hover:border-[#3E8ED0] hover:text-[#3E8ED0] group-hover:bg-[#3E8ED0]/5"
+                  >
+                    Xem chi tiết
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </Link>
               </div>
             ))}
           </div>

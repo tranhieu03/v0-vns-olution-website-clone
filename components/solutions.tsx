@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Recycle, FlaskConical, Factory, Truck, TestTube, FileCheck, BarChart3, Shield, ChevronRight } from "lucide-react"
+import Link from "next/link"
 
 const solutions = [
   {
@@ -98,10 +99,12 @@ export function Solutions() {
             </div>
 
             <div className="mt-8 flex gap-3">
-              <Button className="gap-2 bg-gradient-to-r from-primary to-cyan-500 hover:from-primary/90 hover:to-cyan-500/90 transition-all shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30">
-                Tìm hiểu chi tiết
-                <ArrowRight className="h-4 w-4" />
-              </Button>
+              <Link href={activeSolution.id === "waste" ? "/giai-phap/quan-ly-chat-thai" : "/giai-phap/lims"}>
+                <Button className="gap-2 bg-gradient-to-r from-primary to-cyan-500 hover:from-primary/90 hover:to-cyan-500/90 transition-all shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30">
+                  Tìm hiểu chi tiết
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+              </Link>
               <Button variant="outline" className="gap-2 transition-smooth border-slate-300 hover:border-primary hover:text-primary">
                 Xem demo
                 <ChevronRight className="h-4 w-4" />
