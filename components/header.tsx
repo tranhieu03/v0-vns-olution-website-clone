@@ -47,6 +47,8 @@ export function Header() {
     { label: "Bảng giá", href: "/bang-gia", hasDropdown: false },
     { label: "Tin tức", href: "/tin-tuc", hasDropdown: false },
     { label: "Khách hàng", href: "/khach-hang", hasDropdown: false },
+    { label: "Kiến thức", href: "/kien-thuc", hasDropdown: false },
+    { label: "Tuyển dụng", href: "/tuyen-dung", hasDropdown: false },
     {
       label: "Về chúng tôi",
       hasDropdown: true,
