@@ -23,17 +23,17 @@ const footerLinks = {
   resources: {
     title: "Tài nguyên",
     links: [
-      { label: "Tài liệu hướng dẫn", href: "#" },
-      { label: "Dự án tiêu biểu", href: "#clients" },
+      { label: "Kiến thức", href: "/kien-thuc" },
+      { label: "Khách hàng", href: "/khach-hang" },
       { label: "Blog & Tin tức", href: "/tin-tuc" },
     ],
   },
   company: {
     title: "Công ty",
     links: [
-      { label: "Giới thiệu", href: "#company" },
-      { label: "Tuyển dụng", href: "#" },
-      { label: "Liên hệ", href: "#contact" },
+      { label: "Giới thiệu", href: "/ve-chung-toi/gioi-thieu" },
+      { label: "Tuyển dụng", href: "/tuyen-dung" },
+      { label: "Liên hệ", href: "/ve-chung-toi/lien-he" },
     ],
   },
 }
