@@ -25,7 +25,7 @@ const footerLinks = {
     links: [
       { label: "Tài liệu hướng dẫn", href: "#" },
       { label: "Dự án tiêu biểu", href: "#clients" },
-      { label: "Blog & Tin tức", href: "#" },
+      { label: "Blog & Tin tức", href: "/tin-tuc" },
     ],
   },
   company: {
