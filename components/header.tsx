@@ -29,9 +29,9 @@ export function Header() {
       label: "Giải pháp",
       hasDropdown: true,
       items: [
-        { name: "Quản lý Chất thải", href: "#solutions" },
-        { name: "Phòng Thí nghiệm (LIMS)", href: "#solutions" },
-        { name: "Giải pháp theo ngành", href: "#solutions" },
+        { name: "Quản lý Chất thải", href: "/giai-phap/quan-ly-chat-thai" },
+        { name: "Phòng Thí nghiệm (LIMS)", href: "/giai-phap/lims" },
+        { name: "Giải pháp theo ngành", href: "/#solutions" },
       ],
     },
     {

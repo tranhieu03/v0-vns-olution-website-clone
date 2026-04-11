@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Building2, Users, Truck, BarChart3, CheckCircle, Settings, Shield, Zap, Bot, Sparkles } from "lucide-react"
+import Link from "next/link"
 
 const products = [
   {
@@ -110,14 +111,16 @@ export function Products() {
                 ))}
               </ul>
 
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                className="w-full justify-between text-sm text-slate-500 group-hover:text-primary transition-colors-smooth"
-              >
-                Tìm hiểu thêm
-                <ArrowRight className="h-4 w-4 transition-smooth group-hover:translate-x-1" />
-              </Button>
+              <Link href="/bang-gia">
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  className="w-full justify-between text-sm text-slate-500 group-hover:text-primary transition-colors-smooth"
+                >
+                  Xem bảng giá
+                  <ArrowRight className="h-4 w-4 transition-smooth group-hover:translate-x-1" />
+                </Button>
+              </Link>
             </div>
           ))}
         </div>
