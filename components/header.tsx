@@ -47,8 +47,14 @@ export function Header() {
     { label: "Bảng giá", href: "/bang-gia", hasDropdown: false },
     { label: "Tin tức", href: "/tin-tuc", hasDropdown: false },
     { label: "Khách hàng", href: "/khach-hang", hasDropdown: false },
-    { label: "Về chúng tôi", href: "#company", hasDropdown: false },
-    { label: "Liên hệ", href: "#contact", hasDropdown: false },
+    {
+      label: "Về chúng tôi",
+      hasDropdown: true,
+      items: [
+        { name: "Giới thiệu công ty", href: "/ve-chung-toi/gioi-thieu" },
+        { name: "Liên hệ", href: "/ve-chung-toi/lien-he" },
+      ],
+    },
   ]
 
   return (
