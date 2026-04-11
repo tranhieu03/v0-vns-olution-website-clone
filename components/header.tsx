@@ -45,6 +45,7 @@ export function Header() {
       ],
     },
     { label: "Bảng giá", href: "/bang-gia", hasDropdown: false },
+    { label: "Tin tức", href: "/tin-tuc", hasDropdown: false },
     { label: "Dự án", href: "#clients", hasDropdown: false },
     { label: "Về chúng tôi", href: "#company", hasDropdown: false },
     { label: "Liên hệ", href: "#contact", hasDropdown: false },
