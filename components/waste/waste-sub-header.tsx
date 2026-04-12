@@ -13,15 +13,15 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 const subNavItems = [
-  { label: "Tính năng AI", href: "/giai-phap/quan-ly-chat-thai/tinh-nang-ai" },
+  { label: "Tổng quan", href: "/giai-phap/quan-ly-chat-thai/tinh-nang" },
   { 
     label: "Tính năng", 
     hasDropdown: true,
     items: [
       { name: "Thu gom chất thải", href: "/giai-phap/quan-ly-chat-thai/tinh-nang/thu-gom" },
-      { name: "Vận chuyển", href: "/giai-phap/quan-ly-chat-thai/tinh-nang/van-chuyen" },
+      { name: "Vận chuyển & Logistics", href: "/giai-phap/quan-ly-chat-thai/tinh-nang/van-chuyen" },
       { name: "Xử lý & Tái chế", href: "/giai-phap/quan-ly-chat-thai/tinh-nang/xu-ly" },
-      { name: "Báo cáo môi trường", href: "/giai-phap/quan-ly-chat-thai/tinh-nang/bao-cao" },
+      { name: "Báo cáo BTNMT", href: "/giai-phap/quan-ly-chat-thai/tinh-nang/bao-cao" },
     ]
   },
   { label: "Khách hàng tiêu biểu", href: "/giai-phap/quan-ly-chat-thai/khach-hang" },
