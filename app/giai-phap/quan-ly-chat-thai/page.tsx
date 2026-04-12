@@ -1,6 +1,4 @@
 import { Metadata } from "next"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { WasteHero } from "@/components/waste/waste-hero"
 import { WasteModules } from "@/components/waste/waste-modules"
 import { WasteFeatures } from "@/components/waste/waste-features"
@@ -15,13 +13,11 @@ export const metadata: Metadata = {
 export default function WasteManagementPage() {
   return (
     <main className="min-h-screen">
-      <Header />
       <WasteHero />
       <WasteModules />
       <WasteFeatures />
       <WastePricing />
       <WasteCTA />
-      <Footer />
     </main>
   )
 }
